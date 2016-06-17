@@ -11,7 +11,9 @@ SolarSystem.prototype = {
     travelTime: function(planet1, planet2, mode) {
 
     },
-    Weight;
+    weightOnPlanet: function(planet) {
+
+    }
 };
 
 module.exports = SolarSystem;
