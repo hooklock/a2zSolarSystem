@@ -94,7 +94,6 @@ html body{
 }
 .parallax__layer {
   position: absolute;
-	transform-origin-x: 100%;
   top: 0;
   right: 0;
   bottom: 0;
