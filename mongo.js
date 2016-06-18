@@ -331,6 +331,268 @@ db.solarSystem.insert({
             diameter: 2
           }
         ]
+      },
+      {
+        name: "Saturn",
+        earthDistance: 1200000000 ,
+        sunDistance: 1429000000,
+        orbitalPeriod: 29,
+        diameter: 116464,
+        gravity: 10.44,
+        type: "Gas",
+        mass: "5.683e26kg",
+        dayLength: "0d 10h 42m",
+        axisAngle: 26.7,
+        moons:[
+          {
+            name: "S/2009 S 1",
+            diameter: 0.3
+          },
+          {
+            name: "Pan",
+            diameter: 28
+          },
+          {
+            name: "Daphnis",
+            diameter: 8
+          },
+          {
+            name: "Atlas",
+            diameter: 30
+          },
+          {
+            name: "Prometheus",
+            diameter: 86
+          },
+          {
+            name: "Pandora",
+            diameter: 81
+          },
+          {
+            name: "Epimetheus",
+            diameter: 116
+          },
+          {
+            name: "Janus",
+            diameter: 179
+          },
+          {
+            name: "Aegaeon",
+            diameter: 0.5
+          },
+          {
+            name: "Mimas",
+            diameter: 396
+          },
+          {
+            name: "Methone",
+            diameter: 3
+          },
+          {
+            name: "Anthe",
+            diameter: 1
+          },
+          {
+            name: "Pallene",
+            diameter: 5
+          },
+          {
+            name: "Enceladus",
+            diameter: 504
+          },
+          {
+            name: "Tethys",
+            diameter: 1062
+          },
+          {
+            name: "Telesto",
+            diameter: 24
+          },
+          {
+            name: "Calypso",
+            diameter: 21
+          },
+          {
+            name: "Dione",
+            diameter: 1122
+          },
+          {
+            name: "Helene",
+            diameter: 35
+          },
+          {
+            name: "Polydeuces",
+            diameter: 3
+          },
+          {
+            name: "Rhea",
+            diameter: 1527
+          },
+          {
+            name: "Titan",
+            diameter: 5149
+          },
+          {
+            name: "Hyperion",
+            diameter: 270
+          },
+          {
+            name: "Iapetus",
+            diameter: 1469
+          },
+          {
+            name: "Kiviuq",
+            diameter: 16
+          },
+          {
+            name: "Ijiraq",
+            diameter: 12
+          },
+          {
+            name: "Phoebe",
+            diameter: 213
+          },
+          {
+            name: "Paaliaq",
+            diameter: 22
+          },
+          {
+            name: "Skathi",
+            diameter: 8
+          },
+          {
+            name: "Albiorix",
+            diameter: 32
+          },
+          {
+            name: "S/2007 S 2",
+            diameter: 6
+          },
+          {
+            name: "Bebhionn",
+            diameter: 6
+          },
+          {
+            name: "Erriapus",
+            diameter: 10
+          },
+          {
+            name: "Skoll",
+            diameter: 6
+          },
+          {
+            name: "Siarnaq",
+            diameter: 40
+          },
+          {
+            name: "Tarqeq",
+            diameter: 7
+          },
+          {
+            name: "S/2004 S 13",
+            diameter: 6
+          },
+          {
+            name: "Greip",
+            diameter: 6
+          },
+          {
+            name: "Hyrrokkin",
+            diameter: 8
+          },
+          {
+            name: "Jarnsaxa",
+            diameter: 6
+          },
+          {
+            name: "Tarvos",
+            diameter: 15
+          },
+          {
+            name: "Mundilfari",
+            diameter: 7
+          },
+          {
+            name: "S/2006 S 1",
+            diameter: 6
+          },
+          {
+            name: "S/2004 S 17",
+            diameter: 4
+          },
+          {
+            name: "Bergelmir",
+            diameter: 6
+          },
+          {
+            name: "Narvi",
+            diameter: 7
+          },
+          {
+            name: "Suttungr",
+            diameter: 7
+          },
+          {
+            name: "Hati",
+            diameter: 6
+          },
+          {
+            name: "S/2004 S 12",
+            diameter: 5
+          },
+          {
+            name: "Farbauti",
+            diameter: 5
+          },
+          {
+            name: "Thrymr",
+            diameter: 7
+          },
+          {
+            name: "Aegir",
+            diameter: 6
+          },
+          {
+            name: "S/2007 S 3",
+            diameter: 5
+          },
+          {
+            name: "Bestla",
+            diameter: 7
+          },
+          {
+            name: "S/2004 S 7",
+            diameter: 6
+          },
+          {
+            name: "S/2006 S 3",
+            diameter: 6
+          },
+          {
+            name: "Fenrir",
+            diameter: 4
+          },
+          {
+            name: "Surtur",
+            diameter: 6
+          },
+          {
+            name: "Kari",
+            diameter: 7
+          },
+          {
+            name: "Ymir",
+            diameter: 18
+          },
+          {
+            name: "Loge",
+            diameter: 6
+          },
+          {
+            name: "Fornjot",
+            diameter: 6
+          }
+        ]
       }
 
     ]
