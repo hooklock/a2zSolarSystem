@@ -181,39 +181,39 @@ describe('SolarSystem', function() {
       assert.deepEqual( earth, solarsystem.findLargestDiameter('sunDistance'));
   });
 
-  // it('should find the largest diameter', function(){
-  //     solarsystem.addPlanet(mercury);
-  //     solarsystem.addPlanet(venus);
-  //     solarsystem.addPlanet(earth);
-  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
-  // });
-  //
-  // it('should find the largest diameter', function(){
-  //     solarsystem.addPlanet(mercury);
-  //     solarsystem.addPlanet(venus);
-  //     solarsystem.addPlanet(earth);
-  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
-  // });
-  //
-  // it('should find the largest diameter', function(){
-  //     solarsystem.addPlanet(mercury);
-  //     solarsystem.addPlanet(venus);
-  //     solarsystem.addPlanet(earth);
-  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
-  // });
-  //
-  // it('should find the largest diameter', function(){
-  //     solarsystem.addPlanet(mercury);
-  //     solarsystem.addPlanet(venus);
-  //     solarsystem.addPlanet(earth);
-  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
-  // });
-  //
-  // it('should find the largest diameter', function(){
-  //     solarsystem.addPlanet(mercury);
-  //     solarsystem.addPlanet(venus);
-  //     solarsystem.addPlanet(earth);
-  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
-  // });
+  it('should find the longest orbital period', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( earth, solarsystem.findLargestDiameter('orbitalPeriod'));
+  });
+
+  it('should find the highest gravity', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( earth, solarsystem.findLargestDiameter('gravity'));
+  });
+
+  it('should find the largest mass', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( earth, solarsystem.findLargestDiameter('mass'));
+  });
+
+  it('should find the largest axis angle', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( venus, solarsystem.findLargestDiameter('axisAngle'));
+  });
+
+  it('should find the planet of longest day length', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( venus, solarsystem.longestDayLength());
+  });
 
 });

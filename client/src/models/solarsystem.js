@@ -94,6 +94,27 @@ SolarSystem.prototype = {
     // return largestthing;
     // }
 
+    longestDayLength: function(){
+        var value = 0;
+        var pln = {};
+        var longest = this.planets[0];
+        this.planets.forEach(function(planet){
+            var newlength = []
+            var length1 = planet.dayLength.split(" ");
+            for(var string of length1){
+                string = parseInt(string.slice(0, -1));
+                newlength.push(string);
+            }
+            // console.log(length1);
+            if(newlength[0] > value){
+            value = newlength[0];
+            pln = planet;
+        }
+
+    });
+        return pln;
+    },
+
     // order planets by a 'thing', and 'order' is either Asc or Desc
     orderBy: function(thing, order){
         var face = 0;
