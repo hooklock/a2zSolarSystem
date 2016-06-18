@@ -3,6 +3,39 @@ html body{
 	padding: 0;
 	margin: 0;
 	background: #000;
+	overflow: hidden;
+}
+
+/*TOP NAVIGATION MENU*/
+nav {
+	color: transparent;
+	display: inline-block;
+}
+
+.top-nav-menu {
+	color: rgb(175, 238, 238);
+	display: inline-block;
+	position: fixed;
+	right: 92%;
+	top: 10%;
+	width: 8em;
+	margin-top: -2.5em;
+	z-index: 100;
+}
+
+ul {
+	display: inline-block;
+}
+
+.top-nav-menu li {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	border: 2px;
+	background-color: rgba(83,163,178,0.2);
+	border-color: rgba(175, 238, 238,0.3);
+	border-style: solid;
+	border-radius: 0% 25% ;
 }
 
 /*BACKGROUND DISPLAY*/
