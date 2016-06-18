@@ -48,6 +48,7 @@
 	
 	window.onload = function() {
 		//Solar System Setup
+		// FIXME: This needs to be refactored into the solarSytem_view.js and then called into app.js. discuss with team Monday Morning.
 		var speed = 3;
 		var x, y;
 		function handleMouse(e) {
