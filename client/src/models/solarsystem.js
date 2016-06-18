@@ -59,12 +59,44 @@ SolarSystem.prototype = {
     });
     },
     // based on planets, takes in a 'thing' as a parameter (diameter, mass, distanceFromSun, distanceFromEarth)
-    greatest: function(thing) {
+    findLargestDiameter: function(thing){
+        var value = 0;
+        var pln = {};
+        this.planets.forEach(function(planet){
+            if(planet[thing] > value){
+            value = planet[thing];
+            pln = planet;
+        }
 
+    });
+        return pln;
     },
-    // order planets by a 'thing', and 'order' is either Asc or Desc
-    orderBy: function(thing, order) {
+    // findLargestDiameter: function(){
+    //     var value = 0;
+    //     var pln = {};
+    //     this.planets.forEach(function(planet){
+    //         if(planet.diameter > value){
+    //         value = planet.diameter;
+    //         pln = planet;
+    //     }
+    //
+    // });
+    //     return pln;
+    // }
+    // findLargestDiameter: function(thing) {
+    // var largestthing = this.planets[0];
+    // for(var planet of this.planets) {
+    //     console.log(planet.thing);
+    //     if (planet.thing > largestthing.thing) {
+    //         largestthing = planet;
+    //     }
+    // }
+    // return largestthing;
+    // }
 
+    // order planets by a 'thing', and 'order' is either Asc or Desc
+    orderBy: function(thing, order){
+        var face = 0;
     }
 };
 

@@ -88,6 +88,7 @@ describe('SolarSystem', function() {
           orbitalPeriod: 88,
           diameter: 4879,
           gravity: 3.7,
+        //   type: "Sunish",
           type: "Terrestrial",
           mass: "3.285e23",
           dayLength: "58d 15h 30m",
@@ -159,15 +160,60 @@ describe('SolarSystem', function() {
       assert.equal(mercury, solarsystem.findPlanetByName("Mercury"));
   });
 
-  // it('should find the largest account', function(){
-  //     bank1.addAccount(account1);
-  //     bank1.addAccount(account2);
-  //     bank1.addAccount(account3);
-  //     bank1.addAccount(account4);
-  //     bank1.addAccount(account5);
-  //     bank1.addAccount(account6);
-  //     bank1.addAccount(account7);
-  //     assert.equal( account6, bank1.accounts.findLargestAccount);
+  it('should filter by planet type', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual([mercury, venus, earth], solarsystem.filteredPlanets("Terrestrial"));
+  });
+
+  it('should find the largest diameter', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
+  });
+
+  it('should find the furthest distance from sun', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.deepEqual( earth, solarsystem.findLargestDiameter('sunDistance'));
+  });
+
+  // it('should find the largest diameter', function(){
+  //     solarsystem.addPlanet(mercury);
+  //     solarsystem.addPlanet(venus);
+  //     solarsystem.addPlanet(earth);
+  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
+  // });
+  //
+  // it('should find the largest diameter', function(){
+  //     solarsystem.addPlanet(mercury);
+  //     solarsystem.addPlanet(venus);
+  //     solarsystem.addPlanet(earth);
+  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
+  // });
+  //
+  // it('should find the largest diameter', function(){
+  //     solarsystem.addPlanet(mercury);
+  //     solarsystem.addPlanet(venus);
+  //     solarsystem.addPlanet(earth);
+  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
+  // });
+  //
+  // it('should find the largest diameter', function(){
+  //     solarsystem.addPlanet(mercury);
+  //     solarsystem.addPlanet(venus);
+  //     solarsystem.addPlanet(earth);
+  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
+  // });
+  //
+  // it('should find the largest diameter', function(){
+  //     solarsystem.addPlanet(mercury);
+  //     solarsystem.addPlanet(venus);
+  //     solarsystem.addPlanet(earth);
+  //     assert.deepEqual( earth, solarsystem.findLargestDiameter('diameter'));
   // });
 
 });
