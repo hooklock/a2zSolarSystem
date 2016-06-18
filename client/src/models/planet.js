@@ -13,7 +13,9 @@ var Planet = function(params){
 };
 
 Planet.prototype = {
-
+    weightOnPlanet: function(currentweight) {
+        var newWeight = (currentWeight * (this.gravity/9.8));
+    }
 };
 
 module.exports = Planet;
