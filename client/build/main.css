@@ -13,14 +13,14 @@ html body{
 	height: 100%;
 }
 
-#background {
+.background {
 	background-color: black;
 	width: 3000px;
 	height: 2000px;
 	z-index: 1;
 }
 
-#sun {
+.sun {
 	top: 600px;
 	left: 1000px;
 	width: 475px;
@@ -29,8 +29,8 @@ html body{
 	position: absolute;
 }
 
-#orbit-outer {
-	top: 600px;
+.orbit-outer {
+	top: 450px;
 	left: 175px;
 	width: 2286px;
 	height: 1000px;
@@ -38,9 +38,20 @@ html body{
 	position: absolute;
 }
 
-#asteroid-belt {
-	top: 0px;
+.asteroid-belt {
+	top: 625px;
+	left: 675px;
 	width: 1216px;
 	height: 527px;
 	z-index: 2;
+	position: absolute;
+}
+
+.orbit-inner {
+	top: 675px;
+	left: 850px;
+	width: 839px;
+	height: 361px;
+	z-index: 15;
+	position: absolute;
 }
