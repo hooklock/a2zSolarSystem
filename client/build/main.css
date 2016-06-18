@@ -103,5 +103,5 @@ html body{
   transform: translateZ(0px);
 }
 .parallax__layer--back {
-  transform: translateZ(-2px);
+  transform: translateZ(-2px) scale(1.39);
 }
