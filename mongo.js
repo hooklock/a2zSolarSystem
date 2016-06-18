@@ -785,12 +785,7 @@ db.solarSystem.insert({
             diameter: 40
           }
         ]
-
       }
-
     ]
-
-
-
   }
 );
