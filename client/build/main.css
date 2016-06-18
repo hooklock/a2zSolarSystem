@@ -55,3 +55,30 @@ html body{
 	z-index: 15;
 	position: absolute;
 }
+
+.clouds {
+	top: 300px;
+	left: 400px;
+	width: 2792px;
+	height: 1611px;
+	z-index: 6;
+	position: absolute;
+}
+
+.kuiper-inner {
+	top: 300px;
+	left: 400px;
+	width: 2866px;
+	height: 1972px;
+	z-index: 7;
+	position: absolute;
+}
+
+.kuiper-outer {
+	top: 100px;
+	left: 400px;
+	width: 3192px;
+	height: 1841px;
+	z-index: 8;
+	position: absolute;
+}
