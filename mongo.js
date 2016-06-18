@@ -715,6 +715,77 @@ db.solarSystem.insert({
             diameter: 20
           }
         ]
+      },
+      {
+        name: "Neptune",
+        earthDistance: 4300000000,
+        sunDistance: 4498000000,
+        orbitalPeriod: 165,
+        diameter: 49244,
+        gravity: 11.15,
+        type: "Gas",
+        mass: "1.024e26kg",
+        dayLength: "0d 16h 6m",
+        axisAngle: 28.32,
+        moons:[
+          {
+            name: "Naiad",
+            diameter: 66
+          },
+          {
+            name: "Thalassa",
+            diameter: 82
+          },
+          {
+            name: "Despina",
+            diameter: 150
+          },
+          {
+            name: "Galatea",
+            diameter: 176
+          },
+          {
+            name: "Larissa",
+            diameter: 194
+          },
+          {
+            name: "S/2004 N 1",
+            diameter: 18
+          },
+          {
+            name: "Proteus",
+            diameter: 420
+          },
+          {
+            name: "Triton",
+            diameter: 2705
+          },
+          {
+            name: "Nereid",
+            diameter: 340
+          },
+          {
+            name: "Halimede",
+            diameter: 62
+          },
+          {
+            name: "Sao",
+            diameter: 44
+          },
+          {
+            name: "Laomedeia",
+            diameter: 42
+          },
+          {
+            name: "Psamathe",
+            diameter: 40
+          },
+          {
+            name: "Neso",
+            diameter: 40
+          }
+        ]
+
       }
 
     ]
