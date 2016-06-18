@@ -593,6 +593,128 @@ db.solarSystem.insert({
             diameter: 6
           }
         ]
+      },
+      {
+        name: "Uranus",
+        earthDistance: 2600000000,
+        sunDistance: 2877000000,
+        orbitalPeriod: 85,
+        diameter: 50724,
+        gravity: 8.69,
+        type: "Gas",
+        mass: "8.681e25kg",
+        dayLength: "0d 17h 14m",
+        axisAngle: 98,
+        moons:[
+          {
+            name: "Cordelia",
+            diameter: 40
+          },
+          {
+            name: "Ophelia",
+            diameter: 43
+          },
+          {
+            name: "Bianca",
+            diameter: 51
+          },
+          {
+            name: "Cressida",
+            diameter: 80
+          },
+          {
+            name: "Desdemona",
+            diameter: 64
+          },
+          {
+            name: "Juliet",
+            diameter: 94
+          },
+          {
+            name: "Portia",
+            diameter: 135
+          },
+          {
+            name: "Rosalind",
+            diameter: 72
+          },
+          {
+            name: "Cupid",
+            diameter: 18
+          },
+          {
+            name: "Belinda",
+            diameter: 90
+          },
+          {
+            name: "Perdita",
+            diameter: 30
+          },
+          {
+            name: "Puck",
+            diameter: 162
+          },
+          {
+            name: "Mab",
+            diameter: 25
+          },
+          {
+            name: "Miranda",
+            diameter: 472
+          },
+          {
+            name: "Ariel",
+            diameter: 1159
+          },
+          {
+            name: "Umbriel",
+            diameter: 1169
+          },
+          {
+            name: "Titania",
+            diameter: 1577
+          },
+          {
+            name: "Oberon",
+            diameter: 1523
+          },
+          {
+            name: "Francisco",
+            diameter: 22
+          },
+          {
+            name: "Caliban",
+            diameter: 72
+          },
+          {
+            name: "Stephano",
+            diameter: 32
+          },
+          {
+            name: "Trinculo",
+            diameter: 18
+          },
+          {
+            name: "Sycorax",
+            diameter: 165
+          },
+          {
+            name: "Margaret",
+            diameter: 20
+          },
+          {
+            name: "Prospero",
+            diameter: 50
+          },
+          {
+            name: "Setebos",
+            diameter: 48
+          },
+          {
+            name: "Ferdinand",
+            diameter: 20
+          }
+        ]
       }
 
     ]
