@@ -20,6 +20,7 @@ Planet.prototype = {
     },
     addMoon: function(moon) {
         this.moons.push(moon);
+        return this.moons;
     }
 };
 

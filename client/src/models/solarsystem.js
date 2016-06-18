@@ -9,17 +9,20 @@ var SolarSystem = function(params){
 SolarSystem.prototype = {
     addPlanet: function(planet) {
         this.planets.push(planet);
+        return this.planets;
     },
+    // Calculates travel time between 2 planets using various modes of transport
+    // outputs travel time in years...
     travelTime: function(planet1, planet2, mode) {
         var timeTo = 0;
         // velocity is in metres per second
         var velocity = 0;
         var distance = 0;
 
-        if (planet1.distanceFromSun > planet2.distanceFromSun) {
-            distance = (planet1.distanceFromSun - planet2.distanceFromSun);
-        } else if (planet2.distanceFromSun > planet1.distanceFromSun) {
-            distance = (planet2.distanceFromSun - planet1.distanceFromSun);
+        if (planet1.sunDistance > planet2.sunDistance) {
+            distance = (planet1.sunDistance - planet2.sunDistance);
+        } else if (planet2.sunDistance > planet1.sunDistance) {
+            distance = (planet2.sunDistance - planet1.sunDistance);
         } else {
             distance = 0;
         }
@@ -40,14 +43,15 @@ SolarSystem.prototype = {
                 break;
         }
 
-        timeTo = (distance/velocity);
+        timeTo = ((distance/velocity)/60/60/24/365);
+        return timeTo;
     },
     findPlanetByName:function(planetName){
       return _.find(this.planets, function(planet){
         return planet.name === planetName;
     });
     },
-    // returns planets dependant on type (Rocky or Gas Giants)
+    // returns planets dependant on type (Terrestrial or GasGiants)
     filteredPlanets: function(type){
       if(!type) return this.planets;
       return _.filter(this.planets, function(planet){
