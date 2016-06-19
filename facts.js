@@ -1,4 +1,4 @@
-db.solarSystem.insert(
+db.funFacts.insert([
   {
     type: "Planet",
     name: "Mercury",
@@ -209,4 +209,4 @@ db.solarSystem.insert(
     name: "Neptune",
     fact: "Neptune is a large, water planet with a blue hydrogen-methane atmosphere and faint rings. It is covered in thin wispy white clouds which stretch out around the planet."
   }
-);
+]);
