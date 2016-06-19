@@ -170,9 +170,59 @@ db.solarSystem.insert(
     fact: "Saturn is very light as it is made up of more hydrogen than helium so it is less dense. If we could fit Saturn into a bathtub it would float (but that would have to be one big bathtub!)"
   },
   {
+    type: "Planet",
+    name: "Saturn",
+    fact: "Saturn is not a peaceful planet. Storm winds race around the atmosphere at 800kmp/h. Saturn has a very strong magnetic field which traps energy particles resulting in high levels of radiation. Like Jupiter, Saturn has many moons which surround it."
+  },
+  {
+    type: "Planet",
+    name: "Uranus",
+    fact: "Uranus spins lying on its side (like a barrel), this is perhaps due to a large collision early in its formation. It was the first planet discovered by telescope"
+  },
+  {
+    type: "Planet",
+    name: "Uranus",
+    fact: "Since Uranus takes 84 Earth years to go around the sun, this means that each of its poles is in daylight for 42 years and in darkness for the next 42."
+  },
+  {
+    type: "Planet",
+    name: "Uranus",
+    fact: "Uranus’s atmosphere is mostly hydrogen but it also contains large amounts of a gas called methane. Methane absorbs red light and scatters blue light so a blue-green methane haze hides the interior of the planet from view. "
+  },
+  {
+    type: "Planet",
+    name: "Uranus",
+    fact: "Uranus hides its interior but scientists guess that under the hydrogen-methane atmosphere is a hot, slushy ocean of water, ammonia and methane thousands of miles deep wrapped around a rocky core."
+  },
+  {
     type: "",
     name: "",
-    fact: "Saturn is not a peaceful planet. Storm winds race around the atmosphere at 800kmp/h. Saturn has a very strong magnetic field which traps energy particles resulting in high levels of radiation. Like Jupiter, Saturn has many moons which surround it."
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
   },
   {
     type: "",
@@ -184,15 +234,6 @@ db.solarSystem.insert(
     name: "",
     fact: ""
   }
-
-
-
-
-
-
-
-
-
 
 
 
