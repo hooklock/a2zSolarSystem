@@ -1,6 +1,5 @@
-var SolarSystemView = function() {
-// var SolarSystemView = function(solarSystem) {
-// 	this.solarSystem = solarSystem;
+var SolarSystemView = function(solarSystem) {
+	this.solarSystem = solarSystem;
 };
 
 SolarSystemView.prototype = {

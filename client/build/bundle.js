@@ -47,8 +47,7 @@
 	var SolarSystemView = __webpack_require__(1);
 	
 	window.onload = function() {
-		// var solarsystem = new SolarSystemView(solarsystem);
-		var solarsystem = new SolarSystemView();
+		var solarsystem = new SolarSystemView(solarsystem);
 		solarsystem.render();
 	};
 
@@ -57,9 +56,8 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	var SolarSystemView = function() {
-	// var SolarSystemView = function(solarSystem) {
-	// 	this.solarSystem = solarSystem;
+	var SolarSystemView = function(solarSystem) {
+		this.solarSystem = solarSystem;
 	};
 	
 	SolarSystemView.prototype = {
