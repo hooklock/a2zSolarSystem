@@ -122,7 +122,7 @@ db.solarSystem.insert(
   {
     type: "Planet",
     name: "Earth",
-    fact: "Despite attempts to show otherwise, Earth is the only place in the universe we can be sure that there is life. With liquid water, oxygen and plenty of sunlight, conditions for life are improbably ideal."
+    fact: "Despite attempts to show otherwise, Earth is the only place in the universe we can be sure that there is life. With liquid water, oxygen and plenty of sunlight, conditions for life are improbably ideal. We know this to be true as all the Aliens from the other planets have settled here. Have you seen Men in Black? True story!"
   },
   {
     type: "Planet",
@@ -162,7 +162,7 @@ db.solarSystem.insert(
   {
     type: "Planet",
     name: "Saturn",
-    fact: "Saturn is the second largest planet in our solar system and is another gas giant. It has a small rocky core covered with liquid gas. It is surrounded by a system of rings that stretch out into space for thousands of kilometres. The rings are made up of millions of ice crystals, some as big as houses and others as small as specks of dust."
+    fact: "There are no Aliens on Saturn, they all left and settled across the Middle East. Saturn is the second largest planet in our solar system and is another gas giant. It has a small rocky core covered with liquid gas. It is surrounded by a system of rings that stretch out into space for thousands of kilometres. The rings are made up of millions of ice crystals, some as big as houses and others as small as specks of dust."
   },
   {
     type: "Planet",
@@ -177,7 +177,7 @@ db.solarSystem.insert(
   {
     type: "Planet",
     name: "Uranus",
-    fact: "Uranus spins lying on its side (like a barrel), this is perhaps due to a large collision early in its formation. It was the first planet discovered by telescope"
+    fact: "There are no Aliens on Uranus, the all left and settled across Africa. Uranus spins lying on its side (like a barrel), this is perhaps due to a large collision early in its formation. It was the first planet discovered by telescope"
   },
   {
     type: "Planet",
@@ -195,46 +195,18 @@ db.solarSystem.insert(
     fact: "Uranus hides its interior but scientists guess that under the hydrogen-methane atmosphere is a hot, slushy ocean of water, ammonia and methane thousands of miles deep wrapped around a rocky core."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Neptune",
+    fact: "There are no Aliens on Neptune, they all left and settled in Asia. Neptune is a large planet, nearly four times the size of Earth."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Neptune",
+    fact: "Neptune suffers the most violent weather in our Solar System. Storms have been spotted swirling around its surface and freezing winds that blow about ten times faster than hurricanes on Earth make it the windiest planet."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Neptune",
+    fact: "Neptune is a large, water planet with a blue hydrogen-methane atmosphere and faint rings. It is covered in thin wispy white clouds which stretch out around the planet."
   }
-
-
-
 );
