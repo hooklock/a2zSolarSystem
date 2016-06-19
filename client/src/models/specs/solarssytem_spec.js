@@ -291,8 +291,88 @@ describe('Fun Facts', function() {
 
   it('should add a fact', function(){
       factoids.addFact(fact1);
-      console.log(factoids);
       assert.equal("Mercury", factoids.facts[0].name);
   });
+
+});
+
+describe('User', function() {
+
+  beforeEach(function(){
+      newsun = new Sun ({name: 'Sol'});
+      solarsystem = new SolarSystem({name: "Solar System", sun: newsun, planets: []});
+      mercury = new Planet({
+          name: "Mercury",
+          earthDistance: 77000000 ,
+          sunDistance: 58000000,
+          orbitalPeriod: 88,
+          diameter: 4879,
+          gravity: 3.7,
+        //   type: "Sunish",
+          type: "Terrestrial",
+          mass: "3.285e23",
+          dayLength: "58d 15h 30m",
+          axisAngle: 2.11,
+          moons: []
+      });
+        venus = new Planet({
+          name: "Venus",
+          earthDistance: 38000000 ,
+          sunDistance: 108000000,
+          orbitalPeriod: 225,
+          diameter: 12104,
+          gravity: 8.87,
+          type: "Terrestrial",
+          mass: "4.867e24",
+          dayLength: "116d 18h 0m",
+          axisAngle: 177.4
+        });
+        earth = new Planet({
+          name: "Earth",
+          earthDistance: 0,
+          sunDistance: 149600000,
+          orbitalPeriod: 365,
+          diameter: 12742,
+          gravity: 9.807,
+          type: "Terrestrial",
+          mass: "5.972e24",
+          dayLength: "0d 24h 0m",
+          axisAngle: 23.5,
+          moons:[
+            {
+              name: "Moon",
+              diameter: 3474
+            }
+            ]
+        });
+        moon1 = new Moon({name: "Moon", diameter: 5000});
+        moon2 = new Moon({name: "Io", diameter: 1000});
+        fact1 = new FunFact({name: mercury.name, type: mercury.type, fact: "This is the closest planet to the sun!"});
+        fact2 = new FunFact({name: venus.name, type: venus.type, fact: "This is the closest planet to the sun!"});
+        fact3 = new FunFact({name: earth.name, type: earth.type, fact: "This is the closest planet to the sun!"});
+        factoids = new FunFacts({facts: []});
+        user1 = new User({name: "Dave Jnr", favPlanets: []});
+  });
+
+  it('should have name', function(){
+      assert.equal("Dave Jnr", user1.name);
+  });
+
+  it('should start with no fav planets', function(){
+      assert.equal(0, user1.favPlanets.length);
+  });
+
+  it('should add planets to favPlanets', function(){
+      user1.addPlanet(mercury);
+      user1.addPlanet(venus);
+      user1.addPlanet(earth);
+      assert.equal(3, user1.favPlanets.length);
+  });
+
+  // it('should add a fact', function(){
+  //     factoids.addFact(fact1);
+  //     console.log(factoids);
+  //     assert.equal("Mercury", factoids.facts[0].name);
+  // });
 
 });

@@ -4,7 +4,9 @@ var User = function(params){
 };
 
 User.prototype = {
-
+    addPlanet: function(planet){
+        this.favPlanets.push(planet);
+    }
 };
 
 module.exports = User;
