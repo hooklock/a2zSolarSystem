@@ -46,9 +46,16 @@ SolarSystem.prototype = {
         timeTo = ((distance/velocity)/60/60/24/365);
         return timeTo;
     },
-    findPlanetByName:function(planetName){
+    findPlanetByName: function(planetName){
       return _.find(this.planets, function(planet){
         return planet.name === planetName;
+    });
+    },
+    // returns planet found by thing and value
+    // could be used to fins answers for a game?
+    findPlanetByThing: function(value, thing){
+      return _.find(this.planets, function(planet){
+        return planet[thing] === value;
     });
     },
     // returns planets dependant on type (Terrestrial or GasGiants)
@@ -71,8 +78,6 @@ SolarSystem.prototype = {
     });
         return pln;
     },
-
-
     longestDayLength: function(){
         var value = 0;
         var pln = {};

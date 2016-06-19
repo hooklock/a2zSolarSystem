@@ -105,7 +105,8 @@ describe('SolarSystem', function() {
           type: "Terrestrial",
           mass: "4.867e24",
           dayLength: "116d 18h 0m",
-          axisAngle: 177.4
+          axisAngle: 177.4,
+          moons: []
         });
         earth = new Planet({
           name: "Earth",
@@ -223,6 +224,14 @@ describe('SolarSystem', function() {
     //   assert.deepEqual( [earth, venus, mercury], solarsystem.orderThingsBy("mass", "descending"));
     //   assert.deepEqual( [earth, mercury, venus], solarsystem.orderThingsBy("name", "ascending"));
       assert.deepEqual( [venus, mercury, earth], solarsystem.orderThingsBy("dayLength", "ascending"));
+  });
+
+  it('should find planet by thing and value', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+    //   assert.equal( "Mercury", solarsystem.findPlanetByThing(4879, "diameter").name);
+      assert.equal( "Earth", solarsystem.findPlanetByThing(365, "orbitalPeriod").name);
   });
 
 });
