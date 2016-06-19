@@ -95,15 +95,69 @@ db.solarSystem.insert(
     fact: "There are no Aliens on Venus, they all left and settled in Scotland. In the same neighbourhood of the solar system as Earth it is the closest planet to us and is nearly the same size and has nearly the same gravity. It has mountains and valleys from tectonic activity and a complex weather system in its thick atmosphere. By all measures, it is our twin, our evil twin. Venus is the hottest place in the solar system (aside from the sun), with punishing 450°C temperatures, clouds that consists of sulphuric acid which block out the sun, rain and snow made from toxic lead compounds, and an atmospheric pressure nearly a hundred times that of Earth. The effect would be like being boiled alive while being hugged by the Incredible Hulk while your skin dissolves. The surface is so horrible that for years, the probes we sent there were crushed, then melted. Venus doesn’t tilt on its axis, so it doesn’t have seasons and every day is the hottest day. Still, the upper clouds are rather pleasant, as the atmosphere is so dense, oxygen would float on Venus just as helium does on Earth so perhaps cities in the clouds are an option for the future?"
   },
   {
+    type: "Planet",
+    name: "Venus",
+    fact: "Much like Mercury, Venus has a weird calendar. Its year of 225 days isn’t too different to Earth’s, its rotation is very slow and probably due to a large impact during its formation, it rotates backwards very slowly. If you could see it thourgh the coulds of sulphuric acid, you would notice the sun setting twice in the east."
+  },
+  {
+    type: "Planet",
+    name: "Venus",
+    fact: "Veuns glows at night, although no one is quite sure why. The effect is very subtle, but there is a distinct glow on the night side. Some believe it to be lightning storms so violent they light up the sky others believe it to be bonfires being lit to celebrate the coronation of a new Venusian emperor, or the slash and burn of Venusian farmers."
+  },
+  {
+    type: "Planet",
+    name: "Earth",
+    fact: "The core of the Earth is a solid lump of nickel and iron, rotating in a sea of molten iron and nickel. This rotating is the same as winding up a hand held generator giving the Earth an enormous magnetic field. This magnetic field extends up to 50,000km out into space and is crucial for life on Earth. Without it we would be exposed to the full force of the Sun’s radiation which, as well as causing cancers and other radiation aggravated conditions, our atmosphere would be blown into space. This is what happened to Mercury, and to a lesser extent, Mars. Instead, charged particles are (mostly) harmlessly deflected away, giving rise to the auroras."
+  },
+  {
+    type: "Planet",
+    name: "Earth",
+    fact: "Earth is not the biggest planet in the system but it is the biggest rocky planet in the solar system, and also the densest. Earth has by far the highest surface gravity of any terrestrial object in the solar system. The reason for the high density is the large deposits of heavy elements in the Earth’s makeup. Elements like lead and uranium are much less common on other worlds which gives us a huge advantage in the amount and variety of construction projects available to us on Earth. High gravity makes Earth the worst place in the solar system for space exploration. The sheer cost of overcoming Earth’s gravity each launch has been the single biggest barrier to space travel. To put it into perspective, if the Earth only had the same gravity as the Moon, a typical aeroplane would be fast enough to get into orbit."
+  },
+  {
+    type: "Planet#",
+    name: "Earth",
+    fact: "Most planets in the solar system have moons, and the Moon may not be the biggest of them, but in comparison to Earth it's enormous. Most scientists think that rather than coalescing on its own like the other large moons, it was violently shorn off Earth billions of years ago by a collision with another planet. The impact - with a planet about the size of Mars - liquified Earth in the heat, and the Moon broke off and cooled into a ball of rock from this molten planet. The Moon’s size and distance are a giant cosmic coincidence, which means that on Earth we can experience total eclipses, annular eclipses and partial eclipses, all from the comfort of our own planet. If the Moon were more in proportion, it would be too small for any sort of eclipse at all."
+  },
+  {
+    type: "Planet",
+    name: "Earth",
+    fact: "Despite attempts to show otherwise, Earth is the only place in the universe we can be sure that there is life. With liquid water, oxygen and plenty of sunlight, conditions for life are improbably ideal."
+  },
+  {
     type: "",
     name: "",
     fact: ""
-  }
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
   {
     type: "",
     name: "",
     fact: ""
   }
+
+
+
+
 
 
 );
