@@ -216,4 +216,11 @@ describe('SolarSystem', function() {
       assert.deepEqual( venus, solarsystem.longestDayLength());
   });
 
+  it('should find the planet of longest day length', function(){
+      solarsystem.addPlanet(mercury);
+      solarsystem.addPlanet(venus);
+      solarsystem.addPlanet(earth);
+      assert.equal( [mercury, venus, earth], solarsystem.orderBy("mass", "ascending"));
+  });
+
 });
