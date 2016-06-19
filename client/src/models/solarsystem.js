@@ -59,7 +59,7 @@ SolarSystem.prototype = {
     });
     },
     // based on planets, takes in a 'thing' as a parameter (diameter, mass, distanceFromSun, distanceFromEarth)
-    findLargestDiameter: function(thing){
+    findLargestThing: function(thing){
         var value = 0;
         var pln = {};
         this.planets.forEach(function(planet){
@@ -71,28 +71,7 @@ SolarSystem.prototype = {
     });
         return pln;
     },
-    // findLargestDiameter: function(){
-    //     var value = 0;
-    //     var pln = {};
-    //     this.planets.forEach(function(planet){
-    //         if(planet.diameter > value){
-    //         value = planet.diameter;
-    //         pln = planet;
-    //     }
-    //
-    // });
-    //     return pln;
-    // }
-    // findLargestDiameter: function(thing) {
-    // var largestthing = this.planets[0];
-    // for(var planet of this.planets) {
-    //     console.log(planet.thing);
-    //     if (planet.thing > largestthing.thing) {
-    //         largestthing = planet;
-    //     }
-    // }
-    // return largestthing;
-    // }
+
 
     longestDayLength: function(){
         var value = 0;
@@ -105,8 +84,9 @@ SolarSystem.prototype = {
                 newlength.push(string);
             }
             // console.log(length1);
-            if(newlength[0] > value){
-            value = newlength[0];
+            var hourslength = ((newlength[0]*24) + newlength[1])
+            if(hourslength > value){
+            value = hourslength;
             pln = planet;
         }
 
@@ -115,17 +95,59 @@ SolarSystem.prototype = {
     },
 
     // order planets by a 'thing', and 'order' is either Asc or Desc
-    orderBy: function(thing, order){
-        planets = this.planets;
-        planets.sort(function(a,b){
-            // if(order === "ascending"){
-            //     console.log(thing);
-                var topmass = a.mass - b.mass;
-                return topmass;
-            // } else if(order === "descending"){
-            //     return b.thing-a.thing;
-            // }
+    orderThingsBy: function(thing, order){
+        orderplanets = this.planets;
+        orderplanets.sort(function(a,b){
+            if(a[thing].type === String){
+                a[thing] = a[thing].toUpperCase();
+                b[thing] = b[thing].toUpperCase();
+            }
+            if(thing === 'dayLength'){
+                var newlength1 = [];
+                var newlength2 = [];
+                var length1 = a[thing];
+                var length2 = b[thing];
+                if(typeof a[thing] === 'string'){
+                    length1 = a[thing].split(" ");
+                    for(var string1 of length1){
+                        string1 = parseInt(string1.slice(0, -1));
+                        newlength1.push(string1);
+                        hourslength1 = ((newlength1[0]*24) + newlength1[1]);
+                    }
+                }
+                if(typeof b[thing] === 'string'){
+                    length2 = b[thing].split(" ");
+                    for(var string2 of length2){
+                        string2 = parseInt(string2.slice(0, -1));
+                        newlength2.push(string2);
+                        hourslength2 = ((newlength2[0]*24) + newlength2[1]);
+                    }
+                }
+                a[thing] = newlength1;
+                b[thing] = newlength2;
+            }
+            if(order === "ascending"){
+                if (a[thing] > b[thing]) {
+                    return 1;
+                }
+                if (a[thing] < b[thing]) {
+                    return -1;
+                }
+                // a must be equal to b
+                return 0;
+            }
+            if(order === "descending"){
+                if (a[thing] > b[thing]) {
+                    return -1;
+                }
+                if (a[thing] < b[thing]) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            }
         });
+        return orderplanets;
     }
 };
 
