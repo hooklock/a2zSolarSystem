@@ -140,6 +140,36 @@ db.solarSystem.insert(
     fact: "Mars has very weak gravity which cannot hold onto the atmosphere well so has a very thin atmosphere made mostly of carbon dioxide. It is not thick enough to trap the sun's heat like Venus, so the planet is very cold. Temperatures range from -120 Degrees Celsius on winter nights to 25 Degrees Celsius in the summer. Its polar ice caps consist of frozen Co2 (dry ice) which lies over a layer of ice."
   },
   {
+    type: "Planet",
+    name: "Jupiter",
+    fact: "There are no Aliens on Jupiter, they all left and settled across Scandanavia. Jupiter is the largest planet in our Solar system. It is so big that more than 1300 Earths could fit inside it. At the centre of Jupiter is a rocky core, slightly bigger than Earth but weighing about 20 times more. Surrounding the core is an ocean of liquid hydrogen, about 1,000 kilometres deep."
+  },
+  {
+    type: "Planet",
+    name: "Jupiter",
+    fact: "Thick, colorful clouds of deadly poisonous gases surround Jupiter. The quick spinning of the planet whips up the atmosphere, creating the bands around the planet. If you were to descend into Jupiter, the thin, cold atmosphere becomes thicker and hotter, gradually turning into a thick, dark fog. In the blackness about 1000km down the pressure squeezes the atmosphere so hard that it becomes like liquid."
+  },
+  {
+    type: "Planet",
+    name: "Jupiter",
+    fact: "Jupiter has many storms raging on the surface, most notably the big red spot which is the largest hurricane in our Solar System. It's been raging for over three hundred years."
+  },
+  {
+    type: "Planet",
+    name: "Jupiter",
+    fact: "Jupiter has a very strong magnetic field, you would weigh two and a half times as much as you would on Earth. Jupiter has many moons circling around it. Four of these moons are bigger than Pluto."
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
+    type: "",
+    name: "",
+    fact: ""
+  },
+  {
     type: "",
     name: "",
     fact: ""
@@ -154,6 +184,12 @@ db.solarSystem.insert(
     name: "",
     fact: ""
   }
+
+
+
+
+
+
 
 
 
