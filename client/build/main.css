@@ -1,0 +1,140 @@
+/*MAIN*/
+html body{
+	padding: 0;
+	margin: 0;
+	background: #000;
+	overflow: hidden;
+}
+
+/*TOP NAVIGATION MENU*/
+nav {
+	color: transparent;
+	display: inline-block;
+}
+
+.top-nav-menu {
+	color: rgb(175, 238, 238);
+	display: inline-block;
+	position: fixed;
+	right: 92%;
+	top: 10%;
+	width: 8em;
+	margin-top: -2.5em;
+	z-index: 100;
+}
+
+ul {
+	display: inline-block;
+}
+
+.top-nav-menu li {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	border: 2px;
+	background-color: rgba(83,163,178,0.2);
+	border-color: rgba(175, 238, 238,0.3);
+	border-style: solid;
+	border-radius: 0% 25% ;
+}
+
+/*BACKGROUND DISPLAY*/
+#viewport {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.background {
+	background: #000;
+	width: 3000px;
+	height: 2000px;
+	z-index: 1;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.sun {
+	position: absolute;
+	top: 600px;
+	left: 1000px;
+	width: 475px;
+	height: 475px;
+	z-index: 5;
+}
+
+.orbit-outer {
+	position: absolute;
+	top: 450px;
+	left: 175px;
+	width: 2286px;
+	height: 1000px;
+	z-index: 4;
+}
+
+.asteroid-belt {
+	position: absolute;
+	top: 625px;
+	left: 675px;
+	width: 1216px;
+	height: 527px;
+	z-index: 2;
+}
+
+.orbit-inner {
+	position: absolute;
+	top: 675px;
+	left: 850px;
+	width: 839px;
+	height: 361px;
+	z-index: 15;
+}
+
+.clouds {
+	position: absolute;
+	top: 300px;
+	left: 400px;
+	width: 2792px;
+	height: 1611px;
+	z-index: 6;
+}
+
+.kuiper-inner {
+	position: absolute;
+	top: 300px;
+	left: 400px;
+	width: 2866px;
+	height: 1972px;
+	z-index: 7;
+}
+
+.kuiper-outer {
+	position: absolute;
+	top: 100px;
+	left: 400px;
+	width: 3000px;
+	height: 1841px;
+	z-index: 8;
+}
+
+/*PARALLAX MAGIC*/
+.parallax {
+  perspective: 5px;
+	perspective-origin-x: 100%;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0px);
+}
+.parallax__layer--back {
+  transform: translateZ(-2px) scale(1.39);
+}
