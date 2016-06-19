@@ -160,19 +160,19 @@ db.solarSystem.insert(
     fact: "Jupiter has a very strong magnetic field, you would weigh two and a half times as much as you would on Earth. Jupiter has many moons circling around it. Four of these moons are bigger than Pluto."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Saturn",
+    fact: "Saturn is the second largest planet in our solar system and is another gas giant. It has a small rocky core covered with liquid gas. It is surrounded by a system of rings that stretch out into space for thousands of kilometres. The rings are made up of millions of ice crystals, some as big as houses and others as small as specks of dust."
+  },
+  {
+    type: "Planet",
+    name: "Saturn",
+    fact: "Saturn is very light as it is made up of more hydrogen than helium so it is less dense. If we could fit Saturn into a bathtub it would float (but that would have to be one big bathtub!)"
   },
   {
     type: "",
     name: "",
-    fact: ""
-  },
-  {
-    type: "",
-    name: "",
-    fact: ""
+    fact: "Saturn is not a peaceful planet. Storm winds race around the atmosphere at 800kmp/h. Saturn has a very strong magnetic field which traps energy particles resulting in high levels of radiation. Like Jupiter, Saturn has many moons which surround it."
   },
   {
     type: "",
