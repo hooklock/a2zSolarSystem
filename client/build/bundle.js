@@ -64,6 +64,9 @@
 	
 	SolarSystemView.prototype = {
 		render: function() {
+			this.coolscrollything();
+		},
+		coolscrollything: function() {
 			var speed = 3;
 			var x, y;
 			function handleMouse(e) {
@@ -75,7 +78,7 @@
 			  y = e.clientY;
 			}
 			document.onmousemove = handleMouse;
-		},
+		}
 	};
 	
 	module.exports = SolarSystemView;
