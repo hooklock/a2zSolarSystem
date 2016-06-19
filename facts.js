@@ -125,19 +125,19 @@ db.solarSystem.insert(
     fact: "Despite attempts to show otherwise, Earth is the only place in the universe we can be sure that there is life. With liquid water, oxygen and plenty of sunlight, conditions for life are improbably ideal."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Mars",
+    fact: "There are no Aliens on Mars, they all left and settled in England. Nicknamed the red planet because it is covered with rust-like dust and the atmosphere is a pinkish red, colored by tiny particles of dust thrown up from the surface. Mars experiences violent dust storms which continually change its surface"
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Mars",
+    fact: "Mars has many massive volcanoes and is home to Olympus Mons, the largest volcano in our solar system, it stands 21km high and is 600km across the base. It has many channels, plains and canyons on the surface which could have been caused by water erosion in the past."
   },
   {
-    type: "",
-    name: "",
-    fact: ""
+    type: "Planet",
+    name: "Mars",
+    fact: "Mars has very weak gravity which cannot hold onto the atmosphere well so has a very thin atmosphere made mostly of carbon dioxide. It is not thick enough to trap the sun's heat like Venus, so the planet is very cold. Temperatures range from -120 Degrees Celsius on winter nights to 25 Degrees Celsius in the summer. Its polar ice caps consist of frozen Co2 (dry ice) which lies over a layer of ice."
   },
   {
     type: "",
