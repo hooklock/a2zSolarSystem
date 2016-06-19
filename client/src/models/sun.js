@@ -1,5 +1,5 @@
-var Sun = function(name){
-    this.name = name;
+var Sun = function(params){
+    this.name = params.name;
 };
 
 Sun.prototype = {
