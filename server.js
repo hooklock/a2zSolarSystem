@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 app.get('/solarSystem', function (req, res) {
   MongoClient.connect(url, function(err, db) {
-    var collection = db.collection('planets');
+    var collection = db.collection('solarSystem');
     collection.find({}).toArray(function(err, docs) {
       res.json(docs);
       db.close();
@@ -21,15 +21,25 @@ app.get('/solarSystem', function (req, res) {
   });
 });
 
-app.post('/solarSystem', function(req,res){
-  console.log('body', req.body);
+app.get('/funFacts', function (req, res) {
   MongoClient.connect(url, function(err, db) {
-    var collection = db.collection('planets');
-    collection.insert(req.body.country);
-    res.status(200).end();
-    db.close();
+    var collection = db.collection('funFacts');
+    collection.find({}).toArray(function(err, docs) {
+      res.json(docs);
+      db.close();
+    });
   });
 });
+
+// app.post('/solarSystem', function(req,res){
+//   console.log('body', req.body);
+//   MongoClient.connect(url, function(err, db) {
+//     var collection = db.collection('planets');
+//     collection.insert(req.body.country);
+//     res.status(200).end();
+//     db.close();
+//   });
+// });
 
 app.use(express.static('client/build'));
 
