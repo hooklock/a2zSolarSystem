@@ -31,15 +31,25 @@ app.get('/funFacts', function (req, res) {
   });
 });
 
-// app.post('/solarSystem', function(req,res){
-//   console.log('body', req.body);
-//   MongoClient.connect(url, function(err, db) {
-//     var collection = db.collection('planets');
-//     collection.insert(req.body.country);
-//     res.status(200).end();
-//     db.close();
-//   });
-// });
+app.get('/users', function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    var collection = db.collection('users');
+    collection.find({}).toArray(function(err, docs) {
+      res.json(docs);
+      db.close();
+    });
+  });
+});
+
+app.post('/users', function(req,res){
+  console.log('body', req.body);
+  MongoClient.connect(url, function(err, db) {
+    var collection = db.collection('users');
+    collection.insert(req.body);
+    res.status(200).end();
+    db.close();
+  });
+});
 
 app.use(express.static('client/build'));
 
