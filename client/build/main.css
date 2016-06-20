@@ -12,8 +12,8 @@ ul {
 	color: rgb(175, 238, 238);
 	text-align: center;
 	position: fixed;
-	right: 90%;
-	top: 8%;
+	left: -10em;
+	top: 3em;
 	width: 500px;
 	margin-top: -2.5em;
 	z-index: 100;
@@ -42,8 +42,9 @@ ul {
 	border-style: solid;
 }
 
-.top-nav-menu li:nth-child(1)::first-line {
-
+.top-nav-menu li:nth-child(1):first-line {
+	font-size: 24px;
+	background-color: rgba(175, 238, 238,0.3);
 }
 
 
