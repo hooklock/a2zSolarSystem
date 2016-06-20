@@ -16804,26 +16804,26 @@
 				this.listPlanets(e.target.value);
 			}.bind(this);
 		},
-	
+		// XXX: Could use some refactoring as this only deals with the opening of one element.
 		showInnerOrbitContainer: function() {
 			var showButton = document.getElementsByName("orbit-inner-display")[0];
-			showButton.addEventListener("click", function(event) {
+			showButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
 				var innerOrbitClose = document.getElementById("orbit-inner-close");
-				event.target = innerOrbitDisplay.style.visibility = "visible";
-				event.target = innerOrbitClose.style.visibility = "visible";
+				e.target = innerOrbitDisplay.style.visibility = "visible";
+				e.target = innerOrbitClose.style.visibility = "visible";
 			});
 		},
-	
+		// XXX: Could use some refactoring as this only deals with the closing of one element.
 		closeInnerOrbitContainer: function() {
 			var close = document.getElementById("orbit-inner-close");
 			console.log(close);
-			close.addEventListener("click", function(event) {
+			close.addEventListener("click", function(e) {
 				console.log("Clicky");
 				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
 				var innerOrbitClose = document.getElementById("orbit-inner-close");
-				event.target = innerOrbitDisplay.style.visibility = "hidden";
-				event.target = innerOrbitClose.style.visibility = "hidden";
+				e.target = innerOrbitDisplay.style.visibility = "hidden";
+				e.target = innerOrbitClose.style.visibility = "hidden";
 			});
 		}
 	

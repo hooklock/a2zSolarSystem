@@ -147,12 +147,51 @@ ul {
 	z-index: 8;
 }
 
-/*PANEL VIEWPORT*/
-.orbit-inner-button {
+.outer-planet-div {
 	position: absolute;
-	top: 907px;
-	left: 1304px;
+	border: 1px solid rgba(130,236,255,0.6);
 	z-index: 30;
+	border-radius: 50%;
+}
+
+.jupiter-div {
+	top: 743px;
+	right: -600px;
+	height: 126px;
+	width: 126px;
+}
+
+.saturn-div {
+	top: 1074px;
+	left: 1139px;
+	height: 113px;
+	width: 113px;
+}
+
+.uranus-div {
+	top: 631px;
+	left: 2191px;
+	height: 80px;
+	width: 80px;
+}
+
+.neptune-div {
+	top: 1033px;
+	left: 1651px;
+	height: 95px;
+	width: 95px;
+}
+
+/*PANEL VIEWPORT*/
+.orbit-inner-div {
+	position: absolute;
+	border: 2px solid rgba(130,236,255,0.6);
+	z-index: 30;
+	border-radius: 30px;
+	top: 885px;
+	left: 1290px;
+	height: 58px;
+	width: 58px;
 }
 
 #orbit-inner-close {
