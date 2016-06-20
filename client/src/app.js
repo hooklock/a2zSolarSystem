@@ -24,9 +24,10 @@ window.onload = function() {
 	});
 
 	function doTheThings(solarsystem, solarsystemview){
-		console.log("scope whoot");
-		console.log(solarsystem);
+		// console.log("scope whoot");
+		// console.log(solarsystem);
 		// solarsystemview.listPlanet(solarsystem.planets[1].name);
-		solarsystemview.listPlanets(solarsystem);
+		// solarsystemview.listPlanets(solarsystem);
+		// solarsystemview.displayWeight();
 	}
 };

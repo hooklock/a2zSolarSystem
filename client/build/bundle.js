@@ -70,10 +70,11 @@
 		});
 	
 		function doTheThings(solarsystem, solarsystemview){
-			console.log("scope whoot");
-			console.log(solarsystem);
+			// console.log("scope whoot");
+			// console.log(solarsystem);
 			// solarsystemview.listPlanet(solarsystem.planets[1].name);
-			solarsystemview.listPlanets(solarsystem);
+			// solarsystemview.listPlanets(solarsystem);
+			// solarsystemview.displayWeight();
 		}
 	};
 
@@ -16740,8 +16741,10 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+	var Planet = __webpack_require__(2);
+	
 	var SolarSystemView = function(solarSystem) {
 		this.solarSystem = solarSystem;
 	};
@@ -16750,6 +16753,7 @@
 		render: function() {
 			this.coolscrollything();
 			// this.listPlanet();
+			this.displayWeight();
 		},
 		coolscrollything: function() {
 			var speed = 3;
@@ -16764,18 +16768,39 @@
 			}
 			document.onmousemove = handleMouse;
 		},
-		listPlanet: function(pname){
-			var newPlanet = this.solarSystem.findPlanetByName(pname);
-			console.log(newPlanet);
-			var weightBox = document.getElementById('testbox');
-			var planetName = document.createElement('h1');
-			planetName.innerText = newPlanet.name;
+		listPlanet: function(pname, weight){
+	
+			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
+			// console.log(newPlanet);
+			var weightBox = document.getElementById('planetList');
+			var planetName = document.createElement('li');
+			// console.log(newPlanet.weightOnPlanet(weight));
+			planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight) + " kgs";
 			weightBox.appendChild(planetName);
 		},
-		listPlanets: function(){
+		listPlanets: function(weight){
 			for(var planet of this.solarSystem.planets){
-				this.listPlanet(planet.name);
+				this.listPlanet(planet.name, weight);
 			}
+		},
+		displayWeight: function(){
+			var weightHere = document.getElementById('testbox');
+			var weightForm = document.createElement('form');
+			var weightInput = document.createElement('input');
+			// weightInput.setAttribute('name', 'Enter your Weight');
+			weightInput.setAttribute('placeholder', 'Enter Weight in Kgs');
+			weightForm.appendChild(weightInput);
+			weightHere.appendChild(weightForm);
+			weightForm.onkeyup = function(e){
+				var planetBox = document.getElementById('planetList')
+				while (planetBox.hasChildNodes()) {
+				planetBox.removeChild(planetBox.firstChild);
+				}
+				e.preventDefault();
+				console.log(e.target.value);
+				console.log(this);
+				this.listPlanets(e.target.value);
+			}.bind(this);
 		}
 	};
 	
