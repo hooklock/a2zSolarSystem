@@ -1,3 +1,4 @@
+var SolarSystem = require("./solarsystem.js");
 var GetRequest = function(url){
     this.url = url;
 
@@ -8,16 +9,19 @@ var GetRequest = function(url){
                 if(request.status === 200){
                     console.log("got the data");
                     var jsonString = request.responseText;
-                    var sampleSolarSystem = JSON.parse(jsonString);
-
-                    callback(sampleSolarSystem);
+                    var sampleSolarSystem = JSON.parse(jsonString)[0];
+                    // var solarsystem = new SolarSystem(sampleSolarSystem);
+                    // console.log(solarsystem);
+                    // return solarsystem;
+                    return callback(sampleSolarSystem);
                     // localStorage.setItem('data', JSON.stringify(sampleSolarSystem));
                 }
             };
             request.send(null);
+
     };
 
-    this.getSolarSystem();
+    // this.getSolarSystem();
 };
 
 module.exports = GetRequest;

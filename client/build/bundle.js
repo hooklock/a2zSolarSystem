@@ -45,94 +45,41 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	// var FunFact = require("./models/funFact.js");
-	var FunFacts = __webpack_require__(3);
+	var FunFacts = __webpack_require__(1);
 	// var Moon = require("./models/moon.js");
-	var Planet = __webpack_require__(4);
-	var SolarSystem = __webpack_require__(5);
+	var Planet = __webpack_require__(2);
+	var SolarSystem = __webpack_require__(3);
+	var SolarSystems = __webpack_require__(6);
 	// var Sun = require("./models/sun.js");
 	// var User = require("./models/user.js");
-	var SolarSystemView = __webpack_require__(1);
-	var PlanetView = __webpack_require__(2);
-	var GetRequest = __webpack_require__(8);
+	var SolarSystemView = __webpack_require__(7);
+	var PlanetView = __webpack_require__(8);
+	var GetRequest = __webpack_require__(9);
 	
 	
 	
 	
 	
 	window.onload = function() {
-		// var planetview = new PlanetView(planet);
 		var getRequestSolar = new GetRequest('http://localhost:3000/solarSystem');
-		var solarsystem = new SolarSystem(getRequestSolar);
-		// var solarsystem = new SolarSystem(JSON.parse(localStorage.getItem('data')));
-		console.log(solarsystem);
-		var solarsystemview = new SolarSystemView(solarsystem);
-		solarsystemview.render();
+		getRequestSolar.getSolarSystem(function(sampleSolarSystem){
+			var solarsystem = new SolarSystem(sampleSolarSystem);
+			var solarsystemview = new SolarSystemView(solarsystem);
+			doTheThings(solarsystem, solarsystemview);
+			solarsystemview.render();
+		});
+	
+		function doTheThings(solarsystem, solarsystemview){
+			console.log("scope whoot");
+			console.log(solarsystem);
+			// solarsystemview.listPlanet(solarsystem.planets[1].name);
+			solarsystemview.listPlanets(solarsystem);
+		}
 	};
 
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
-
-	var SolarSystemView = function(solarSystem) {
-		this.solarSystem = solarSystem;
-	};
-	
-	SolarSystemView.prototype = {
-		render: function() {
-			this.coolscrollything();
-			this.listPlanet();
-		},
-		coolscrollything: function() {
-			var speed = 3;
-			var x, y;
-			function handleMouse(e) {
-			  if (x && y) {
-				document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
-				document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
-			  }
-			  x = e.clientX;
-			  y = e.clientY;
-			}
-			document.onmousemove = handleMouse;
-		},
-		listPlanet: function(){
-			var newPlanet = this.solarSystem.findPlanetByName("Mercury");
-			var weightBox = getElementById('Zak-planet-weight');
-			var planetName = createElement('h1');
-			planetName.innerText = newPlanet[name];
-			weightBox.appendChild(planetName);
-		}
-	};
-	
-	module.exports = SolarSystemView;
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	var PlanetView = function(planet) {
-		this.planet = planet;
-	};
-	
-	PlanetView.prototype = {
-		render: function() {
-		},
-	    displayNewWeight: function(planet, currentWeight){
-	        var weightBox = document.getElementById('Zak-planet-weight');
-	        var planetName = document.createElement('p');
-	        planetName.innerText = planet.name;
-	        weightBox.appendChild(planetName);
-	    // this.planet.weightOnPlanet(currentWeight);
-	    }
-	};
-	
-	module.exports = PlanetView;
-
-
-/***/ },
-/* 3 */
 /***/ function(module, exports) {
 
 	var FunFacts = function(params){
@@ -149,7 +96,7 @@
 
 
 /***/ },
-/* 4 */
+/* 2 */
 /***/ function(module, exports) {
 
 	var Planet = function(params){
@@ -182,10 +129,10 @@
 
 
 /***/ },
-/* 5 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(6);
+	var _ = __webpack_require__(4);
 	
 	var SolarSystem = function(params){
 	    this.name = params.name;
@@ -347,7 +294,7 @@
 
 
 /***/ },
-/* 6 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -16755,10 +16702,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module), (function() { return this; }())))
 
 /***/ },
-/* 7 */
+/* 5 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -16774,9 +16721,95 @@
 
 
 /***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	var SolarSystems = function(solarsystem){
+	    this.solarsystems = [];
+	};
+	
+	SolarSystems.prototype = {
+	    addSolarSystem: function(solarsystem){
+	        this.solarsystems.push(solarsystem);
+	        return this.solarsystems;
+	    }
+	};
+	
+	module.exports = SolarSystems;
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	var SolarSystemView = function(solarSystem) {
+		this.solarSystem = solarSystem;
+	};
+	
+	SolarSystemView.prototype = {
+		render: function() {
+			this.coolscrollything();
+			// this.listPlanet();
+		},
+		coolscrollything: function() {
+			var speed = 3;
+			var x, y;
+			function handleMouse(e) {
+			  if (x && y) {
+				document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
+				document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
+			  }
+			  x = e.clientX;
+			  y = e.clientY;
+			}
+			document.onmousemove = handleMouse;
+		},
+		listPlanet: function(pname){
+			var newPlanet = this.solarSystem.findPlanetByName(pname);
+			console.log(newPlanet);
+			var weightBox = document.getElementById('testbox');
+			var planetName = document.createElement('h1');
+			planetName.innerText = newPlanet.name;
+			weightBox.appendChild(planetName);
+		},
+		listPlanets: function(){
+			for(var planet of this.solarSystem.planets){
+				this.listPlanet(planet.name);
+			}
+		}
+	};
+	
+	module.exports = SolarSystemView;
+
+
+/***/ },
 /* 8 */
 /***/ function(module, exports) {
 
+	var PlanetView = function(planet) {
+		this.planet = planet;
+	};
+	
+	PlanetView.prototype = {
+		render: function() {
+		},
+	    displayNewWeight: function(planet, currentWeight){
+	        var weightBox = document.getElementById('Zak-planet-weight');
+	        var planetName = document.createElement('p');
+	        planetName.innerText = planet.name;
+	        weightBox.appendChild(planetName);
+	    // this.planet.weightOnPlanet(currentWeight);
+	    }
+	};
+	
+	module.exports = PlanetView;
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var SolarSystem = __webpack_require__(3);
 	var GetRequest = function(url){
 	    this.url = url;
 	
@@ -16787,16 +16820,19 @@
 	                if(request.status === 200){
 	                    console.log("got the data");
 	                    var jsonString = request.responseText;
-	                    var sampleSolarSystem = JSON.parse(jsonString);
-	
-	                    callback(sampleSolarSystem);
+	                    var sampleSolarSystem = JSON.parse(jsonString)[0];
+	                    // var solarsystem = new SolarSystem(sampleSolarSystem);
+	                    // console.log(solarsystem);
+	                    // return solarsystem;
+	                    return callback(sampleSolarSystem);
 	                    // localStorage.setItem('data', JSON.stringify(sampleSolarSystem));
 	                }
 	            };
 	            request.send(null);
+	
 	    };
 	
-	    this.getSolarSystem();
+	    // this.getSolarSystem();
 	};
 	
 	module.exports = GetRequest;

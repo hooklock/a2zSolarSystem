@@ -5,7 +5,7 @@ var SolarSystemView = function(solarSystem) {
 SolarSystemView.prototype = {
 	render: function() {
 		this.coolscrollything();
-		this.listPlanet();
+		// this.listPlanet();
 	},
 	coolscrollything: function() {
 		var speed = 3;
@@ -20,12 +20,18 @@ SolarSystemView.prototype = {
 		}
 		document.onmousemove = handleMouse;
 	},
-	listPlanet: function(){
-		var newPlanet = this.solarSystem.findPlanetByName("Mercury");
-		var weightBox = getElementById('Zak-planet-weight');
-		var planetName = createElement('h1');
-		planetName.innerText = newPlanet[name];
+	listPlanet: function(pname){
+		var newPlanet = this.solarSystem.findPlanetByName(pname);
+		console.log(newPlanet);
+		var weightBox = document.getElementById('testbox');
+		var planetName = document.createElement('h1');
+		planetName.innerText = newPlanet.name;
 		weightBox.appendChild(planetName);
+	},
+	listPlanets: function(){
+		for(var planet of this.solarSystem.planets){
+			this.listPlanet(planet.name);
+		}
 	}
 };
 
