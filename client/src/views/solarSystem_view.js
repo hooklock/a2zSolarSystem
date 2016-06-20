@@ -5,6 +5,7 @@ var SolarSystemView = function(solarSystem) {
 SolarSystemView.prototype = {
 	render: function() {
 		this.coolscrollything();
+		this.listPlanet();
 	},
 	coolscrollything: function() {
 		var speed = 3;
@@ -18,6 +19,13 @@ SolarSystemView.prototype = {
 		  y = e.clientY;
 		}
 		document.onmousemove = handleMouse;
+	},
+	listPlanet: function(){
+		var newPlanet = this.solarSystem.findPlanetByName("Mercury");
+		var weightBox = getElementById('Zak-planet-weight');
+		var planetName = createElement('h1');
+		planetName.innerText = newPlanet[name];
+		weightBox.appendChild(planetName);
 	}
 };
 
