@@ -1,5 +1,6 @@
 /*MAIN*/
 html body{
+	font-family: 'Changa', sans-serif;
 	padding: 0;
 	margin: 0;
 	background: #000;
@@ -7,24 +8,15 @@ html body{
 }
 
 /*TOP NAVIGATION MENU*/
-nav {
-	color: transparent;
-	display: inline-block;
-}
-
-.top-nav-menu {
+ul {
 	color: rgb(175, 238, 238);
-	display: inline-block;
+	text-align: center;
 	position: fixed;
-	right: 92%;
-	top: 10%;
-	width: 8em;
+	right: 90%;
+	top: 8%;
+	width: 500px;
 	margin-top: -2.5em;
 	z-index: 100;
-}
-
-ul {
-	display: inline-block;
 }
 
 .top-nav-menu li {
@@ -37,6 +29,24 @@ ul {
 	border-style: solid;
 	border-radius: 0% 25% ;
 }
+
+.top-nav-menu li:nth-child(1) {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 25px;
+	margin: 5px;
+	border: 2px;
+	background-color: rgba(83,163,178,0.2);
+	border-color: rgba(175, 238, 238,0.3);
+	border-style: solid;
+}
+
+.top-nav-menu li:nth-child(1)::first-line {
+
+}
+
+
 
 /*BACKGROUND DISPLAY*/
 #viewport {
