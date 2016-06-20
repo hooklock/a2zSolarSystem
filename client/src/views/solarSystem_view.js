@@ -9,6 +9,7 @@ SolarSystemView.prototype = {
 		this.coolscrollything();
 		// this.listPlanet();
 		this.displayWeight();
+		this.planetByType();
 	},
 	coolscrollything: function() {
 		var speed = 3;
@@ -46,7 +47,7 @@ SolarSystemView.prototype = {
 		weightForm.appendChild(weightInput);
 		weightHere.appendChild(weightForm);
 		weightForm.onkeyup = function(e){
-			var planetBox = document.getElementById('planetList')
+			var planetBox = document.getElementById('planetList');
 			while (planetBox.hasChildNodes()) {
 			planetBox.removeChild(planetBox.firstChild);
 			}
@@ -55,7 +56,28 @@ SolarSystemView.prototype = {
 			console.log(this);
 			this.listPlanets(e.target.value);
 		}.bind(this);
+	},
+	planetByType: function(){
+		var gButton = document.createElement("button");
+		gButton.innerHTML = "See Gas Planets";
+		var button1 = document.getElementById("gButton");
+		button1.appendChild(gButton);
+		var tButton = document.createElement("button");
+		tButton.innerHTML = "See Terrestrial Planets";
+		var button2 = document.getElementById("tButton");
+		button2.appendChild(tButton);
+
+		gButton.onclick = function(e){
+			var gPlanet = document.getElementsByClassName("gtPlanets");
+			e.preventDefault();
+			console.log(gPlanet);
+			console.log(this);
+			this.solarSystem.filteredPlanets("Gas");
+
+
+		}.bind(this);
 	}
+
 };
 
 module.exports = SolarSystemView;
