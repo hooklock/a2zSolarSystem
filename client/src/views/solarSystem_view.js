@@ -24,7 +24,6 @@ SolarSystemView.prototype = {
 		document.onmousemove = handleMouse;
 	},
 	listPlanet: function(pname, weight){
-
 		var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 		// console.log(newPlanet);
 		var weightBox = document.getElementById('planetList');
