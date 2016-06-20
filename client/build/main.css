@@ -155,14 +155,25 @@ ul {
 	z-index: 30;
 }
 
+#orbit-inner-close {
+  background: transparent url('./img/frame-close.png') no-repeat 0 0;
+	position: absolute;
+	visibility: hidden;
+  width: 18px;
+  height: 18px;
+  top: 704px;
+  left: 1619px;
+	z-index: 31;
+}
+
 .orbit-inner-planet-img {
 	visibility: hidden;
 	position: absolute;
-	top: 682px;
-	left: 1365px;
-	z-index: 29;
+	top: 698px;
+	left: 1344px;
 	border: 3px solid rgba(175, 238, 238,0.3);
 	border-radius: 10px;
+	z-index: 15;
 }
 
 /*PARALLAX MAGIC*/

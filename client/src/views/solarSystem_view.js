@@ -6,12 +6,14 @@ var SolarSystemView = function(solarSystem) {
 
 SolarSystemView.prototype = {
 	render: function() {
-		this.showInnerOrbit();
-		this.coolscrollything();
+		this.showInnerOrbitContainer();
+		this.closeInnerOrbitContainer();
+		this.viewScroll();
 		// this.listPlanet();
 		this.displayWeight();
 	},
-	coolscrollything: function() {
+
+	viewScroll: function() {
 		var speed = 3;
 		var x, y;
 		function handleMouse(e) {
@@ -27,23 +29,22 @@ SolarSystemView.prototype = {
 
 	listPlanet: function(pname, weight){
 		var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
-		// console.log(newPlanet);
 		var weightBox = document.getElementById('planetList');
 		var planetName = document.createElement('li');
-		// console.log(newPlanet.weightOnPlanet(weight));
-		planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight) + " kgs";
+		planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight).toFixed(2) + " kgs";
 		weightBox.appendChild(planetName);
 	},
+
 	listPlanets: function(weight){
 		for(var planet of this.solarSystem.planets){
 			this.listPlanet(planet.name, weight);
 		}
 	},
+
 	displayWeight: function(){
 		var weightHere = document.getElementById('testbox');
 		var weightForm = document.createElement('form');
 		var weightInput = document.createElement('input');
-		// weightInput.setAttribute('name', 'Enter your Weight');
 		weightInput.setAttribute('placeholder', 'Enter Weight in Kgs');
 		weightForm.appendChild(weightInput);
 		weightHere.appendChild(weightForm);
@@ -58,11 +59,26 @@ SolarSystemView.prototype = {
 			this.listPlanets(e.target.value);
 		}.bind(this);
 	},
-	showInnerOrbit: function() {
+
+	showInnerOrbitContainer: function() {
 		var showButton = document.getElementsByName("orbit-inner-display")[0];
 		showButton.addEventListener("click", function(event) {
 			var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+			var innerOrbitClose = document.getElementById("orbit-inner-close");
 			event.target = innerOrbitDisplay.style.visibility = "visible";
+			event.target = innerOrbitClose.style.visibility = "visible";
+		});
+	},
+
+	closeInnerOrbitContainer: function() {
+		var close = document.getElementById("orbit-inner-close");
+		console.log(close);
+		close.addEventListener("click", function(event) {
+			console.log("Clicky");
+			var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+			var innerOrbitClose = document.getElementById("orbit-inner-close");
+			event.target = innerOrbitDisplay.style.visibility = "hidden";
+			event.target = innerOrbitClose.style.visibility = "hidden";
 		});
 	}
 
