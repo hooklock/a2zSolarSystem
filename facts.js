@@ -115,7 +115,7 @@ db.funFacts.insert([
     fact: "Earth is not the biggest planet in the system but it is the biggest rocky planet in the solar system, and also the densest. Earth has by far the highest surface gravity of any terrestrial object in the solar system. The reason for the high density is the large deposits of heavy elements in the Earth’s makeup. Elements like lead and uranium are much less common on other worlds which gives us a huge advantage in the amount and variety of construction projects available to us on Earth. High gravity makes Earth the worst place in the solar system for space exploration. The sheer cost of overcoming Earth’s gravity each launch has been the single biggest barrier to space travel. To put it into perspective, if the Earth only had the same gravity as the Moon, a typical aeroplane would be fast enough to get into orbit."
   },
   {
-    type: "Planet#",
+    type: "Planet",
     name: "Earth",
     fact: "Most planets in the solar system have moons, and the Moon may not be the biggest of them, but in comparison to Earth it's enormous. Most scientists think that rather than coalescing on its own like the other large moons, it was violently shorn off Earth billions of years ago by a collision with another planet. The impact - with a planet about the size of Mars - liquified Earth in the heat, and the Moon broke off and cooled into a ball of rock from this molten planet. The Moon’s size and distance are a giant cosmic coincidence, which means that on Earth we can experience total eclipses, annular eclipses and partial eclipses, all from the comfort of our own planet. If the Moon were more in proportion, it would be too small for any sort of eclipse at all."
   },
