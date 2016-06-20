@@ -1,14 +1,26 @@
 db.users.insert([
   {
     name: "Adam",
-    favPlanet: "Jupiter"
+    favPlanet:[
+      {
+        name: "Jupiter"
+      }
+    ]
   },
   {
     name: "Zak",
-    favPlanet: "Mars"
+    favPlanet:[
+      {
+        name: "Mars"
+      }
+    ]
   },
   {
     name: "Alistair",
-    favPlanet: "Saturn"
+    favPlanet:[
+      {
+        name: "Saturn"
+      }
+    ]
   }
 ]);
