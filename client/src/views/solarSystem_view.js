@@ -79,7 +79,7 @@ SolarSystemView.prototype = {
 		var submitButton = document.createElement('input');
 		submitButton.setAttribute('type', 'submit');
 		submitButton.setAttribute('value', 'Click Here');
-		// travelForm.addEventListener('submit', this.solarSystem.travelTime(this.getTimeInfo[0], this.getTimeInfo[1], this.getTimeInfo[2]));
+
 		travelForm.addEventListener('submit', this.getTimeInfo.bind(this));
 		// travelForm.addEventListener('submit', function(e){
 		// 	e.preventDefault();
@@ -163,10 +163,6 @@ SolarSystemView.prototype = {
 		console.log(thisObject1);
 		console.log(thisObject2);
 		console.log(object3);
-
-		// return [thisObject1, thisObject2, object3];
-
-		// console.log(this.solarSystem.travelTime(thisObject1, thisObject2, object3));
 
 		var travelTimeDays = this.solarSystem.travelTime(thisObject1, thisObject2, object3).toFixed();
 

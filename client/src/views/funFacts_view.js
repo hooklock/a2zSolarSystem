@@ -10,10 +10,8 @@ FunFactsView.prototype = {
 	},
     randomFact: function(){
         var factBox = document.getElementById('RandomFact');
-        // console.log(this.funfacts.facts);
         var random = _.sample(this.funfacts.facts).fact;
         factBox.innerText = random;
-        // console.log(random);
     }
 };
 
