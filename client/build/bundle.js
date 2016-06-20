@@ -40,11 +40,12 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var SolarSystemView = __webpack_require__(1);
+	var SolarSystemView = __webpack_require__(7);
 	
 	window.onload = function() {
 		var solarsystem = new SolarSystemView(solarsystem);
@@ -53,7 +54,8 @@
 
 
 /***/ },
-/* 1 */
+
+/***/ 7:
 /***/ function(module, exports) {
 
 	var SolarSystemView = function(solarSystem) {
@@ -83,5 +85,6 @@
 
 
 /***/ }
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=bundle.js.map
