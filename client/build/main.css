@@ -16,7 +16,7 @@ ul {
 	top: 3em;
 	width: 500px;
 	margin-top: -2.5em;
-	z-index: 100;
+	z-index: 20;
 }
 
 .top-nav-menu li {
@@ -129,7 +129,19 @@ ul {
 }
 
 /*PANEL VIEWPORT*/
+.orbit-inner-show {
+	position: absolute;
+	top: 907px;
+	left: 1304px;
+	z-index: 30;
+}
 
+.orbit-inner-planet {
+	position: absolute;
+	top: 682px;
+	left: 1365px;
+	z-index: 29;
+}
 
 /*PARALLAX MAGIC*/
 .parallax {
