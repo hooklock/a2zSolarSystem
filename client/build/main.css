@@ -1,3 +1,24 @@
+#testbox {
+	z-index: 1000000;
+}
+
+#planetList{
+	margin-top: 80px;
+}
+
+#testbox li {
+	color: white;
+	display: block;
+	padding: 10px;
+
+	margin: 10px;
+	border: 2px;
+	/*background-color: rgba(83,163,178,0.2);*/
+	/*border-color: rgba(175, 238, 238,0.3);*/
+	border-style: none;
+	/*border-radius: 0% 25% ;*/
+}
+
 /*MAIN*/
 html body{
 	font-family: 'Changa', sans-serif;
@@ -12,7 +33,7 @@ ul {
 	color: rgb(175, 238, 238);
 	text-align: center;
 	position: fixed;
-	left: -10em;
+	/*left: -10em;*/
 	top: 3em;
 	width: 500px;
 	margin-top: -2.5em;
