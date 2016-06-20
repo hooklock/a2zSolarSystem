@@ -46,19 +46,14 @@
 
 	// var FunFact = require("./models/funFact.js");
 	var FunFacts = __webpack_require__(1);
-	// var Moon = require("./models/moon.js");
 	var Planet = __webpack_require__(2);
 	var SolarSystem = __webpack_require__(3);
 	var SolarSystems = __webpack_require__(6);
-	// var Sun = require("./models/sun.js");
 	// var User = require("./models/user.js");
 	var SolarSystemView = __webpack_require__(7);
 	var PlanetView = __webpack_require__(8);
+	var FunFactsView = __webpack_require__(10);
 	var GetRequest = __webpack_require__(9);
-	
-	
-	
-	
 	
 	window.onload = function() {
 		var getRequestSolar = new GetRequest('http://localhost:3000/solarSystem');
@@ -68,9 +63,25 @@
 			passOutSolarSystem(solarsystem, solarsystemview);
 		});
 	
+		var getRequestFunFacts = new GetRequest('http://localhost:3000/funFacts');
+		getRequestFunFacts.getFunFacts(function(sampleFunFacts){
+			var funfacts = new FunFacts();
+			for(var fact of sampleFunFacts){
+				funfacts.addFact(fact);
+			}
+			var funfactsview = new FunFactsView(funfacts);
+			passOutFunFacts(funfacts, funfactsview);
+		});
+	
 		function passOutSolarSystem(solarsystem, solarsystemview){
 			solarsystemview.render();
 		}
+	
+		function passOutFunFacts(funfacts, funfactsview){
+			funfactsview.render();
+		}
+	
+	
 	};
 
 
@@ -78,8 +89,8 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	var FunFacts = function(params){
-	    this.facts = params.facts;
+	var FunFacts = function(){
+	    this.facts = [];
 	};
 	
 	FunFacts.prototype = {
@@ -16758,9 +16769,8 @@
 	SolarSystemView.prototype = {
 		render: function() {
 			this.coolscrollything();
-			// this.listPlanet();
 			// this.displayWeight();
-			this.displayTravelTime();
+			// this.displayTravelTime();
 		},
 		coolscrollything: function() {
 			var speed = 3;
@@ -16779,9 +16789,9 @@
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 			// console.log(newPlanet);
 			var weightBox = document.getElementById('planetList');
-			var planetName = document.createElement('li');
+			var planetName = document.createElement('p');
 			// console.log(newPlanet.weightOnPlanet(weight));
-			planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight) + " kgs";
+			planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight).toFixed(2) + " kgs";
 			weightBox.appendChild(planetName);
 		},
 		listPlanets: function(weight){
@@ -16931,8 +16941,6 @@
 			} else {
 				displayTravel.innerText = "It would take you: " + travelTimeDays + " years to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 			}
-	
-	
 		}
 	};
 	
@@ -16986,13 +16994,56 @@
 	                }
 	            };
 	            request.send(null);
+	    };
 	
+	    this.getFunFacts = function(callback){
+	            var request = new XMLHttpRequest();
+	            request.open("GET", this.url);
+	            request.onload = function(){
+	                if(request.status === 200){
+	                    console.log("got the data");
+	                    var jsonString = request.responseText;
+	                    var sampleFunFacts = JSON.parse(jsonString);
+	                    // var solarsystem = new SolarSystem(sampleFunFacts);
+	                    // console.log(solarsystem);
+	                    // return solarsystem;
+	                    return callback(sampleFunFacts);
+	                    // localStorage.setItem('data', JSON.stringify(sampleSolarSystem));
+	                }
+	            };
+	            request.send(null);
 	    };
 	
 	    // this.getSolarSystem();
 	};
 	
 	module.exports = GetRequest;
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(4);
+	
+	var FunFactsView = function(funfacts) {
+		this.funfacts = funfacts;
+	};
+	
+	FunFactsView.prototype = {
+		render: function() {
+			this.randomFact();
+		},
+	    randomFact: function(){
+	        var factBox = document.getElementById('RandomFact');
+	        // console.log(this.funfacts.facts);
+	        var random = _.sample(this.funfacts.facts).fact;
+	        factBox.innerText = random;
+	        // console.log(random);
+	    }
+	};
+	
+	module.exports = FunFactsView;
 
 
 /***/ }

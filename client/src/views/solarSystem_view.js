@@ -7,9 +7,8 @@ var SolarSystemView = function(solarSystem) {
 SolarSystemView.prototype = {
 	render: function() {
 		this.coolscrollything();
-		// this.listPlanet();
 		// this.displayWeight();
-		this.displayTravelTime();
+		// this.displayTravelTime();
 	},
 	coolscrollything: function() {
 		var speed = 3;
@@ -28,9 +27,9 @@ SolarSystemView.prototype = {
 		var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 		// console.log(newPlanet);
 		var weightBox = document.getElementById('planetList');
-		var planetName = document.createElement('li');
+		var planetName = document.createElement('p');
 		// console.log(newPlanet.weightOnPlanet(weight));
-		planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight) + " kgs";
+		planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight).toFixed(2) + " kgs";
 		weightBox.appendChild(planetName);
 	},
 	listPlanets: function(weight){
@@ -180,8 +179,6 @@ SolarSystemView.prototype = {
 		} else {
 			displayTravel.innerText = "It would take you: " + travelTimeDays + " years to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 		}
-
-
 	}
 };
 
