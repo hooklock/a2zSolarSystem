@@ -23,11 +23,6 @@ window.onload = function() {
 	});
 
 	function passOutSolarSystem(solarsystem, solarsystemview){
-		// console.log("scope whoot");
-		// console.log(solarsystem);
-		// solarsystemview.listPlanet(solarsystem.planets[1].name);
-		// solarsystemview.listPlanets(solarsystem);
-		// solarsystemview.displayWeight();
 		solarsystemview.render();
 	}
 };
