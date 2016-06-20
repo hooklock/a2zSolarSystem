@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/a2zSolarSystem';
+var url = 'mongodb://localhost:27017/a2zsolarsystem';
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
