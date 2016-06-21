@@ -52,8 +52,8 @@
 	// var User = require("./models/user.js");
 	var SolarSystemView = __webpack_require__(7);
 	var PlanetView = __webpack_require__(8);
-	var FunFactsView = __webpack_require__(9);
-	var GetRequest = __webpack_require__(10);
+	var FunFactsView = __webpack_require__(10);
+	var GetRequest = __webpack_require__(9);
 	
 	window.onload = function() {
 		var getRequestSolar = new GetRequest('http://localhost:3000/solarSystem');
@@ -17077,30 +17077,6 @@
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(4);
-	
-	var FunFactsView = function(funfacts) {
-		this.funfacts = funfacts;
-	};
-	
-	FunFactsView.prototype = {
-		render: function() {
-			// this.randomFact();
-		},
-	    randomFact: function(){
-	        var factBox = document.getElementById('RandomFact');
-	        var random = _.sample(this.funfacts.facts).fact;
-	        factBox.innerText = random;
-	    }
-	};
-	
-	module.exports = FunFactsView;
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var SolarSystem = __webpack_require__(3);
 	var GetRequest = function(url){
 	    this.url = url;
@@ -17145,6 +17121,30 @@
 	};
 	
 	module.exports = GetRequest;
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(4);
+	
+	var FunFactsView = function(funfacts) {
+		this.funfacts = funfacts;
+	};
+	
+	FunFactsView.prototype = {
+		render: function() {
+			// this.randomFact();
+		},
+	    randomFact: function(){
+	        var factBox = document.getElementById('RandomFact');
+	        var random = _.sample(this.funfacts.facts).fact;
+	        factBox.innerText = random;
+	    }
+	};
+	
+	module.exports = FunFactsView;
 
 
 /***/ }
