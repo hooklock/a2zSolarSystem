@@ -60,10 +60,10 @@ SolarSystemView.prototype = {
 		weightForm.appendChild(weightInput);
 		container.appendChild(weightForm);
 		var planetlist = document.createElement('p');
-		planetlist.setAttribute("id", "planetList")
+		planetlist.setAttribute("class", "planetList");
 		container.appendChild(planetlist);
 		weightForm.onkeyup = function(e){
-			var planetBox = document.getElementById('planetList')
+			var planetBox = document.getElementsByClassName('planetList')[0];
 			while (planetBox.hasChildNodes()) {
 			planetBox.removeChild(planetBox.firstChild);
 			}
@@ -99,7 +99,6 @@ SolarSystemView.prototype = {
 			e.target = innerOrbitDisplay.style.visibility = "visible";
 			this.displayWeight();
 		}.bind(this));
-	// },
 		var timeButton = document.getElementById("TimeFrame");
 		timeButton.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementById("viewDiv");
@@ -129,10 +128,8 @@ SolarSystemView.prototype = {
 		while (travelBox.hasChildNodes()) {
 		travelBox.removeChild(travelBox.firstChild);
 		}
-		// var travelBox = document.getElementById('TravelTime');
 		var travelForm = document.createElement('form');
 		travelForm.setAttribute('id', 'travelform');
-		// travelForm.setAttribute('type', 'submit');
 		var planet1Label = document.createElement('label');
 		planet1Label.setAttribute( 'id', 'planet1-dropdown');
 		planet1Label.innerText = "Choose your first Planet:  ";
@@ -163,35 +160,32 @@ SolarSystemView.prototype = {
 		travelForm.appendChild(submitButton);
 		travelBox.appendChild(travelForm);
 
-
-
 		this.makeDisplayTravelTimeDropDowns();
 
 		var displayTravel = document.createElement("h1");
 		displayTravel.setAttribute("id", "displayTravelTime");
-		// var travelBox = document.getElementById('viewDiv');
 		travelBox.appendChild(displayTravel);
 		console.log(displayTravel);
-
 	},
+
 	makeDisplayTravelTimeDropDowns: function() {
-		for(var planet of this.solarSystem.planets){
-	    	var planet1 = document.createElement('option');
-	    	var planet2 = document.createElement('option');
+			for(var planet of this.solarSystem.planets){
+	  	var planet1 = document.createElement('option');
+	  	var planet2 = document.createElement('option');
 
-	    	planet1.text = planet.name;
-	    	planet2.text = planet.name;
-	    	planet1.setAttribute( 'class', 'planetNameClass' );
-	    	planet2.setAttribute( 'class', 'planetNameClass' );
+	  	planet1.text = planet.name;
+	  	planet2.text = planet.name;
+	  	planet1.setAttribute( 'class', 'planetNameClass' );
+	  	planet2.setAttribute( 'class', 'planetNameClass' );
 			newObject = JSON.stringify(planet);
-	    	planet1.setAttribute( 'value', newObject );
-	    	planet2.setAttribute( 'value', newObject );
+	  	planet1.setAttribute( 'value', newObject );
+	  	planet2.setAttribute( 'value', newObject );
 
-	    	var newplanet1Select = document.getElementById('planet1-content');
-	    	var newplanet2Select = document.getElementById('planet2-content');
+	  	var newplanet1Select = document.getElementById('planet1-content');
+	  	var newplanet2Select = document.getElementById('planet2-content');
 
-	    	newplanet1Select.appendChild(planet1);
-	    	newplanet2Select.appendChild(planet2);
+	  	newplanet1Select.appendChild(planet1);
+	  	newplanet2Select.appendChild(planet2);
 		}
 
 		var mode1 = document.createElement('option');
@@ -249,9 +243,6 @@ SolarSystemView.prototype = {
 
 		var travelTimeDays = this.solarSystem.travelTime(thisObject1, thisObject2, object3).toFixed();
 
-		// var displayTravel = document.getElementById('FinalTravelTime');
-
-
 		if(object3 === 'voyagerSpaceProbe'){
 			displayTravel.innerText = "It would take you: " + travelTimeDays + " days to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 		} else if(object3 === 'starshipEnterprise')  {
@@ -260,6 +251,7 @@ SolarSystemView.prototype = {
 			displayTravel.innerText = "It would take you: " + travelTimeDays + " years to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 		}
 	},
+
 	planetByType: function(){
 		var typeContainer = document.getElementById("viewDiv");
 		while (typeContainer.hasChildNodes()) {
@@ -302,15 +294,6 @@ SolarSystemView.prototype = {
 				}
 		}.bind(this);
 	},
-
-	// planetByThing: function(){
-	// 	var thingContainer = document.getElementById("thingContainer");
-	// 	var thingForm = document.createElement("form");
-	// 	var thingSelect = document.createElement("select");
-	//
-	// }
-
-
 };
 
 module.exports = SolarSystemView;
