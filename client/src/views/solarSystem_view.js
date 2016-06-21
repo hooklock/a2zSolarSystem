@@ -128,6 +128,9 @@ SolarSystemView.prototype = {
 		while (travelBox.hasChildNodes()) {
 		travelBox.removeChild(travelBox.firstChild);
 		}
+		var lineBreak1 = document.createElement("br");
+		var lineBreak2 = document.createElement("br");
+		var lineBreak3 = document.createElement("br");
 		var travelForm = document.createElement('form');
 		travelForm.setAttribute('id', 'travelform');
 		var planet1Label = document.createElement('label');
@@ -152,8 +155,11 @@ SolarSystemView.prototype = {
 		travelForm.addEventListener('submit', this.getTimeInfo.bind(this));
 
 		planet1Label.appendChild(planet1Select);
+		planet1Label.appendChild(lineBreak1);
 		planet2Label.appendChild(planet2Select);
+		planet2Label.appendChild(lineBreak2);
 		planet3Label.appendChild(planet3Select);
+		planet3Label.appendChild(lineBreak3);
 		travelForm.appendChild(planet1Label);
 		travelForm.appendChild(planet2Label);
 		travelForm.appendChild(planet3Label);
