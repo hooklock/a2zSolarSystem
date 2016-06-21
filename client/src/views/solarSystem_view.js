@@ -10,11 +10,11 @@ SolarSystemView.prototype = {
 		// this.displayTravelTime();
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
-		this.showTestDiv();
-		this.closeTestDiv();
+		this.showWeightDiv();
+		this.closeDiv();
 		this.viewScroll();
 		// this.listPlanet();
-		this.displayWeight();
+		// this.displayWeight();
 		this.planetByType();
 	},
 
@@ -49,24 +49,29 @@ SolarSystemView.prototype = {
 	},
 
 	displayWeight: function(){
-		var weightHere = document.getElementById('PlanetWeight');
+		var container = document.getElementById('viewDiv');
+		while (container.hasChildNodes()) {
+		container.removeChild(container.firstChild);
+		}
 		var weightForm = document.createElement('form');
 		var weightInput = document.createElement('input');
 		weightInput.setAttribute('placeholder', 'Enter Weight in Kgs');
+		weightInput.setAttribute('id', 'weightInput');
 		weightForm.appendChild(weightInput);
-		weightHere.appendChild(weightForm);
+		container.appendChild(weightForm);
+		var planetlist = document.createElement('p');
+		planetlist.setAttribute("id", "planetList")
+		container.appendChild(planetlist);
 		weightForm.onkeyup = function(e){
-			var planetBox = document.getElementById('planetList');
+			var planetBox = document.getElementById('planetList')
 			while (planetBox.hasChildNodes()) {
 			planetBox.removeChild(planetBox.firstChild);
 			}
 			e.preventDefault();
-			console.log(e.target.value);
-			console.log(this);
 			this.listPlanets(e.target.value);
 		}.bind(this);
 	},
-	// XXX: Could use some refactoring as this only deals with the opening of one element.
+
 	showInnerOrbitContainer: function() {
 		var showButton = document.getElementsByName("orbit-inner-display")[0];
 		showButton.addEventListener("click", function(e) {
@@ -76,12 +81,10 @@ SolarSystemView.prototype = {
 			e.target = innerOrbitClose.style.visibility = "visible";
 		});
 	},
-	// XXX: Could use some refactoring as this only deals with the closing of one element.
+
 	closeInnerOrbitContainer: function() {
 		var close = document.getElementById("orbit-inner-close");
-		console.log(close);
 		close.addEventListener("click", function(e) {
-			console.log("Clicky");
 			var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
 			var innerOrbitClose = document.getElementById("orbit-inner-close");
 			e.target = innerOrbitDisplay.style.visibility = "hidden";
@@ -89,33 +92,44 @@ SolarSystemView.prototype = {
 		});
 	},
 
-	showTestDiv: function() {
-		var weightButton = document.getElementById("TestFrame");
+	showWeightDiv: function() {
+		var weightButton = document.getElementById("WeightFrame");
 		weightButton.addEventListener("click", function(e) {
-			console.log("Clicky");
-			console.log(weightButton);
 			var innerOrbitDisplay = document.getElementById("viewDiv");
 			e.target = innerOrbitDisplay.style.visibility = "visible";
-		});
-		// var showButton2 = document.getElementById("TestFrame");
-		// showButton2.addEventListener("click", function(e) {
-		// 	console.log("Clicky");
-		// 	console.log(showButton2);
-		// 	var innerOrbitDisplay = document.getElementById("viewDiv");
-		// 	e.target = innerOrbitDisplay.style.visibility = "visible";
-		// });
+			this.displayWeight();
+		}.bind(this));
+	// },
+		var timeButton = document.getElementById("TimeFrame");
+		timeButton.addEventListener("click", function(e) {
+			var innerOrbitDisplay = document.getElementById("viewDiv");
+			e.target = innerOrbitDisplay.style.visibility = "visible";
+			this.displayTravelTime();
+		}.bind(this));
+		var typeButton = document.getElementById("TypeFrame");
+		typeButton.addEventListener("click", function(e) {
+			var innerOrbitDisplay = document.getElementById("viewDiv");
+			e.target = innerOrbitDisplay.style.visibility = "visible";
+			this.planetByType();
+		}.bind(this));
 	},
-	closeTestDiv: function() {
+
+	closeDiv: function() {
 		document.getElementById('main-frame').onclick = function(e) {
-    		if(e.target != document.getElementById("viewDiv")) {
-        		var closeDiv = document.getElementById("viewDiv");
+		if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2]) {
+			console.log(document.getElementById("viewDiv").children);
+    		var closeDiv = document.getElementById("viewDiv");
 				e.target = closeDiv.style.visibility = "hidden";
-    		}
-    	};
+  		}
+  	};
 	},
 
 	displayTravelTime: function(){
-		var travelBox = document.getElementById('TravelTime');
+		var travelBox = document.getElementById('viewDiv');
+		while (travelBox.hasChildNodes()) {
+		travelBox.removeChild(travelBox.firstChild);
+		}
+		// var travelBox = document.getElementById('TravelTime');
 		var travelForm = document.createElement('form');
 		travelForm.setAttribute('id', 'travelform');
 		// travelForm.setAttribute('type', 'submit');
@@ -139,10 +153,6 @@ SolarSystemView.prototype = {
 		submitButton.setAttribute('value', 'Click Here');
 
 		travelForm.addEventListener('submit', this.getTimeInfo.bind(this));
-		// travelForm.addEventListener('submit', function(e){
-		// 	e.preventDefault();
-		// 	console.log(e.target);
-		// });
 
 		planet1Label.appendChild(planet1Select);
 		planet2Label.appendChild(planet2Select);
@@ -153,7 +163,15 @@ SolarSystemView.prototype = {
 		travelForm.appendChild(submitButton);
 		travelBox.appendChild(travelForm);
 
+
+
 		this.makeDisplayTravelTimeDropDowns();
+
+		var displayTravel = document.createElement("h1");
+		displayTravel.setAttribute("id", "displayTravelTime");
+		// var travelBox = document.getElementById('viewDiv');
+		travelBox.appendChild(displayTravel);
+		console.log(displayTravel);
 
 	},
 	makeDisplayTravelTimeDropDowns: function() {
@@ -207,6 +225,13 @@ SolarSystemView.prototype = {
 	getTimeInfo: function(e){
 		e.preventDefault();
 
+		var displayTravel = document.getElementById("displayTravelTime");
+
+
+		while (displayTravel.hasChildNodes()) {
+		displayTravel.removeChild(displayTravel.firstChild);
+		}
+
 		var select1 = document.getElementById('planet1-content');
 		var select2 = document.getElementById('planet2-content');
 		var select3 = document.getElementById('planet3-content');
@@ -224,7 +249,8 @@ SolarSystemView.prototype = {
 
 		var travelTimeDays = this.solarSystem.travelTime(thisObject1, thisObject2, object3).toFixed();
 
-		var displayTravel = document.getElementById('FinalTravelTime');
+		// var displayTravel = document.getElementById('FinalTravelTime');
+
 
 		if(object3 === 'voyagerSpaceProbe'){
 			displayTravel.innerText = "It would take you: " + travelTimeDays + " days to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
@@ -235,13 +261,19 @@ SolarSystemView.prototype = {
 		}
 	},
 	planetByType: function(){
-		var typeContainer = document.getElementById("typeContainer");
-		var gButton = document.createElement("button");
-		gButton.innerHTML = "See Gas Planets";
-		typeContainer.appendChild(gButton);
+		var typeContainer = document.getElementById("viewDiv");
+		while (typeContainer.hasChildNodes()) {
+		typeContainer.removeChild(typeContainer.firstChild);
+		}
 		var tButton = document.createElement("button");
 		tButton.innerHTML = "See Terrestrial Planets";
 		typeContainer.appendChild(tButton);
+		var gButton = document.createElement("button");
+		gButton.innerHTML = "See Gas Planets";
+		typeContainer.appendChild(gButton);
+		var gtPlanet = document.createElement("p");
+		gtPlanet.setAttribute("id", "gtPlanets");
+		typeContainer.appendChild(gtPlanet);
 
 		gButton.onclick = function(e){
 			e.preventDefault();
@@ -249,11 +281,9 @@ SolarSystemView.prototype = {
 			while (gtPlanet.hasChildNodes()) {
 			gtPlanet.removeChild(gtPlanet.firstChild);
 			}
-			console.log(this);
 			var gList = this.solarSystem.filteredPlanets("Gas");
 			for(var planet of gList){
-				console.log(planet.name);
-				var gasPlanet = document.createElement("li");
+				var gasPlanet = document.createElement("h1");
 				gasPlanet.innerText = planet.name;
 				gtPlanet.appendChild(gasPlanet);
 			}
@@ -264,11 +294,9 @@ SolarSystemView.prototype = {
 				while (gtPlanet.hasChildNodes()) {
 				gtPlanet.removeChild(gtPlanet.firstChild);
 				}
-				console.log(this);
 				var tList = this.solarSystem.filteredPlanets("Terrestrial");
 				for(var planet of tList){
-					console.log(planet.name);
-					var terrPlanet = document.createElement("li");
+					var terrPlanet = document.createElement("h1");
 					terrPlanet.innerText = planet.name;
 					gtPlanet.appendChild(terrPlanet);
 				}
