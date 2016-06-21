@@ -104,13 +104,14 @@ li {
 .close-icon {
 	background: transparent url('./img/frame-close.png') no-repeat 0 0;
 	position: absolute;
-	visibility: visible;
+	visibility: hidden;
   width: 18px;
   height: 18px;
   top: 5px;
   right: 5px;
 	z-index: 31;
 }
+
 
 /*BACKGROUND DISPLAY*/
 #viewport {
@@ -239,6 +240,16 @@ li {
 }
 
 #orbit-inner-close {
+  background: transparent url('./img/frame-close.png') no-repeat 0 0;
+	position: absolute;
+	visibility: hidden;
+  width: 18px;
+  height: 18px;
+  top: 704px;
+  left: 1619px;
+	z-index: 31;
+}
+#orbit-inner-close2 {
   background: transparent url('./img/frame-close.png') no-repeat 0 0;
 	position: absolute;
 	visibility: hidden;
