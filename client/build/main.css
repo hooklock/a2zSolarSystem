@@ -70,7 +70,7 @@ li {
 
 /*MAIN VIEW FRAME*/
 .viewClass {
-	visibility: hidden;
+	/*visibility: hidden;*/
 	position: fixed;
 	width: 65em;
 	height: 32em;
@@ -83,7 +83,11 @@ li {
 	border-radius: 15px;
 }
 
-#huh{
+#viewDiv{
+	visibility: hidden;
+}
+
+#planetDiv{
 	visibility: hidden;
 }
 
