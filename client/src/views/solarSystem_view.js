@@ -10,6 +10,7 @@ SolarSystemView.prototype = {
 		// this.displayTravelTime();
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
+		this.showTestDiv()
 		this.viewScroll();
 		// this.listPlanet();
 		this.displayWeight();
@@ -86,6 +87,17 @@ SolarSystemView.prototype = {
 			e.target = innerOrbitClose.style.visibility = "hidden";
 		});
 	},
+
+	showTestDiv: function() {
+		var showButton = document.getElementById("TestFrame");
+		showButton.addEventListener("click", function(e) {
+			console.log("Clicky");
+			console.log(showButton);
+			var innerOrbitDisplay = document.getElementById("testDiv");
+			e.target = innerOrbitDisplay.style.visibility = "visible";
+		});
+	},
+
 	displayTravelTime: function(){
 		var travelBox = document.getElementById('TravelTime');
 		var travelForm = document.createElement('form');

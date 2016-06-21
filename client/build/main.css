@@ -231,6 +231,18 @@ ul {
 	z-index: 15;
 }
 
+#testDiv {
+	visibility: hidden;
+	position: fixed;
+	width: 500px;
+	height: 500px;
+	border: red;
+	background-color: blue;
+	z-index: 40;
+	top: 698px;
+	left: 1200px;
+}
+
 /*PARALLAX MAGIC*/
 .parallax {
   perspective: 5px;
