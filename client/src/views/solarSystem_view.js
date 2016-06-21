@@ -60,10 +60,10 @@ SolarSystemView.prototype = {
 		weightForm.appendChild(weightInput);
 		container.appendChild(weightForm);
 		var planetlist = document.createElement('p');
-		planetlist.setAttribute("class", "planetList");
+		planetlist.setAttribute("id", "planetList");
 		container.appendChild(planetlist);
 		weightForm.onkeyup = function(e){
-			var planetBox = document.getElementsByClassName('planetList')[0];
+			var planetBox = document.getElementById('planetList');
 			while (planetBox.hasChildNodes()) {
 			planetBox.removeChild(planetBox.firstChild);
 			}
