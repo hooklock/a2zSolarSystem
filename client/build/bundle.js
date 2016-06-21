@@ -16775,6 +16775,7 @@
 			this.viewScroll();
 			// this.listPlanet();
 			this.displayWeight();
+			this.planetByType();
 		},
 	
 		viewScroll: function() {
@@ -16966,7 +16967,55 @@
 			} else {
 				displayTravel.innerText = "It would take you: " + travelTimeDays + " years to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 			}
-		}
+		},
+		planetByType: function(){
+			var typeContainer = document.getElementById("typeContainer");
+			var gButton = document.createElement("button");
+			gButton.innerHTML = "See Gas Planets";
+			typeContainer.appendChild(gButton);
+			var tButton = document.createElement("button");
+			tButton.innerHTML = "See Terrestrial Planets";
+			typeContainer.appendChild(tButton);
+	
+			gButton.onclick = function(e){
+				e.preventDefault();
+				var gtPlanet = document.getElementById("gtPlanets");
+				while (gtPlanet.hasChildNodes()) {
+				gtPlanet.removeChild(gtPlanet.firstChild);
+				}
+				console.log(this);
+				var gList = this.solarSystem.filteredPlanets("Gas");
+				for(var planet of gList){
+					console.log(planet.name);
+					var gasPlanet = document.createElement("li");
+					gasPlanet.innerText = planet.name;
+					gtPlanet.appendChild(gasPlanet);
+				}
+			}.bind(this);
+				tButton.onclick = function(e){
+					e.preventDefault();
+					var gtPlanet = document.getElementById("gtPlanets");
+					while (gtPlanet.hasChildNodes()) {
+					gtPlanet.removeChild(gtPlanet.firstChild);
+					}
+					console.log(this);
+					var tList = this.solarSystem.filteredPlanets("Terrestrial");
+					for(var planet of tList){
+						console.log(planet.name);
+						var terrPlanet = document.createElement("li");
+						terrPlanet.innerText = planet.name;
+						gtPlanet.appendChild(terrPlanet);
+					}
+			}.bind(this);
+		},
+	
+		// planetByThing: function(){
+		// 	var thingContainer = document.getElementById("thingContainer");
+		// 	var thingForm = document.createElement("form");
+		// 	var thingSelect = document.createElement("select");
+		//
+		// }
+	
 	
 	};
 	
