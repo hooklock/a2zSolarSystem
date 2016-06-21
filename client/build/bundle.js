@@ -16772,8 +16772,8 @@
 			// this.displayTravelTime();
 			this.showInnerOrbitContainer();
 			this.closeInnerOrbitContainer();
-			this.showTestDiv();
-			this.closeTestDiv();
+			this.showWeightDiv();
+			this.closeDiv();
 			this.viewScroll();
 			// this.listPlanet();
 			this.displayWeight();
@@ -16811,20 +16811,23 @@
 		},
 	
 		displayWeight: function(){
-			var weightHere = document.getElementById('PlanetWeight');
+			var container = document.getElementById('viewDiv');
 			var weightForm = document.createElement('form');
 			var weightInput = document.createElement('input');
 			weightInput.setAttribute('placeholder', 'Enter Weight in Kgs');
+			weightInput.setAttribute('id', 'weightInput');
 			weightForm.appendChild(weightInput);
-			weightHere.appendChild(weightForm);
+			container.appendChild(weightForm);
+			var planetlist = document.createElement('p');
+			planetlist.setAttribute("id", "planetList")
+			container.appendChild(planetlist);
 			weightForm.onkeyup = function(e){
-				var planetBox = document.getElementById('planetList');
+				var planetBox = document.getElementById('planetList')
+				console.log(planetBox);
 				while (planetBox.hasChildNodes()) {
 				planetBox.removeChild(planetBox.firstChild);
 				}
 				e.preventDefault();
-				console.log(e.target.value);
-				console.log(this);
 				this.listPlanets(e.target.value);
 			}.bind(this);
 		},
@@ -16851,8 +16854,8 @@
 			});
 		},
 	
-		showTestDiv: function() {
-			var weightButton = document.getElementById("TestFrame");
+		showWeightDiv: function() {
+			var weightButton = document.getElementById("WeightFrame");
 			weightButton.addEventListener("click", function(e) {
 				console.log("Clicky");
 				console.log(weightButton);
@@ -16867,12 +16870,19 @@
 			// 	e.target = innerOrbitDisplay.style.visibility = "visible";
 			// });
 		},
-		closeTestDiv: function() {
+		closeDiv: function() {
 			document.getElementById('main-frame').onclick = function(e) {
-	    		if(e.target != document.getElementById("viewDiv")) {
+				// || e.target != document.getElementsByTagName("input")[0])
+	    		// if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("weightInput")) {
+				if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0][0]) {
+					console.log(document.getElementById("viewDiv").children[1].children[0]);
 	        		var closeDiv = document.getElementById("viewDiv");
 					e.target = closeDiv.style.visibility = "hidden";
 	    		}
+	    		// if(e.target != document.getElementsByTagName("input")[0]) {
+	        	// 	var closeDiv = document.getElementById("viewDiv");
+				// 	e.target = closeDiv.style.visibility = "hidden";
+	    		// }
 	    	};
 		},
 	
