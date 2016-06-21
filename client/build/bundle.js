@@ -16998,7 +16998,7 @@
 			var massBox = document.createElement("p");
 			massBox.innerText = "Mass: " + planetMass;
 			var orbitalPeriodBox = document.createElement("p");
-			orbitalPeriodBox.innerText = "Planet takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
+			orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
 			var diameterBox = document.createElement("p");
 			diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
 			var dayLengthBox = document.createElement("p");
