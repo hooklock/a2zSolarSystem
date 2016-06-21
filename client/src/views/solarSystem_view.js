@@ -11,10 +11,8 @@ SolarSystemView.prototype = {
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
 		this.showTestDiv();
-<<<<<<< HEAD
-=======
+
 		this.closeTestDiv();
->>>>>>> 3098efbfa1f35f5cce7f676a39892e4540da6f53
 		this.viewScroll();
 		// this.listPlanet();
 		this.displayWeight();
