@@ -65,16 +65,16 @@
 		getRequestSolar.getSolarSystem(function(sampleSolarSystem){
 			var solarsystem = new SolarSystem(sampleSolarSystem);
 			var solarsystemview = new SolarSystemView(solarsystem);
-			doTheThings(solarsystem, solarsystemview);
-			solarsystemview.render();
+			passOutSolarSystem(solarsystem, solarsystemview);
 		});
 	
-		function doTheThings(solarsystem, solarsystemview){
+		function passOutSolarSystem(solarsystem, solarsystemview){
 			// console.log("scope whoot");
 			// console.log(solarsystem);
 			// solarsystemview.listPlanet(solarsystem.planets[1].name);
 			// solarsystemview.listPlanets(solarsystem);
 			// solarsystemview.displayWeight();
+			solarsystemview.render();
 		}
 	};
 
@@ -16769,7 +16769,6 @@
 			document.onmousemove = handleMouse;
 		},
 		listPlanet: function(pname, weight){
-	
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 			// console.log(newPlanet);
 			var weightBox = document.getElementById('planetList');
