@@ -52,8 +52,8 @@
 	// var User = require("./models/user.js");
 	var SolarSystemView = __webpack_require__(7);
 	var PlanetView = __webpack_require__(8);
-	var FunFactsView = __webpack_require__(10);
-	var GetRequest = __webpack_require__(9);
+	var FunFactsView = __webpack_require__(9);
+	var GetRequest = __webpack_require__(10);
 	
 	window.onload = function() {
 		var getRequestSolar = new GetRequest('http://localhost:3000/solarSystem');
@@ -63,14 +63,6 @@
 			passOutSolarSystem(solarsystem, solarsystemview);
 		});
 	
-<<<<<<< HEAD
-		function passOutSolarSystem(solarsystem, solarsystemview){
-			// console.log("scope whoot");
-			// console.log(solarsystem);
-			// solarsystemview.listPlanet(solarsystem.planets[1].name);
-			// solarsystemview.listPlanets(solarsystem);
-			// solarsystemview.displayWeight();
-=======
 		var getRequestFunFacts = new GetRequest('http://localhost:3000/funFacts');
 		getRequestFunFacts.getFunFacts(function(sampleFunFacts){
 			var funfacts = new FunFacts();
@@ -82,7 +74,6 @@
 		});
 	
 		function passOutSolarSystem(solarsystem, solarsystemview){
->>>>>>> feature/zak-traveltime
 			solarsystemview.render();
 		}
 	
@@ -16777,18 +16768,13 @@
 	
 	SolarSystemView.prototype = {
 		render: function() {
-<<<<<<< HEAD
-			this.showInnerOrbit();
-			this.coolscrollything();
 			// this.displayWeight();
 			// this.displayTravelTime();
-=======
 			this.showInnerOrbitContainer();
 			this.closeInnerOrbitContainer();
 			this.viewScroll();
 			// this.listPlanet();
 			this.displayWeight();
->>>>>>> 4c16b8792c6c9548ea0df892160e4dcf60324199
 		},
 	
 		viewScroll: function() {
@@ -16804,19 +16790,13 @@
 			}
 			document.onmousemove = handleMouse;
 		},
-<<<<<<< HEAD
 	
-=======
->>>>>>> feature/zak-traveltime
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 			var weightBox = document.getElementById('planetList');
-<<<<<<< HEAD
 			var planetName = document.createElement('p');
 			// console.log(newPlanet.weightOnPlanet(weight));
-=======
-			var planetName = document.createElement('li');
->>>>>>> 4c16b8792c6c9548ea0df892160e4dcf60324199
+	
 			planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight).toFixed(2) + " kgs";
 			weightBox.appendChild(planetName);
 		},
@@ -16845,13 +16825,8 @@
 				this.listPlanets(e.target.value);
 			}.bind(this);
 		},
-<<<<<<< HEAD
-<<<<<<< HEAD
-		showInnerOrbit: function() {
-=======
 		// XXX: Could use some refactoring as this only deals with the opening of one element.
 		showInnerOrbitContainer: function() {
->>>>>>> 4c16b8792c6c9548ea0df892160e4dcf60324199
 			var showButton = document.getElementsByName("orbit-inner-display")[0];
 			showButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
@@ -16871,7 +16846,7 @@
 				e.target = innerOrbitDisplay.style.visibility = "hidden";
 				e.target = innerOrbitClose.style.visibility = "hidden";
 			});
-=======
+		},
 		displayTravelTime: function(){
 			var travelBox = document.getElementById('TravelTime');
 			var travelForm = document.createElement('form');
@@ -16991,7 +16966,6 @@
 			} else {
 				displayTravel.innerText = "It would take you: " + travelTimeDays + " years to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 			}
->>>>>>> feature/zak-traveltime
 		}
 	
 	};
@@ -17024,6 +16998,30 @@
 
 /***/ },
 /* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(4);
+	
+	var FunFactsView = function(funfacts) {
+		this.funfacts = funfacts;
+	};
+	
+	FunFactsView.prototype = {
+		render: function() {
+			// this.randomFact();
+		},
+	    randomFact: function(){
+	        var factBox = document.getElementById('RandomFact');
+	        var random = _.sample(this.funfacts.facts).fact;
+	        factBox.innerText = random;
+	    }
+	};
+	
+	module.exports = FunFactsView;
+
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var SolarSystem = __webpack_require__(3);
@@ -17070,30 +17068,6 @@
 	};
 	
 	module.exports = GetRequest;
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var _ = __webpack_require__(4);
-	
-	var FunFactsView = function(funfacts) {
-		this.funfacts = funfacts;
-	};
-	
-	FunFactsView.prototype = {
-		render: function() {
-			// this.randomFact();
-		},
-	    randomFact: function(){
-	        var factBox = document.getElementById('RandomFact');
-	        var random = _.sample(this.funfacts.facts).fact;
-	        factBox.innerText = random;
-	    }
-	};
-	
-	module.exports = FunFactsView;
 
 
 /***/ }
