@@ -16751,6 +16751,7 @@
 	
 	SolarSystemView.prototype = {
 		render: function() {
+			this.showInnerOrbit();
 			this.coolscrollything();
 			// this.listPlanet();
 			this.displayWeight();
@@ -16768,6 +16769,7 @@
 			}
 			document.onmousemove = handleMouse;
 		},
+	
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 			// console.log(newPlanet);
@@ -16791,7 +16793,7 @@
 			weightForm.appendChild(weightInput);
 			weightHere.appendChild(weightForm);
 			weightForm.onkeyup = function(e){
-				var planetBox = document.getElementById('planetList')
+				var planetBox = document.getElementById('planetList');
 				while (planetBox.hasChildNodes()) {
 				planetBox.removeChild(planetBox.firstChild);
 				}
@@ -16800,7 +16802,15 @@
 				console.log(this);
 				this.listPlanets(e.target.value);
 			}.bind(this);
+		},
+		showInnerOrbit: function() {
+			var showButton = document.getElementsByName("orbit-inner-display")[0];
+			showButton.addEventListener("click", function(event) {
+				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+				event.target = innerOrbitDisplay.style.visibility = "visible";
+			});
 		}
+	
 	};
 	
 	module.exports = SolarSystemView;

@@ -37,7 +37,7 @@ ul {
 	top: 3em;
 	width: 500px;
 	margin-top: -2.5em;
-	z-index: 100;
+	z-index: 20;
 }
 
 .top-nav-menu li {
@@ -67,8 +67,6 @@ ul {
 	font-size: 24px;
 	background-color: rgba(175, 238, 238,0.3);
 }
-
-
 
 /*BACKGROUND DISPLAY*/
 #viewport {
@@ -150,7 +148,22 @@ ul {
 }
 
 /*PANEL VIEWPORT*/
+.orbit-inner-button {
+	position: absolute;
+	top: 907px;
+	left: 1304px;
+	z-index: 30;
+}
 
+.orbit-inner-planet-img {
+	visibility: hidden;
+	position: absolute;
+	top: 682px;
+	left: 1365px;
+	z-index: 29;
+	border: 3px solid rgba(175, 238, 238,0.3);
+	border-radius: 10px;
+}
 
 /*PARALLAX MAGIC*/
 .parallax {
