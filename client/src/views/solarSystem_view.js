@@ -11,6 +11,10 @@ SolarSystemView.prototype = {
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
 		this.showTestDiv();
+<<<<<<< HEAD
+=======
+		this.closeTestDiv();
+>>>>>>> 3098efbfa1f35f5cce7f676a39892e4540da6f53
 		this.viewScroll();
 		// this.listPlanet();
 		this.displayWeight();
@@ -89,13 +93,28 @@ SolarSystemView.prototype = {
 	},
 
 	showTestDiv: function() {
-		var showButton = document.getElementById("TestFrame");
-		showButton.addEventListener("click", function(e) {
+		var weightButton = document.getElementById("TestFrame");
+		weightButton.addEventListener("click", function(e) {
 			console.log("Clicky");
-			console.log(showButton);
+			console.log(weightButton);
 			var innerOrbitDisplay = document.getElementById("testDiv");
 			e.target = innerOrbitDisplay.style.visibility = "visible";
 		});
+		// var showButton2 = document.getElementById("TestFrame");
+		// showButton2.addEventListener("click", function(e) {
+		// 	console.log("Clicky");
+		// 	console.log(showButton2);
+		// 	var innerOrbitDisplay = document.getElementById("testDiv");
+		// 	e.target = innerOrbitDisplay.style.visibility = "visible";
+		// });
+	},
+	closeTestDiv: function() {
+		document.getElementById('main-frame').onclick = function(e) {
+    		if(e.target != document.getElementById("testDiv")) {
+        		var closeDiv = document.getElementById("testDiv");
+				e.target = closeDiv.style.visibility = "hidden";
+    		}
+    	};
 	},
 
 	displayTravelTime: function(){
