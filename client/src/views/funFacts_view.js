@@ -6,7 +6,7 @@ var FunFactsView = function(funfacts) {
 
 FunFactsView.prototype = {
 	render: function() {
-		this.randomFact();
+		// this.randomFact();
 		// this.showFunFactDiv();
 		// this.closeFunFactDiv();
 	},

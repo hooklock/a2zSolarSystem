@@ -99,10 +99,28 @@ ul {
 	border-radius: 15px;
 }
 
+#huh{
+	visibility: hidden;
+}
+
+/*#viewDiv {
+	visibility: hidden;
+	position: fixed;
+	width: 65em;
+	height: 32em;
+	border: 3px solid rgba(175, 238, 238,0.3);
+	background-color: rgba(83,163,178,0.7);
+	color: white;
+	z-index: 40;
+	top: 7em;
+	left: 7em;
+	border-radius: 15px;
+}*/
+
 .close-icon {
 	background: transparent url('./img/frame-close.png') no-repeat 0 0;
 	position: absolute;
-	visibility: hidden;
+	visibility: visible;
   width: 18px;
   height: 18px;
   top: 5px;

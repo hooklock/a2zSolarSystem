@@ -81,6 +81,20 @@
 			funfactsview.render();
 		}
 	
+		// var planetButton = document.getElementById("Saturn");
+		// // console.log(planetButton.id);
+		// planetButton.addEventListener("click", function(e) {
+		// 	var innerOrbitDisplay = document.getElementById("huh");
+		// 	 innerOrbitDisplay.style.visibility = "visible";
+		// 	console.log(innerOrbitDisplay.style);
+		// 	// innerOrbitDisplay.style.setAttribute('cssText', 'visibility:visible;');
+		// 	// innerOrbitDisplay.style.visibility = "visible";
+		// 		// console.log(e.target);
+		// 	// console.log(this.solarSystem.findPlanetByName(planetButton.id));
+		// 	// this.solarSystem.findPlanetByName(planetButton.id);
+		// 	//this.displayPlanetInfo(planetButton.id);
+		// });
+	
 	
 	};
 
@@ -16772,12 +16786,16 @@
 			// this.displayTravelTime();
 			this.showInnerOrbitContainer();
 			this.closeInnerOrbitContainer();
-			this.showWeightDiv();
+			this.showDiv();
 			this.closeDiv();
 			this.viewScroll();
 			// this.listPlanet();
 			// this.displayWeight();
-			this.planetByType();
+			// this.planetByType();
+	
+			// this.showPlanetDiv();
+			// this.closePlanetDiv();
+	
 		},
 	
 		viewScroll: function() {
@@ -16854,37 +16872,65 @@
 			});
 		},
 	
-		showWeightDiv: function() {
+		showDiv: function() {
 			var weightButton = document.getElementById("WeightFrame");
 			weightButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementById("viewDiv");
-				e.target = innerOrbitDisplay.style.visibility = "visible";
+				innerOrbitDisplay.style.visibility = "visible";
 				this.displayWeight();
 			}.bind(this));
-		// },
 			var timeButton = document.getElementById("TimeFrame");
 			timeButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementById("viewDiv");
-				e.target = innerOrbitDisplay.style.visibility = "visible";
+				innerOrbitDisplay.style.visibility = "visible";
 				this.displayTravelTime();
 			}.bind(this));
 			var typeButton = document.getElementById("TypeFrame");
 			typeButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementById("viewDiv");
-				e.target = innerOrbitDisplay.style.visibility = "visible";
+				console.log(innerOrbitDisplay.style);
+				innerOrbitDisplay.style.visibility = "visible";
+				// console.log(e.target);
 				this.planetByType();
+			}.bind(this));
+			var planetButton = document.getElementById("Saturn");
+			// console.log(planetButton.id);
+			planetButton.addEventListener("click", function(e) {
+				var innerOrbitDisplay = document.getElementById("huh");
+	
+				innerOrbitDisplay.style.cssText = "visibility: visible";
+				console.log(innerOrbitDisplay.style);
+				// innerOrbitDisplay.setAttribute('style', 'visibility:visible;');
+				// innerOrbitDisplay.style.visibility = "visible";
+					// console.log(e.target);
+				// console.log(this.solarSystem.findPlanetByName(planetButton.id));
+				// this.solarSystem.findPlanetByName(planetButton.id);
+				//this.displayPlanetInfo(planetButton.id);
 			}.bind(this));
 		},
 	
 		closeDiv: function() {
 			document.getElementById('main-frame').onclick = function(e) {
-			if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2]) {
-				console.log(document.getElementById("viewDiv").children);
+			if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2] && e.target != document.getElementById("viewDiv").children[2] && e.target != document.getElementById("huh")) {
 	    		var closeDiv = document.getElementById("viewDiv");
 					e.target = closeDiv.style.visibility = "hidden";
+				// var closePlanetDiv = document.getElementById("huh");
+				// 	e.target = closePlanetDiv.style.visibility = "hidden";
 	  		}
 	  	};
 		},
+	
+		displayPlanetInfo: function(planetname){
+			var planetInfo = this.solarSystem.findPlanetByName(planetname);
+			// console.log(planetInfo);
+		},
+		// closePlanetDiv: function(){
+		// 	document.getElementById('main-frame').onclick = function(e) {
+		// 	if() {
+		//
+		// 	}
+		// };
+		// }
 	
 		displayTravelTime: function(){
 			var travelBox = document.getElementById('viewDiv');
@@ -16931,9 +16977,7 @@
 	
 			var displayTravel = document.createElement("h1");
 			displayTravel.setAttribute("id", "displayTravelTime");
-			// var travelBox = document.getElementById('viewDiv');
 			travelBox.appendChild(displayTravel);
-			console.log(displayTravel);
 	
 		},
 		makeDisplayTravelTimeDropDowns: function() {
@@ -17011,9 +17055,6 @@
 	
 			var travelTimeDays = this.solarSystem.travelTime(thisObject1, thisObject2, object3).toFixed();
 	
-			// var displayTravel = document.getElementById('FinalTravelTime');
-	
-	
 			if(object3 === 'voyagerSpaceProbe'){
 				displayTravel.innerText = "It would take you: " + travelTimeDays + " days to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
 			} else if(object3 === 'starshipEnterprise')  {
@@ -17063,7 +17104,18 @@
 						gtPlanet.appendChild(terrPlanet);
 					}
 			}.bind(this);
-		},
+		}
+		// showPlanetDiv: function(){
+		// 	var planetButton = document.getElementById("Saturn");
+		// 	console.log(planetButton.id);
+		// 	planetButton.addEventListener("click", function(e) {
+		// 		var planetDisplay = document.getElementById("planetDiv");
+		// 		e.target = planetDisplay.style.visibility = "visible";
+		// 		console.log(this.solarSystem.findPlanetByName(planetButton.id));
+		// 		this.solarSystem.findPlanetByName(planetButton.id);
+		// 	}.bind(this));
+		// }
+	
 	
 		// planetByThing: function(){
 		// 	var thingContainer = document.getElementById("thingContainer");
@@ -17113,7 +17165,7 @@
 	
 	FunFactsView.prototype = {
 		render: function() {
-			this.randomFact();
+			// this.randomFact();
 			// this.showFunFactDiv();
 			// this.closeFunFactDiv();
 		},
