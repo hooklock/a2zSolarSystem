@@ -37,6 +37,12 @@ a {
 	padding: 10px;
 }
 
+.viewClass p {
+	padding-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 /*TOP NAVIGATION MENU*/
 nav {
 	color: rgb(175, 238, 238);
