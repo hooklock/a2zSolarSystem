@@ -85,7 +85,7 @@ ul {
 }
 
 /*MAIN VIEW FRAME*/
-#viewDiv {
+.viewClass {
 	visibility: hidden;
 	position: fixed;
 	width: 65em;
