@@ -67,7 +67,7 @@ SolarSystemView.prototype = {
 			this.listPlanets(e.target.value);
 		}.bind(this);
 	},
-	// XXX: Could use some refactoring as this only deals with the opening of one element.
+
 	showInnerOrbitContainer: function() {
 		var showButton = document.getElementsByName("orbit-inner-display")[0];
 		showButton.addEventListener("click", function(e) {
@@ -77,7 +77,7 @@ SolarSystemView.prototype = {
 			e.target = innerOrbitClose.style.visibility = "visible";
 		});
 	},
-	// XXX: Could use some refactoring as this only deals with the closing of one element.
+
 	closeInnerOrbitContainer: function() {
 		var close = document.getElementById("orbit-inner-close");
 		console.log(close);
@@ -93,8 +93,6 @@ SolarSystemView.prototype = {
 	showTestDiv: function() {
 		var weightButton = document.getElementById("TestFrame");
 		weightButton.addEventListener("click", function(e) {
-			console.log("Clicky");
-			console.log(weightButton);
 			var innerOrbitDisplay = document.getElementById("viewDiv");
 			e.target = innerOrbitDisplay.style.visibility = "visible";
 		});
@@ -108,11 +106,11 @@ SolarSystemView.prototype = {
 	},
 	closeTestDiv: function() {
 		document.getElementById('main-frame').onclick = function(e) {
-    		if(e.target != document.getElementById("viewDiv")) {
-        		var closeDiv = document.getElementById("viewDiv");
-				e.target = closeDiv.style.visibility = "hidden";
-    		}
-    	};
+  		if(e.target != document.getElementById("viewDiv")) {
+    		var closeDiv = document.getElementById("viewDiv");
+			e.target = closeDiv.style.visibility = "hidden";
+  		}
+  	};
 	},
 
 	displayTravelTime: function(){
