@@ -1,3 +1,19 @@
+#gtPlanets{
+	margin-top: 150px;
+}
+#gtPlanets li{
+	color: white;
+	display: block;
+	padding: 10px;
+
+	margin: 10px;
+	border: 2px;
+	/*background-color: rgba(83,163,178,0.2);*/
+	/*border-color: rgba(175, 238, 238,0.3);*/
+	border-style: none;
+	/*border-radius: 0% 25% ;*/
+}
+
 #testbox {
 	z-index: 1000000;
 }
