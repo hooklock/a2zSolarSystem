@@ -1,40 +1,3 @@
-#gtPlanets{
-	margin-top: 150px;
-}
-#gtPlanets li{
-	color: white;
-	display: block;
-	padding: 10px;
-
-	margin: 10px;
-	border: 2px;
-	/*background-color: rgba(83,163,178,0.2);*/
-	/*border-color: rgba(175, 238, 238,0.3);*/
-	border-style: none;
-	/*border-radius: 0% 25% ;*/
-}
-
-#testbox {
-	z-index: 1000000;
-}
-
-#planetList{
-	margin-top: 80px;
-}
-
-#testbox li {
-	color: white;
-	display: block;
-	padding: 10px;
-
-	margin: 10px;
-	border: 2px;
-	/*background-color: rgba(83,163,178,0.2);*/
-	/*border-color: rgba(175, 238, 238,0.3);*/
-	border-style: none;
-	/*border-radius: 0% 25% ;*/
-}
-
 /*MAIN*/
 html body{
 	font-family: 'Changa', sans-serif;
@@ -44,44 +7,61 @@ html body{
 	overflow: hidden;
 }
 
-/*TOP NAVIGATION MENU*/
 ul {
+	display: inline-block;
+	list-style: none;
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+}
+
+a {
+	color: rgb(175, 238, 238);
+}
+
+/*TOP NAVIGATION MENU*/
+nav {
 	color: rgb(175, 238, 238);
 	text-align: center;
 	position: fixed;
-	left: -5em;
+	left: 1em;
 	top: 3em;
-	width: 800px;
+	width: 45em;
 	margin-top: -2.5em;
 	z-index: 20;
+	background-color: rgba(83,163,178,0.2);
+	border-color: rgba(175, 238, 238,0.3);
+	border-style: solid;
+	border-radius: 5px 30px ;
 }
 
-.top-nav-menu li {
+nav ul {
+	margin: 5px;
+	padding-left: 0px;
+}
+
+li {
 	display: inline-block;
 	padding: 10px;
 	margin: 10px;
 	border: 2px;
-	background-color: rgba(83,163,178,0.2);
-	border-color: rgba(175, 238, 238,0.3);
-	border-style: solid;
-	border-radius: 0% 25% ;
 }
 
-.top-nav-menu li:nth-child(1) {
+.top-nav-menu li {
 	display: inline-block;
 	font-weight: bold;
-	font-size: 30px;
-	padding: 10px;
+	font-size: 18px;
 	margin: 5px;
 	border: 2px;
-	background-color: rgba(83,163,178,0.2);
-	border-color: rgba(175, 238, 238,0.3);
 	border-style: solid;
+	border-radius: 15px;
 }
 
-.top-nav-menu li:nth-child(1):first-line {
-	font-size: 24px;
-	background-color: rgba(175, 238, 238,0.3);
+.top-nav-menu li:hover {
+	background-color: rgba(83,163,178,0.8);
+	border-color: rgba(175, 238, 238,0.8);
 }
 
 /*MAIN VIEW FRAME*/
