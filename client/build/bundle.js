@@ -17028,7 +17028,7 @@
 	
 	FunFactsView.prototype = {
 		render: function() {
-			this.randomFact();
+			// this.randomFact();
 		},
 	    randomFact: function(){
 	        var factBox = document.getElementById('RandomFact');
