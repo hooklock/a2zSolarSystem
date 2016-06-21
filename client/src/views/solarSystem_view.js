@@ -10,14 +10,8 @@ SolarSystemView.prototype = {
 		// this.displayTravelTime();
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
-<<<<<<< HEAD
-		this.showTestDiv();
-
-		this.closeTestDiv();
-=======
 		this.showWeightDiv();
 		this.closeDiv();
->>>>>>> 556063ac2efbd340863afe2330e1e3e063590f7a
 		this.viewScroll();
 		// this.listPlanet();
 		// this.displayWeight();
@@ -77,7 +71,7 @@ SolarSystemView.prototype = {
 			this.listPlanets(e.target.value);
 		}.bind(this);
 	},
-	// XXX: Could use some refactoring as this only deals with the opening of one element.
+
 	showInnerOrbitContainer: function() {
 		var showButton = document.getElementsByName("orbit-inner-display")[0];
 		showButton.addEventListener("click", function(e) {
@@ -87,7 +81,7 @@ SolarSystemView.prototype = {
 			e.target = innerOrbitClose.style.visibility = "visible";
 		});
 	},
-	// XXX: Could use some refactoring as this only deals with the closing of one element.
+
 	closeInnerOrbitContainer: function() {
 		var close = document.getElementById("orbit-inner-close");
 		close.addEventListener("click", function(e) {
@@ -119,14 +113,15 @@ SolarSystemView.prototype = {
 			this.planetByType();
 		}.bind(this));
 	},
+
 	closeDiv: function() {
 		document.getElementById('main-frame').onclick = function(e) {
-			if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2]) {
-				console.log(document.getElementById("viewDiv").children);
-        		var closeDiv = document.getElementById("viewDiv");
+		if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2]) {
+			console.log(document.getElementById("viewDiv").children);
+    		var closeDiv = document.getElementById("viewDiv");
 				e.target = closeDiv.style.visibility = "hidden";
-    		}
-    	};
+  		}
+  	};
 	},
 
 	displayTravelTime: function(){
