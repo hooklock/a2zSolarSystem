@@ -27,23 +27,34 @@ SolarSystem.prototype = {
             distance = 0;
         }
 
+        console.log("distance", distance);
+        console.log("mode", mode);
+
         switch(mode) {
             case 'bike':
-                velocity = (40/3600);
+                velocity = (40);
                 break;
             // car travelling at 60mph
             case 'car':
-                velocity = (95.5606/3600);
+                velocity = (95.5606);
                 break;
             case 'starshipEnterprise':
-                velocity = 300000000;
+                velocity = (300000*3600);
                 break;
             case 'voyagerSpaceProbe':
-                velocity = (62140/3600);
+                velocity = (62140);
                 break;
         }
 
-        timeTo = ((distance/velocity)/60/60/24/365);
+        console.log("Velocity", velocity);
+
+        if(mode === 'starshipEnterprise'){
+            timeTo = ((distance/velocity));
+        } else if(mode ===  'voyagerSpaceProbe') {
+            timeTo = ((distance/velocity)/24);
+        } else {
+            timeTo = ((distance/velocity)/24/365);
+        }
         return timeTo;
     },
     findPlanetByName: function(planetName){
