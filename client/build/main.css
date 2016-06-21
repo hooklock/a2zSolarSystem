@@ -231,7 +231,7 @@ ul {
 	z-index: 15;
 }
 
-#testDiv {
+#viewDiv {
 	visibility: hidden;
 	position: fixed;
 	width: 500px;

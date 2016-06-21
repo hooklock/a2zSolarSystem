@@ -16856,21 +16856,21 @@
 			weightButton.addEventListener("click", function(e) {
 				console.log("Clicky");
 				console.log(weightButton);
-				var innerOrbitDisplay = document.getElementById("testDiv");
+				var innerOrbitDisplay = document.getElementById("viewDiv");
 				e.target = innerOrbitDisplay.style.visibility = "visible";
 			});
 			// var showButton2 = document.getElementById("TestFrame");
 			// showButton2.addEventListener("click", function(e) {
 			// 	console.log("Clicky");
 			// 	console.log(showButton2);
-			// 	var innerOrbitDisplay = document.getElementById("testDiv");
+			// 	var innerOrbitDisplay = document.getElementById("viewDiv");
 			// 	e.target = innerOrbitDisplay.style.visibility = "visible";
 			// });
 		},
 		closeTestDiv: function() {
 			document.getElementById('main-frame').onclick = function(e) {
-	    		if(e.target != document.getElementById("testDiv")) {
-	        		var closeDiv = document.getElementById("testDiv");
+	    		if(e.target != document.getElementById("viewDiv")) {
+	        		var closeDiv = document.getElementById("viewDiv");
 					e.target = closeDiv.style.visibility = "hidden";
 	    		}
 	    	};
