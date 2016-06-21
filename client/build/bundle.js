@@ -16773,6 +16773,7 @@
 			this.showInnerOrbitContainer();
 			this.closeInnerOrbitContainer();
 			this.showTestDiv();
+	
 			this.closeTestDiv();
 			this.viewScroll();
 			// this.listPlanet();
