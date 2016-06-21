@@ -10,7 +10,7 @@ SolarSystemView.prototype = {
 		// this.displayTravelTime();
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
-		this.showTestDiv()
+		this.showTestDiv();
 		this.viewScroll();
 		// this.listPlanet();
 		this.displayWeight();
