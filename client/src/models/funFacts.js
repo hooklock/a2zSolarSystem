@@ -1,5 +1,5 @@
-var FunFacts = function(params){
-    this.facts = params.facts;
+var FunFacts = function(){
+    this.facts = [];
 };
 
 FunFacts.prototype = {
