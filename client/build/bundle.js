@@ -16841,7 +16841,14 @@
 						gtPlanet.appendChild(terrPlanet);
 					}
 			}.bind(this);
-		}
+		},
+	
+		// planetByThing: function(){
+		// 	var thingContainer = document.getElementById("thingContainer");
+		// 	var thingForm = document.createElement("form");
+		// 	var thingSelect = document.createElement("select");
+		//
+		// }
 	
 	};
 	
