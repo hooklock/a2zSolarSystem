@@ -16782,20 +16782,11 @@
 	
 	SolarSystemView.prototype = {
 		render: function() {
-			// this.displayWeight();
-			// this.displayTravelTime();
 			this.showInnerOrbitContainer();
 			this.closeInnerOrbitContainer();
 			this.showDiv();
 			this.closeDiv();
 			this.viewScroll();
-			// this.listPlanet();
-			// this.displayWeight();
-			// this.planetByType();
-	
-			// this.showPlanetDiv();
-			// this.closePlanetDiv();
-	
 		},
 	
 		viewScroll: function() {
@@ -16811,6 +16802,11 @@
 			}
 			document.onmousemove = handleMouse;
 		},
+	
+		// animationMouseFollow: function() {
+		// 	x = e.clientX;
+		// 	y = e.clientY;
+		// },
 	
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
@@ -17241,24 +17237,6 @@
 			}.bind(this);
 		},
 	};
-		// showPlanetDiv: function(){
-		// 	var planetButton = document.getElementById("Saturn");
-		// 	console.log(planetButton.id);
-		// 	planetButton.addEventListener("click", function(e) {
-		// 		var planetDisplay = document.getElementById("planetDiv");
-		// 		e.target = planetDisplay.style.visibility = "visible";
-		// 		console.log(this.solarSystem.findPlanetByName(planetButton.id));
-		// 		this.solarSystem.findPlanetByName(planetButton.id);
-		// 	}.bind(this));
-		// }
-	
-	
-		// planetByThing: function(){
-		// 	var thingContainer = document.getElementById("thingContainer");
-		// 	var thingForm = document.createElement("form");
-		// 	var thingSelect = document.createElement("select");
-		//
-		// }
 	
 	module.exports = SolarSystemView;
 
