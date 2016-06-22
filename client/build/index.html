@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Solar System</title>
+		<link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="bundle.js" charset="utf-8"></script>
+	</head>
+	<body>
+			<nav class="top-nav-menu">
+				<ul>
+					<a href="http://www.bbc.co.uk/education"><li class="bbc-logo"><img src="./img/bbc-logo.png" alt="BBC"></li></a>
+
+					<!-- <li id="TravelTime">Travel Time
+						<h1 id="FinalTravelTime"></h1>
+					</li> -->
+					<a href="#" id="FactFrame"><li>RandomFact</li></a>
+
+					<a href="#" id="TimeFrame"><li>How Long To....</li></a>
+
+					<a href="#" id="WeightFrame"><li>Check Your Weight</li></a>
+
+					<a href="#" id="TypeFrame"><li>Types of Planet</li></a>
+
+					<!-- <li id="typeContainer">
+						<ul id="gtPlanets"></ul>
+					</li> -->
+					<!-- <li id="thingContainer">
+						<ul id="thingPlanet"></ul>
+					</li> -->
+				</ul>
+			</nav>
+			<div id="viewDiv" class="viewClass">
+				<!-- <img id="orbit-inner-close" class="close-icon" src="./img/frame-close.png"> -->
+				<!-- <a href="#" id="orbit-inner-close2"></a> -->
+
+			</div>
+
+			<!-- <div id="huh" class="viewClass">
+				<h1>HUH</h1>
+			</div> -->
+			<div id="planetDiv" class="viewClass">
+
+			</div>
+		<div id="main-frame">
+		<!-- Solar System View Div -->
+		<div scroll="no" id="viewport">
+			<div class="parallax">
+				<div class="parallax__layer parallax__layer--back">
+					<img class="background" src="./img/solarSystem.jpg">
+					<img class="clouds" src="./img/clouds.gif">
+					<img class="kuiper-inner" src="./img/kuiper-inner.png">
+				</div>
+				<div class=" parallax__layer parallax__layer--base">
+					<img class="sun" src="./img/sun.png">
+					<img class="orbit-outer" src="./img/orbit-outer.png">
+					<img class="asteroid-belt" src="./img/asteroid-belt.png">
+					<img class="orbit-inner" src="./img/orbit-inner.png">
+					<img class="kuiper-outer" src="./img/kuiper-outer.png">
+					<div id="contentpanel" class="frame">
+						<img class="orbit-inner-planet-img" src="./img/inner-window.png">
+						<a href="#" id="orbit-inner-close"></a>
+						<div class="orbit-inner-div outer-planet-div parallax__layer--base" name="orbit-inner-display"></div>
+					</div>
+					<div>
+						<div id="Jupiter"class="outer-planet-div jupiter-div"></div>
+						<div id="Saturn" class="outer-planet-div saturn-div"></div>
+						<div id="Uranus"class="outer-planet-div uranus-div"></div>
+						<div id="Neptune"class="outer-planet-div neptune-div"></div>
+					</div>
+					<!-- <div id="PlanetWeightB" class="frame"> -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Solar System View Div -->
+	</body>
+</html>
