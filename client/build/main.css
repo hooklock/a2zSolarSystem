@@ -192,6 +192,8 @@ h3 {
 	z-index: 7;
 }
 
+
+/*OUTER PLANETS*/
 .kuiper-outer {
 	position: absolute;
 	top: 100px;
@@ -240,7 +242,7 @@ h3 {
 	width: 95px;
 }
 
-/*PANEL VIEWPORT*/
+/*INNER PLANETS*/
 .orbit-inner-div {
 	position: absolute;
   border: 1px solid rgba(130,236,255,0.6);
