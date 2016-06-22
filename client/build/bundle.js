@@ -16792,10 +16792,8 @@
 			// this.listPlanet();
 			// this.displayWeight();
 			// this.planetByType();
-	
 			// this.showPlanetDiv();
 			// this.closePlanetDiv();
-	
 		},
 	
 		viewScroll: function() {
@@ -17019,7 +17017,7 @@
 			massBox.innerText = "Mass: " + planetMass;
 			var orbitalPeriodBox = document.createElement("p");
 			orbitalPeriodBox.setAttribute("class", "planet-p");
-			orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
+			orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Days to orbit the Sun.";
 			var diameterBox = document.createElement("p");
 			diameterBox.setAttribute("class", "planet-p");
 			diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
