@@ -16786,17 +16786,33 @@
 			this.closeInnerOrbitContainer();
 			this.showDiv();
 			this.closeDiv();
-			// this.viewScroll();
-			this.followMouse();
+			this.viewScroll();
+			// this.followMouse();
 		},
 	
-		// viewScroll: function() {
-		// 	var speed = 5;
+		viewScroll: function() {
+			var speed = 5;
+			var x, y;
+			function handleMouse(e) {
+			  if (x && y) {
+					document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
+					document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
+					document.getElementsByClassName("cursor")[0].style.top = e.clientY + "px";
+					document.getElementsByClassName("cursor")[0].style.left = e.clientX + "px";
+			  }
+			  x = e.clientX;
+			  y = e.clientY;
+			}
+			document.onmousemove = handleMouse;
+		},
+	
+		// followMouse: function() {
+		// 	var speed = 3;
 		// 	var x, y;
 		// 	function handleMouse(e) {
 		// 	  if (x && y) {
-		// 			document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
-		// 			document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
+		// 			document.getElementsByClassName("cursor")[0].style.top = e.clientY + "px";
+		// 			document.getElementsByClassName("cursor")[0].style.left = e.clientX + "px";
 		// 			// document.getElementById("cursor").scrollTop += speed*(e.clientY - y);
 		// 			// document.getElementById("cursor").scrollLeft += speed*(e.clientX - x);
 		// 	  }
@@ -16805,22 +16821,6 @@
 		// 	}
 		// 	document.onmousemove = handleMouse;
 		// },
-	
-		followMouse: function() {
-			var speed = 3;
-			var x, y;
-			function handleMouse(e) {
-			  if (x && y) {
-					document.getElementsByClassName("cursor")[0].style.top = speed*(e.clientY - y) + "px";
-					document.getElementsByClassName("cursor")[0].style.left = speed*(e.clientX - x) + "px";
-					// document.getElementById("cursor").scrollTop += speed*(e.clientY - y);
-					// document.getElementById("cursor").scrollLeft += speed*(e.clientX - x);
-			  }
-			  x = e.clientX;
-			  y = e.clientY;
-			}
-			document.onmousemove = handleMouse;
-		},
 	
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));

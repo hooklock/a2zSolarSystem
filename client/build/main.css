@@ -73,16 +73,13 @@ li {
 	position: absolute;
 	z-index: 50;
 	opacity: 0.60;
-	height: 100px;
-	width: 100px;
-	background-color: yellow;
 }
 
-/*#cursor img {
+.cursor img {
 	position: relative;
 	height: 150px;
 	width: auto;
-}*/
+}
 
 /*MAIN VIEW FRAME*/
 .viewClass {
