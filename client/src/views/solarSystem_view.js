@@ -10,12 +10,16 @@ SolarSystemView.prototype = {
 		// this.displayTravelTime();
 		this.showInnerOrbitContainer();
 		this.closeInnerOrbitContainer();
-		this.showWeightDiv();
+		this.showDiv();
 		this.closeDiv();
 		this.viewScroll();
 		// this.listPlanet();
 		// this.displayWeight();
-		this.planetByType();
+		// this.planetByType();
+
+		// this.showPlanetDiv();
+		// this.closePlanetDiv();
+
 	},
 
 	viewScroll: function() {
@@ -60,10 +64,10 @@ SolarSystemView.prototype = {
 		weightForm.appendChild(weightInput);
 		container.appendChild(weightForm);
 		var planetlist = document.createElement('p');
-		planetlist.setAttribute("id", "planetList")
+		planetlist.setAttribute("id", "planetList");
 		container.appendChild(planetlist);
 		weightForm.onkeyup = function(e){
-			var planetBox = document.getElementById('planetList')
+			var planetBox = document.getElementById('planetList');
 			while (planetBox.hasChildNodes()) {
 			planetBox.removeChild(planetBox.firstChild);
 			}
@@ -92,36 +96,139 @@ SolarSystemView.prototype = {
 		});
 	},
 
-	showWeightDiv: function() {
+	showDiv: function() {
 		var weightButton = document.getElementById("WeightFrame");
 		weightButton.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementById("viewDiv");
-			e.target = innerOrbitDisplay.style.visibility = "visible";
+			innerOrbitDisplay.style.visibility = "visible";
 			this.displayWeight();
 		}.bind(this));
-	// },
 		var timeButton = document.getElementById("TimeFrame");
 		timeButton.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementById("viewDiv");
-			e.target = innerOrbitDisplay.style.visibility = "visible";
+			innerOrbitDisplay.style.visibility = "visible";
 			this.displayTravelTime();
 		}.bind(this));
 		var typeButton = document.getElementById("TypeFrame");
 		typeButton.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementById("viewDiv");
-			e.target = innerOrbitDisplay.style.visibility = "visible";
+			innerOrbitDisplay.style.visibility = "visible";
 			this.planetByType();
+		}.bind(this));
+
+		// planet buttons here
+		// var mercuryButton = document.getElementById("Mercury");
+		// mercuryButton.addEventListener("click", function(e) {
+		// 	var planetDisplay = document.getElementById("planetDiv");
+		// 	planetDisplay.style.visibility = "visible";
+		// 	this.displayPlanetInfo(mercuryButton.id);
+		// }.bind(this));
+		// var venusButton = document.getElementById("Venus");
+		// venusButton.addEventListener("click", function(e) {
+		// 	var planetDisplay = document.getElementById("planetDiv");
+		// 	planetDisplay.style.visibility = "visible";
+		// 	this.displayPlanetInfo(venusButton.id);
+		// }.bind(this));
+		// var earthButton = document.getElementById("Earth");
+		// earthButton.addEventListener("click", function(e) {
+		// 	var planetDisplay = document.getElementById("planetDiv");
+		// 	planetDisplay.style.visibility = "visible";
+		// 	this.displayPlanetInfo(earthButton.id);
+		// }.bind(this));
+		// var marsButton = document.getElementById("Mars");
+		// marsButton.addEventListener("click", function(e) {
+		// 	var planetDisplay = document.getElementById("planetDiv");
+		// 	planetDisplay.style.visibility = "visible";
+		// 	this.displayPlanetInfo(marsButton.id);
+		// }.bind(this));
+		var jupiterButton = document.getElementById("Jupiter");
+		jupiterButton.addEventListener("click", function(e) {
+			var planetDisplay = document.getElementById("planetDiv");
+			planetDisplay.style.visibility = "visible";
+			this.displayPlanetInfo(jupiterButton.id);
+		}.bind(this));
+		var saturnButton = document.getElementById("Saturn");
+		saturnButton.addEventListener("click", function(e) {
+			var planetDisplay = document.getElementById("planetDiv");
+			planetDisplay.style.visibility = "visible";
+			this.displayPlanetInfo(saturnButton.id);
+		}.bind(this));
+		var uranusButton = document.getElementById("Uranus");
+		uranusButton.addEventListener("click", function(e) {
+			var planetDisplay = document.getElementById("planetDiv");
+			planetDisplay.style.visibility = "visible";
+			this.displayPlanetInfo(uranusButton.id);
+		}.bind(this));
+		var neptuneButton = document.getElementById("Neptune");
+		neptuneButton.addEventListener("click", function(e) {
+			var planetDisplay = document.getElementById("planetDiv");
+			planetDisplay.style.visibility = "visible";
+			this.displayPlanetInfo(neptuneButton.id);
 		}.bind(this));
 	},
 
 	closeDiv: function() {
-		document.getElementById('main-frame').onclick = function(e) {
-		if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2]) {
-			console.log(document.getElementById("viewDiv").children);
-    		var closeDiv = document.getElementById("viewDiv");
-				e.target = closeDiv.style.visibility = "hidden";
-  		}
-  	};
+ 		document.getElementById('main-frame').onclick = function(e) {
+	  		var closeDiv = document.getElementById("viewDiv");
+			if(closeDiv.style.visibility === "visible"){
+	 			closeDiv.style.visibility = "hidden";
+		}
+ 		};
+		var closeDiv2 = document.getElementById("planetDiv");
+			closeDiv2.onclick = function(e){
+			if(closeDiv2.style.visibility === "visible") {
+					closeDiv2.style.visibility = "hidden";
+				}
+		};
+	},
+
+	displayPlanetInfo: function(planetname){
+		var planetInfo = this.solarSystem.findPlanetByName(planetname);
+		var planetDiv = document.getElementById("planetDiv");
+		while (planetDiv.hasChildNodes()) {
+		planetDiv.removeChild(planetDiv.firstChild);
+		}
+		console.log(planetInfo);
+		var planetName  = planetInfo.name;
+		var planetSunDistance  = planetInfo.sunDistance;
+		var planetEarthDistance  = planetInfo.earthDistance;
+		var planetGravity  = planetInfo.gravity;
+		var planetMass  = planetInfo.mass;
+		var planetOrbitalPeriod  = planetInfo.orbitalPeriod;
+		var planetDiameter  = planetInfo.diameter;
+		var planetDayLength  = planetInfo.dayLength;
+		var planetAxisAngle  = planetInfo.axisAngle;
+		// var planetMoons  = planetInfo.moons;
+
+		var nameBox = document.createElement("p");
+		nameBox.innerText = "Planet Name: " + planetName;
+		var sunDistanceBox = document.createElement("p");
+		sunDistanceBox.innerText = "Distance from Sun: " + planetSunDistance + "Km";
+		var earthDistanceBox = document.createElement("p");
+		earthDistanceBox.innerText = "Distance from Earth: " + planetEarthDistance + "Km";
+		var gravityBox = document.createElement("p");
+		gravityBox.innerText = "Gravity: " + planetGravity + "m/s/s";
+		var massBox = document.createElement("p");
+		massBox.innerText = "Mass: " + planetMass;
+		var orbitalPeriodBox = document.createElement("p");
+		orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
+		var diameterBox = document.createElement("p");
+		diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
+		var dayLengthBox = document.createElement("p");
+		dayLengthBox.innerText = "Length of day: " + planetDayLength;
+		var axisAngleBox = document.createElement("p");
+		axisAngleBox.innerText = "Angle of axis: " + planetAxisAngle + " degrees.";
+
+		planetDiv.appendChild(nameBox);
+		planetDiv.appendChild(sunDistanceBox);
+		planetDiv.appendChild(earthDistanceBox);
+		planetDiv.appendChild(gravityBox);
+		planetDiv.appendChild(massBox);
+		planetDiv.appendChild(orbitalPeriodBox);
+		planetDiv.appendChild(diameterBox);
+		planetDiv.appendChild(dayLengthBox);
+		planetDiv.appendChild(axisAngleBox);
+
 	},
 
 	displayTravelTime: function(){
@@ -129,6 +236,11 @@ SolarSystemView.prototype = {
 		while (travelBox.hasChildNodes()) {
 		travelBox.removeChild(travelBox.firstChild);
 		}
+		// var innerOrbitClose = document.createElement("img");
+		// innerOrbitClose.setAttribute("src", "./img/frame-close.png");
+		// innerOrbitClose.setAttribute("class", "close-icon");
+		// innerOrbitClose.setAttribute("id", "orbit-inner-close");
+
 		// var travelBox = document.getElementById('TravelTime');
 		var travelForm = document.createElement('form');
 		travelForm.setAttribute('id', 'travelform');
@@ -162,6 +274,7 @@ SolarSystemView.prototype = {
 		travelForm.appendChild(planet3Label);
 		travelForm.appendChild(submitButton);
 		travelBox.appendChild(travelForm);
+		// travelForm.appendChild(innerOrbitClose);
 
 
 
@@ -169,9 +282,7 @@ SolarSystemView.prototype = {
 
 		var displayTravel = document.createElement("h1");
 		displayTravel.setAttribute("id", "displayTravelTime");
-		// var travelBox = document.getElementById('viewDiv');
 		travelBox.appendChild(displayTravel);
-		console.log(displayTravel);
 
 	},
 	makeDisplayTravelTimeDropDowns: function() {
@@ -202,7 +313,7 @@ SolarSystemView.prototype = {
 		mode1.text = "Bike";
 		mode2.text = "Car";
 		mode3.text = "Voyager Probe";
-		mode4.text = "starship Enterprise";
+		mode4.text = "Starship Enterprise";
 
 		mode1.setAttribute( 'class', 'travelModeClass' );
 		mode2.setAttribute( 'class', 'travelModeClass' );
@@ -248,9 +359,6 @@ SolarSystemView.prototype = {
 		console.log(object3);
 
 		var travelTimeDays = this.solarSystem.travelTime(thisObject1, thisObject2, object3).toFixed();
-
-		// var displayTravel = document.getElementById('FinalTravelTime');
-
 
 		if(object3 === 'voyagerSpaceProbe'){
 			displayTravel.innerText = "It would take you: " + travelTimeDays + " days to travel between " + thisObject1.name + " and " + thisObject2.name + " using a " + object3 + ".";
@@ -301,7 +409,18 @@ SolarSystemView.prototype = {
 					gtPlanet.appendChild(terrPlanet);
 				}
 		}.bind(this);
-	},
+	}
+	// showPlanetDiv: function(){
+	// 	var planetButton = document.getElementById("Saturn");
+	// 	console.log(planetButton.id);
+	// 	planetButton.addEventListener("click", function(e) {
+	// 		var planetDisplay = document.getElementById("planetDiv");
+	// 		e.target = planetDisplay.style.visibility = "visible";
+	// 		console.log(this.solarSystem.findPlanetByName(planetButton.id));
+	// 		this.solarSystem.findPlanetByName(planetButton.id);
+	// 	}.bind(this));
+	// }
+
 
 	// planetByThing: function(){
 	// 	var thingContainer = document.getElementById("thingContainer");

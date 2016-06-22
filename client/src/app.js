@@ -35,5 +35,19 @@ window.onload = function() {
 		funfactsview.render();
 	}
 
+	// var planetButton = document.getElementById("Saturn");
+	// // console.log(planetButton.id);
+	// planetButton.addEventListener("click", function(e) {
+	// 	var innerOrbitDisplay = document.getElementById("huh");
+	// 	 innerOrbitDisplay.style.visibility = "visible";
+	// 	console.log(innerOrbitDisplay.style);
+	// 	// innerOrbitDisplay.style.setAttribute('cssText', 'visibility:visible;');
+	// 	// innerOrbitDisplay.style.visibility = "visible";
+	// 		// console.log(e.target);
+	// 	// console.log(this.solarSystem.findPlanetByName(planetButton.id));
+	// 	// this.solarSystem.findPlanetByName(planetButton.id);
+	// 	//this.displayPlanetInfo(planetButton.id);
+	// });
+
 
 };

@@ -70,7 +70,7 @@ li {
 
 /*MAIN VIEW FRAME*/
 .viewClass {
-	visibility: hidden;
+	/*visibility: hidden;*/
 	position: fixed;
 	width: 65em;
 	height: 32em;
@@ -83,6 +83,28 @@ li {
 	border-radius: 15px;
 }
 
+#viewDiv{
+	visibility: hidden;
+}
+
+#planetDiv{
+	visibility: hidden;
+}
+
+/*#viewDiv {
+	visibility: hidden;
+	position: fixed;
+	width: 65em;
+	height: 32em;
+	border: 3px solid rgba(175, 238, 238,0.3);
+	background-color: rgba(83,163,178,0.7);
+	color: white;
+	z-index: 40;
+	top: 7em;
+	left: 7em;
+	border-radius: 15px;
+}*/
+
 .close-icon {
 	background: transparent url('./img/frame-close.png') no-repeat 0 0;
 	position: absolute;
@@ -93,6 +115,7 @@ li {
   right: 5px;
 	z-index: 31;
 }
+
 
 /*BACKGROUND DISPLAY*/
 #viewport {
@@ -221,6 +244,16 @@ li {
 }
 
 #orbit-inner-close {
+  background: transparent url('./img/frame-close.png') no-repeat 0 0;
+	position: absolute;
+	visibility: hidden;
+  width: 18px;
+  height: 18px;
+  top: 704px;
+  left: 1619px;
+	z-index: 31;
+}
+#orbit-inner-close2 {
   background: transparent url('./img/frame-close.png') no-repeat 0 0;
 	position: absolute;
 	visibility: hidden;
