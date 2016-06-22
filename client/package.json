@@ -4,13 +4,17 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "test": "mocha src/models/specs",
     "start": "webpack -w"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
     "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
   }
 }
