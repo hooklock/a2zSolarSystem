@@ -577,19 +577,14 @@ SolarSystemView.prototype = {
 		object1 = select1.options[select1.selectedIndex].value;
 		object2 = select2.options[select2.selectedIndex].value;
 
-		// console.log(object1);
-		// console.log(object2);
-
-		// console.log(this.solarSystem);
-
 		var orderOfPlanets = this.solarSystem.orderThingsBy(object1, object2);
 
 		console.log(orderOfPlanets);
 
 		displayOrder.innerText = "In " + object2 + " order: " + orderOfPlanets[0].name + ", " + orderOfPlanets[1].name + ", " + orderOfPlanets[2].name + ", " + orderOfPlanets[3].name + ", " + orderOfPlanets[4].name + ", " + orderOfPlanets[5].name + ", " + orderOfPlanets[6].name + ", " + orderOfPlanets[7].name;
 
-	}
-};
+	},
+
 
 
 	// planetByThing: function(){

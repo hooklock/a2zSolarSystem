@@ -50,7 +50,7 @@
 	var SolarSystem = __webpack_require__(3);
 	var SolarSystems = __webpack_require__(6);
 	// var User = require("./models/user.js");
-	var SolarSystemView = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./views/solarSystem_view.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var SolarSystemView = __webpack_require__(7);
 	var PlanetView = __webpack_require__(8);
 	var FunFactsView = __webpack_require__(9);
 	var GetRequest = __webpack_require__(10);
@@ -16771,9 +16771,6 @@
 
 
 /***/ },
-<<<<<<< HEAD
-/* 7 */,
-=======
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -16913,6 +16910,13 @@
 				var innerOrbitDisplay = document.getElementById("viewDiv");
 				innerOrbitDisplay.style.visibility = "visible";
 				this.orderPlanetsBy();
+			}.bind(this));
+	
+			var largeButton = document.getElementById("largeFrame");
+			largeButton.addEventListener("click", function(e) {
+				var innerOrbitDisplay = document.getElementById("viewDiv");
+				innerOrbitDisplay.style.visibility = "visible";
+				this.planetByLargestThing();
 			}.bind(this));
 	
 			// planet buttons here
@@ -17349,19 +17353,14 @@
 			object1 = select1.options[select1.selectedIndex].value;
 			object2 = select2.options[select2.selectedIndex].value;
 	
-			// console.log(object1);
-			// console.log(object2);
-	
-			// console.log(this.solarSystem);
-	
 			var orderOfPlanets = this.solarSystem.orderThingsBy(object1, object2);
 	
 			console.log(orderOfPlanets);
 	
 			displayOrder.innerText = "In " + object2 + " order: " + orderOfPlanets[0].name + ", " + orderOfPlanets[1].name + ", " + orderOfPlanets[2].name + ", " + orderOfPlanets[3].name + ", " + orderOfPlanets[4].name + ", " + orderOfPlanets[5].name + ", " + orderOfPlanets[6].name + ", " + orderOfPlanets[7].name;
 	
-		}
-	};
+		},
+	
 	
 	
 		// planetByThing: function(){
@@ -17369,13 +17368,75 @@
 		// 	var thingForm = document.createElement("form");
 		// 	var thingSelect = document.createElement("select");
 		//
-		// }
+		//
+		planetByLargestThing: function() {
+		var thingBox = document.getElementById("viewDiv");
+		while (thingBox.hasChildNodes()) {
+		thingBox.removeChild(thingBox.firstChild);
+		}
+		var thingForm = document.createElement("form");
+		thingForm.setAttribute("id", "thing_form");
+		var thingLabel = document.createElement("label");
+		thingLabel.setAttribute("id", "thing_dropdown");
+		thingLabel.innerText = "Select your Thing!";
+		var thingSelect = document.createElement("select");
+		thingSelect.setAttribute("id", "thing_select");
+		var thingSubmit = document.createElement("input");
+		thingSubmit.setAttribute("type", "submit");
+		thingSubmit.setAttribute("value", "Click Here");
+	
+		thingForm.addEventListener("submit", this.getLargestThing.bind(this));
+	
+		thingLabel.appendChild(thingSelect);
+		thingForm.appendChild(thingLabel);
+		thingForm.appendChild(thingSubmit);
+		thingBox.appendChild(thingForm);
+	
+		this.makeThingDropDown();
+	
+		var displayThing = document.createElement("h3");
+		displayThing.setAttribute("id", "display_thing");
+		thingBox.appendChild(displayThing);
+	},
+	
+		makeThingDropDown: function(){
+			var keys = Object.keys(this.solarSystem.planets[0]);
+			for (var key in keys){
+				var choice = document.createElement("option");
+				var element = keys[key];
+				choice.text = element.toUpperCase();
+				choice.setAttribute("value", element);
+				var choiceSelect = document.getElementById("thing_select");
+				choiceSelect.appendChild(choice);
+				// console.log(keys[key]);
+			}
+		},
+	
+		getLargestThing: function(e){
+			e.preventDefault();
+	
+			var displayLargestThing = document.getElementById("display_thing");
+	
+			while(display_thing.hasChildNodes()){display_thing.removeChild(display_thing.firstChild);
+			}
+	
+			var select = document.getElementById("thing_select");
+	
+			object = select.options[select.selectedIndex].value;
+	
+			var result = this.solarSystem.findLargestThing(object);
+			console.log(result);
+	
+			displayLargestThing.innerText = result.name;
+	
+		}
+	
+	};
 	
 	module.exports = SolarSystemView;
 
 
 /***/ },
->>>>>>> 71a9f86d7f1c1b6da8a4b4019d325476730da5c6
 /* 8 */
 /***/ function(module, exports) {
 
