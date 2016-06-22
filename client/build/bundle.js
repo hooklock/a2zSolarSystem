@@ -16944,23 +16944,12 @@
 		},
 	
 		closeDiv: function() {
-		// 	document.getElementById('main-frame').onclick = function(e) {
-		// 	if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0] && e.target != document.getElementById("viewDiv").children[1] && e.target != document.getElementById("viewDiv").children[2] && e.target != document.getElementById("viewDiv").children[2]) {
-	    // 		var closeDiv = document.getElementById("viewDiv");
-		// 			e.target = closeDiv.style.visibility = "hidden";
-		// 		// var closePlanetDiv = document.getElementById("huh");
-		// 		// 	e.target = closePlanetDiv.style.visibility = "hidden";
-	 //  		}
-	 //  	};
 	 		document.getElementById('main-frame').onclick = function(e) {
 		  		var closeDiv = document.getElementById("viewDiv");
 				if(closeDiv.style.visibility === "visible"){
 		 			closeDiv.style.visibility = "hidden";
 			}
-	
-	
 	 		};
-	
 			var closeDiv2 = document.getElementById("planetDiv");
 				closeDiv2.onclick = function(e){
 				if(closeDiv2.style.visibility === "visible") {
@@ -17100,7 +17089,7 @@
 			mode1.text = "Bike";
 			mode2.text = "Car";
 			mode3.text = "Voyager Probe";
-			mode4.text = "starship Enterprise";
+			mode4.text = "Starship Enterprise";
 	
 			mode1.setAttribute( 'class', 'travelModeClass' );
 			mode2.setAttribute( 'class', 'travelModeClass' );
