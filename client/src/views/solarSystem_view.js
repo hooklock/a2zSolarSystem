@@ -80,9 +80,11 @@ SolarSystemView.prototype = {
 		var showButton = document.getElementsByName("orbit-inner-display")[0];
 		showButton.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+			var MercuryDiv = document.getElementsByClassName("Mercury-div")[0];
 			var innerOrbitClose = document.getElementById("orbit-inner-close");
 			e.target = innerOrbitDisplay.style.visibility = "visible";
 			e.target = innerOrbitClose.style.visibility = "visible";
+			e.target = MercuryDiv.style.visibility = "visible";
 		});
 	},
 
@@ -90,9 +92,11 @@ SolarSystemView.prototype = {
 		var close = document.getElementById("orbit-inner-close");
 		close.addEventListener("click", function(e) {
 			var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+			var MercuryDiv = document.getElementsByClassName("Mercury-div")[0];
 			var innerOrbitClose = document.getElementById("orbit-inner-close");
 			e.target = innerOrbitDisplay.style.visibility = "hidden";
 			e.target = innerOrbitClose.style.visibility = "hidden";
+			e.target = MercuryDiv.style.visibility = "hidden";
 		});
 	},
 
