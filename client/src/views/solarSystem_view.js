@@ -528,8 +528,9 @@ SolarSystemView.prototype = {
 			// console.log(keys[key]);
 			var element = keys[key];
 			// console.log(element);
+			// var element2 = element.toUpperCase
 
-		thing.text = element;
+		thing.text = element.toUpperCase();
 		thing.setAttribute( 'class', 'planetNameClass' );
 			// newObject = JSON.stringify(thing);
 		thing.setAttribute( 'value', element );
