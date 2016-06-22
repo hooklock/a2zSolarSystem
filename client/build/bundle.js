@@ -16909,30 +16909,30 @@
 			}.bind(this));
 	
 			// planet buttons here
-			// var mercuryButton = document.getElementById("Mercury");
-			// mercuryButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(mercuryButton.id);
-			// }.bind(this));
-			// var venusButton = document.getElementById("Venus");
-			// venusButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(venusButton.id);
-			// }.bind(this));
-			// var earthButton = document.getElementById("Earth");
-			// earthButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(earthButton.id);
-			// }.bind(this));
-			// var marsButton = document.getElementById("Mars");
-			// marsButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(marsButton.id);
-			// }.bind(this));
+			var mercuryButton = document.getElementById("Mercury");
+			mercuryButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(mercuryButton.id);
+			}.bind(this));
+			var venusButton = document.getElementById("Venus");
+			venusButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(venusButton.id);
+			}.bind(this));
+			var earthButton = document.getElementById("Earth");
+			earthButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(earthButton.id);
+			}.bind(this));
+			var marsButton = document.getElementById("Mars");
+			marsButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(marsButton.id);
+			}.bind(this));
 			var jupiterButton = document.getElementById("Jupiter");
 			jupiterButton.addEventListener("click", function(e) {
 				var planetDisplay = document.getElementById("planetDiv");
