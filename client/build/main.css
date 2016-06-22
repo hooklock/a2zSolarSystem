@@ -244,6 +244,7 @@ h3 {
 }
 
 .Venus-div {
+	visibility: hidden;
 	top: 775px;
 	left: 1415px;
 	height: 40px;
@@ -251,6 +252,7 @@ h3 {
 }
 
 .Earth-div {
+	visibility: hidden;
 	top: 831px;
 	left: 1380px;
 	height: 43px;
@@ -258,6 +260,7 @@ h3 {
 }
 
 .Mars-div {
+	visibility: hidden;
 	top: 839px;
 	left: 1516px;
 	height: 30px;
