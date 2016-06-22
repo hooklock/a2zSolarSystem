@@ -242,6 +242,27 @@ h3 {
 	width: 23px;
 }
 
+.Venus-div {
+	top: 775px;
+	left: 1415px;
+	height: 40px;
+	width: 40px;
+}
+
+.Earth-div {
+	top: 831px;
+	left: 1380px;
+	height: 43px;
+	width: 43px;
+}
+
+.Mars-div {
+	top: 839px;
+	left: 1516px;
+	height: 30px;
+	width: 30px;
+}
+
 .jupiter-div {
 	top: 743px;
 	left: 1736px;
