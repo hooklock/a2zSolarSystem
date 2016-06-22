@@ -97,7 +97,7 @@ li {
 /*FORM ELEMENTS*/
 
 /*CHECK YOUR WEIGHT*/
-#weightInput {
+#weightInput, select, input, button {
 	background-color: rgba(0,0,0, 0.5);
 	border-radius: 10px;
 	border: solid rgb(175, 238, 238);
@@ -110,13 +110,17 @@ li {
 	padding: 10px;
 }
 
-.viewClass p {
+.viewClass p, label, input, button, h3 {
 	padding-left: 10px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 
 /*HOW LONG TO...*/
+h3 {
+	padding: 10px;
+}
+
 
 /*BACKGROUND DISPLAY*/
 #viewport {
@@ -204,6 +208,10 @@ li {
 	border-radius: 50%;
 }
 
+.outer-planet-div:hover {
+	border: 2px solid rgba(130,236,255,0.6);
+}
+
 .jupiter-div {
 	top: 743px;
 	left: 1736px;
@@ -235,13 +243,13 @@ li {
 /*PANEL VIEWPORT*/
 .orbit-inner-div {
 	position: absolute;
-	border: 2px solid rgba(130,236,255,0.6);
-	z-index: 30;
-	border-radius: 30px;
-	top: 885px;
-	left: 1290px;
-	height: 58px;
-	width: 58px;
+  border: 1px solid rgba(130,236,255,0.6);
+  z-index: 30;
+  border-radius: 30px;
+  top: 886px;
+  left: 1291px;
+  height: 58px;
+  width: 58px;
 }
 
 #orbit-inner-close {

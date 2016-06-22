@@ -16930,7 +16930,7 @@
 	
 			this.makeDisplayTravelTimeDropDowns();
 	
-			var displayTravel = document.createElement("h1");
+			var displayTravel = document.createElement("h3");
 			displayTravel.setAttribute("id", "displayTravelTime");
 			travelBox.appendChild(displayTravel);
 			console.log(displayTravel);
@@ -17043,7 +17043,7 @@
 				}
 				var gList = this.solarSystem.filteredPlanets("Gas");
 				for(var planet of gList){
-					var gasPlanet = document.createElement("h1");
+					var gasPlanet = document.createElement("h3");
 					gasPlanet.innerText = planet.name;
 					gtPlanet.appendChild(gasPlanet);
 				}
@@ -17056,7 +17056,7 @@
 					}
 					var tList = this.solarSystem.filteredPlanets("Terrestrial");
 					for(var planet of tList){
-						var terrPlanet = document.createElement("h1");
+						var terrPlanet = document.createElement("h3");
 						terrPlanet.innerText = planet.name;
 						gtPlanet.appendChild(terrPlanet);
 					}
