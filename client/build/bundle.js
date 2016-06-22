@@ -16992,8 +16992,8 @@
 			var planetAxisAngle  = planetInfo.axisAngle;
 			// var planetMoons  = planetInfo.moons;
 	
-			var nameBox = document.createElement("p");
-			nameBox.innerText = "Planet Name: " + planetName;
+			var nameBox = document.createElement("h1");
+			nameBox.innerText = "This is " + planetName;
 			var sunDistanceBox = document.createElement("p");
 			sunDistanceBox.innerText = "Distance from Sun: " + planetSunDistance + "Km";
 			var earthDistanceBox = document.createElement("p");
@@ -17011,6 +17011,11 @@
 			var axisAngleBox = document.createElement("p");
 			axisAngleBox.innerText = "Angle of axis: " + planetAxisAngle + " degrees.";
 	
+			var planetPng = document.createElement("img");
+			planetPng.setAttribute("id", "planetpng");
+			planetPng.setAttribute("src", "./img/" + planetName + "Png.png");
+			console.log(planetPng);
+	
 			planetDiv.appendChild(nameBox);
 			planetDiv.appendChild(sunDistanceBox);
 			planetDiv.appendChild(earthDistanceBox);
@@ -17020,6 +17025,7 @@
 			planetDiv.appendChild(diameterBox);
 			planetDiv.appendChild(dayLengthBox);
 			planetDiv.appendChild(axisAngleBox);
+			planetDiv.appendChild(planetPng);
 	
 		},
 	
