@@ -16790,12 +16790,14 @@
 		},
 	
 		viewScroll: function() {
-			var speed = 3;
+			var speed = 5;
 			var x, y;
 			function handleMouse(e) {
 			  if (x && y) {
-				document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
-				document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
+					document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
+					document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
+					// document.getElementById("cursor").scrollTop += speed*(e.clientY - y);
+					// document.getElementById("cursor").scrollLeft += speed*(e.clientX - x);
 			  }
 			  x = e.clientX;
 			  y = e.clientY;
@@ -16803,16 +16805,10 @@
 			document.onmousemove = handleMouse;
 		},
 	
-		// animationMouseFollow: function() {
-		// 	x = e.clientX;
-		// 	y = e.clientY;
-		// },
-	
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));
 			var weightBox = document.getElementById('planetList');
 			var planetName = document.createElement('p');
-			// console.log(newPlanet.weightOnPlanet(weight));
 	
 			planetName.innerText = newPlanet.name + ": " + newPlanet.weightOnPlanet(weight).toFixed(2) + " kgs";
 			weightBox.appendChild(planetName);
@@ -17061,12 +17057,7 @@
 			var lineBreak1 = document.createElement("br");
 			var lineBreak2 = document.createElement("br");
 			var lineBreak3 = document.createElement("br");
-			// var innerOrbitClose = document.createElement("img");
-			// innerOrbitClose.setAttribute("src", "./img/frame-close.png");
-			// innerOrbitClose.setAttribute("class", "close-icon");
-			// innerOrbitClose.setAttribute("id", "orbit-inner-close");
 	
-			// var travelBox = document.getElementById('TravelTime');
 			var travelForm = document.createElement('form');
 			travelForm.setAttribute('id', 'travelform');
 			var planet1Label = document.createElement('label');
