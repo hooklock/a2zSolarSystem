@@ -72,12 +72,12 @@ db.funFacts.insert([
   {
     type: "Planet",
     name: "Mercury",
-    fact: "Known as the Water Star by the Ancient Chinese. Despite being the closest planet to the sun and one of the hottest places in the solar system, it in fact is subject to enormous temperature fluctuations. It has no atmosphere to retain heat so Mercury’s poles and the nightside of the planet plunge well below even the coldest temperatures recorded on Earth. With some regions never getting above -170°C, conditions are perfect for ice to form. Mercury’s regolith is home to possibly a trillion tonnes of ice, which would make it one of the wettest places in the solar system."
+    fact: "Mercury is known as the Water Star by the Ancient Chinese. Despite being the closest planet to the sun and one of the hottest places in the solar system, it is, in fact, subject to enormous temperature fluctuations. It has no atmosphere to retain heat so Mercury’s poles and the nightside of the planet plunge well below even the coldest temperatures recorded on Earth. With some regions never getting above -170°C, conditions are perfect for ice to form. Mercury’s regolith is home to possibly a trillion tonnes of ice, which would make it one of the wettest places in the solar system."
   },
   {
     type: "Planet",
     name: "Mercury",
-    fact: "It contains the largest man made crater in space. NASA’s MESSENGER probe was orbiting the planet for 6 years and ran out of fuel in 2014. It could no longer correct its course and as its orbit decayed, it got closer to the planet, and much faster. The resulting crash occurred at over 8000mph and left a crater over 50ft wide, easily the biggest man made crater anywhere in the universe. Apart from Earth!"
+    fact: "Mercury contains the largest man made crater in space. NASA’s MESSENGER probe was orbiting the planet for 6 years and ran out of fuel in 2014. It could no longer correct its course and as its orbit decayed, it got closer to the planet, and much faster. The resulting crash occurred at over 8000mph and left a crater over 50ft wide, easily the biggest man made crater anywhere in the universe. Apart from Earth!"
   },
   {
     type: "Planet",
@@ -177,7 +177,7 @@ db.funFacts.insert([
   {
     type: "Planet",
     name: "Uranus",
-    fact: "There are no Aliens on Uranus, the all left and settled across Africa. Uranus spins lying on its side (like a barrel), this is perhaps due to a large collision early in its formation. It was the first planet discovered by telescope"
+    fact: "There are no Aliens on Uranus, they all left and settled across Africa. Uranus spins lying on its side (like a barrel), this is perhaps due to a large collision early in its formation. It was the first planet discovered by telescope"
   },
   {
     type: "Planet",
