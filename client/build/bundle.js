@@ -16856,9 +16856,17 @@
 			var showButton = document.getElementsByName("orbit-inner-display")[0];
 			showButton.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+				var MercuryDiv = document.getElementsByClassName("Mercury-div")[0];
+				var VenusDiv = document.getElementsByClassName("Venus-div")[0];
+				var EarthDiv = document.getElementsByClassName("Earth-div")[0];
+				var MarsDiv = document.getElementsByClassName("Mars-div")[0];
 				var innerOrbitClose = document.getElementById("orbit-inner-close");
 				e.target = innerOrbitDisplay.style.visibility = "visible";
 				e.target = innerOrbitClose.style.visibility = "visible";
+				e.target = MercuryDiv.style.visibility = "visible";
+				e.target = VenusDiv.style.visibility = "visible";
+				e.target = EarthDiv.style.visibility = "visible";
+				e.target = MarsDiv.style.visibility = "visible";
 			});
 		},
 	
@@ -16866,9 +16874,17 @@
 			var close = document.getElementById("orbit-inner-close");
 			close.addEventListener("click", function(e) {
 				var innerOrbitDisplay = document.getElementsByClassName("orbit-inner-planet-img")[0];
+				var MercuryDiv = document.getElementsByClassName("Mercury-div")[0];
+				var VenusDiv = document.getElementsByClassName("Venus-div")[0];
+				var EarthDiv = document.getElementsByClassName("Earth-div")[0];
+				var MarsDiv = document.getElementsByClassName("Mars-div")[0];
 				var innerOrbitClose = document.getElementById("orbit-inner-close");
 				e.target = innerOrbitDisplay.style.visibility = "hidden";
 				e.target = innerOrbitClose.style.visibility = "hidden";
+				e.target = MercuryDiv.style.visibility = "hidden";
+				e.target = VenusDiv.style.visibility = "hidden";
+				e.target = EarthDiv.style.visibility = "hidden";
+				e.target = MarsDiv.style.visibility = "hidden";
 			});
 		},
 	
@@ -16893,30 +16909,30 @@
 			}.bind(this));
 	
 			// planet buttons here
-			// var mercuryButton = document.getElementById("Mercury");
-			// mercuryButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(mercuryButton.id);
-			// }.bind(this));
-			// var venusButton = document.getElementById("Venus");
-			// venusButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(venusButton.id);
-			// }.bind(this));
-			// var earthButton = document.getElementById("Earth");
-			// earthButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(earthButton.id);
-			// }.bind(this));
-			// var marsButton = document.getElementById("Mars");
-			// marsButton.addEventListener("click", function(e) {
-			// 	var planetDisplay = document.getElementById("planetDiv");
-			// 	planetDisplay.style.visibility = "visible";
-			// 	this.displayPlanetInfo(marsButton.id);
-			// }.bind(this));
+			var mercuryButton = document.getElementById("Mercury");
+			mercuryButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(mercuryButton.id);
+			}.bind(this));
+			var venusButton = document.getElementById("Venus");
+			venusButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(venusButton.id);
+			}.bind(this));
+			var earthButton = document.getElementById("Earth");
+			earthButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(earthButton.id);
+			}.bind(this));
+			var marsButton = document.getElementById("Mars");
+			marsButton.addEventListener("click", function(e) {
+				var planetDisplay = document.getElementById("planetDiv");
+				planetDisplay.style.visibility = "visible";
+				this.displayPlanetInfo(marsButton.id);
+			}.bind(this));
 			var jupiterButton = document.getElementById("Jupiter");
 			jupiterButton.addEventListener("click", function(e) {
 				var planetDisplay = document.getElementById("planetDiv");
@@ -16976,34 +16992,68 @@
 			var planetAxisAngle  = planetInfo.axisAngle;
 			// var planetMoons  = planetInfo.moons;
 	
-			var nameBox = document.createElement("p");
-			nameBox.innerText = "Planet Name: " + planetName;
+			var break1 = document.createElement("br");
+			var break2 = document.createElement("br");
+			var break3 = document.createElement("br");
+			var break4 = document.createElement("br");
+			var break5 = document.createElement("br");
+			var break6 = document.createElement("br");
+			var break7 = document.createElement("br");
+			var break8 = document.createElement("br");
+	
+			var nameBox = document.createElement("h1");
+			nameBox.setAttribute("id", "planetTitle");
+			var pictureBox = document.createElement("h1");
+			nameBox.innerText = "This is " + planetName;
 			var sunDistanceBox = document.createElement("p");
+			sunDistanceBox.setAttribute("class", "planet-p");
 			sunDistanceBox.innerText = "Distance from Sun: " + planetSunDistance + "Km";
 			var earthDistanceBox = document.createElement("p");
+			earthDistanceBox.setAttribute("class", "planet-p");
 			earthDistanceBox.innerText = "Distance from Earth: " + planetEarthDistance + "Km";
 			var gravityBox = document.createElement("p");
+			gravityBox.setAttribute("class", "planet-p");
 			gravityBox.innerText = "Gravity: " + planetGravity + "m/s/s";
 			var massBox = document.createElement("p");
+			massBox.setAttribute("class", "planet-p");
 			massBox.innerText = "Mass: " + planetMass;
 			var orbitalPeriodBox = document.createElement("p");
+			orbitalPeriodBox.setAttribute("class", "planet-p");
 			orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
 			var diameterBox = document.createElement("p");
+			diameterBox.setAttribute("class", "planet-p");
 			diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
 			var dayLengthBox = document.createElement("p");
+			dayLengthBox.setAttribute("class", "planet-p");
 			dayLengthBox.innerText = "Length of day: " + planetDayLength;
 			var axisAngleBox = document.createElement("p");
+			axisAngleBox.setAttribute("class", "planet-p");
 			axisAngleBox.innerText = "Angle of axis: " + planetAxisAngle + " degrees.";
 	
+			var planetPng = document.createElement("img");
+			planetPng.setAttribute("id", "planetpng");
+			planetPng.setAttribute("src", "./img/" + planetName + "Png.png");
+			console.log(planetPng);
+	
 			planetDiv.appendChild(nameBox);
+			planetDiv.appendChild(pictureBox);
+			planetDiv.appendChild(break1);
 			planetDiv.appendChild(sunDistanceBox);
+			planetDiv.appendChild(break2);
 			planetDiv.appendChild(earthDistanceBox);
+			planetDiv.appendChild(break3);
 			planetDiv.appendChild(gravityBox);
+			planetDiv.appendChild(break4);
 			planetDiv.appendChild(massBox);
+			planetDiv.appendChild(break5);
 			planetDiv.appendChild(orbitalPeriodBox);
+			planetDiv.appendChild(break6);
 			planetDiv.appendChild(diameterBox);
+			planetDiv.appendChild(break7);
 			planetDiv.appendChild(dayLengthBox);
+			planetDiv.appendChild(break8);
 			planetDiv.appendChild(axisAngleBox);
+			pictureBox.appendChild(planetPng);
 	
 		},
 	
