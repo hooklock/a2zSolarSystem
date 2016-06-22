@@ -16905,6 +16905,12 @@
 				innerOrbitDisplay.style.visibility = "visible";
 				this.planetByType();
 			}.bind(this));
+			var orderButton = document.getElementById("OrderFrame");
+			orderButton.addEventListener("click", function(e) {
+				var innerOrbitDisplay = document.getElementById("viewDiv");
+				innerOrbitDisplay.style.visibility = "visible";
+				this.orderPlanetsBy();
+			}.bind(this));
 	
 			// planet buttons here
 			var mercuryButton = document.getElementById("Mercury");
@@ -17238,17 +17244,120 @@
 					}
 			}.bind(this);
 		},
+	
+		orderPlanetsBy: function() {
+			var orderBox = document.getElementById("viewDiv");
+			while (orderBox.hasChildNodes()) {
+			orderBox.removeChild(orderBox.firstChild);
+			}
+	
+			var lineBreak1 = document.createElement("br");
+			var lineBreak2 = document.createElement("br");
+			var lineBreak3 = document.createElement("br");
+	
+			var orderForm = document.createElement('form');
+			orderForm.setAttribute('id', 'orderform');
+			var thingLabel = document.createElement('label');
+			thingLabel.setAttribute( 'id', 'thing-dropdown');
+			thingLabel.innerText = "Choose your attribute:  ";
+			var orderLabel = document.createElement('label');
+			orderLabel.setAttribute( 'id', 'order-dropdown');
+			orderLabel.innerText = "Ascending or descending?: ";
+			var thingSelect = document.createElement('select');
+			thingSelect.setAttribute( 'id', 'thing-content');
+			var orderSelect = document.createElement('select');
+			orderSelect.setAttribute( 'id', 'order-content');
+			var submitButton = document.createElement('input');
+			submitButton.setAttribute('type', 'submit');
+			submitButton.setAttribute('value', 'Find Planet');
+	
+			orderForm.addEventListener('submit', this.getOrderInfo.bind(this));
+	
+			thingLabel.appendChild(thingSelect);
+			thingLabel.appendChild(lineBreak1);
+			orderLabel.appendChild(orderSelect);
+			orderLabel.appendChild(lineBreak2);
+			orderForm.appendChild(thingLabel);
+			orderForm.appendChild(orderLabel);
+			orderForm.appendChild(submitButton);
+			orderBox.appendChild(orderForm);
+			// travelForm.appendChild(innerOrbitClose);
+	
+			this.makeDisplayOrderDropDowns();
+	
+			var displayOrder = document.createElement("h3");
+			displayOrder.setAttribute("id", "displayOrder");
+			orderBox.appendChild(displayOrder);
+	
+		},
+	
+		makeDisplayOrderDropDowns: function() {
+			// for(var element in this.solarSystem.planets[0]){
+			// var thing = document.createElement('option');
+			var order1 = document.createElement('option');
+			var order2 = document.createElement('option');
+			// console.log(Object.keys(this.solarSystem.planets[0]));
+	
+			var keys = Object.keys(this.solarSystem.planets[0]);
+			for(var key in keys){
+				var thing = document.createElement('option');
+				// console.log(keys[key]);
+				var element = keys[key];
+				// console.log(element);
+	
+			thing.text = element;
+			thing.setAttribute( 'class', 'planetNameClass' );
+				// newObject = JSON.stringify(thing);
+			thing.setAttribute( 'value', element );
+	
+			// console.log("thing", thing);
+	
+			var newthingSelect = document.getElementById('thing-content');
+	
+			newthingSelect.appendChild(thing);
+			}
+	
+			order1.text = "Ascending";
+			order1.setAttribute( 'class', 'planetNameClass' );
+			order1.setAttribute( 'value', "ascending" );
+			order2.text = "Descending";
+			order2.setAttribute( 'class', 'planetNameClass' );
+			order2.setAttribute( 'value', "descending" );
+	
+			var neworderSelect = document.getElementById('order-content');
+	
+			neworderSelect.appendChild(order1);
+			neworderSelect.appendChild(order2);
+		},
+	
+		getOrderInfo: function(e) {
+			e.preventDefault();
+	
+			var displayOrder = document.getElementById("displayOrder");
+	
+			while (displayOrder.hasChildNodes()) {
+			displayOrder.removeChild(displayOrder.firstChild);
+			}
+	
+			var select1 = document.getElementById('thing-content');
+			var select2 = document.getElementById('order-content');
+	
+			object1 = select1.options[select1.selectedIndex].value;
+			object2 = select2.options[select2.selectedIndex].value;
+	
+			// console.log(object1);
+			// console.log(object2);
+	
+			// console.log(this.solarSystem);
+	
+			var orderOfPlanets = this.solarSystem.orderThingsBy(object1, object2);
+	
+			console.log(orderOfPlanets);
+	
+			displayOrder.innerText = "In " + object2 + " order: " + orderOfPlanets[0].name + ", " + orderOfPlanets[1].name + ", " + orderOfPlanets[2].name + ", " + orderOfPlanets[3].name + ", " + orderOfPlanets[4].name + ", " + orderOfPlanets[5].name + ", " + orderOfPlanets[6].name + ", " + orderOfPlanets[7].name;
+	
+		}
 	};
-		// showPlanetDiv: function(){
-		// 	var planetButton = document.getElementById("Saturn");
-		// 	console.log(planetButton.id);
-		// 	planetButton.addEventListener("click", function(e) {
-		// 		var planetDisplay = document.getElementById("planetDiv");
-		// 		e.target = planetDisplay.style.visibility = "visible";
-		// 		console.log(this.solarSystem.findPlanetByName(planetButton.id));
-		// 		this.solarSystem.findPlanetByName(planetButton.id);
-		// 	}.bind(this));
-		// }
 	
 	
 		// planetByThing: function(){
