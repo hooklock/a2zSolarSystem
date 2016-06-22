@@ -118,6 +118,33 @@ li {
 
 /*FORM ELEMENTS*/
 
+/*PLANET VIEWS*/
+#planetpng {
+	height: 200px;
+	width: auto;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#planetTitle {
+	margin-right: 10px;
+	margin-left: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+h1 {
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+
+.planet-p {
+	display: inline-block;
+	vertical-align: top;
+	/*width: 50%;*/
+}
+
 /*CHECK YOUR WEIGHT*/
 #weightInput, select, input, button {
 	background-color: rgba(0,0,0, 0.5);
@@ -141,6 +168,7 @@ li {
 /*HOW LONG TO...*/
 h3 {
 	padding: 10px;
+	width: 721px;
 }
 
 /*BACKGROUND DISPLAY*/

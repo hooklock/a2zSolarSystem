@@ -16992,23 +16992,42 @@
 			var planetAxisAngle  = planetInfo.axisAngle;
 			// var planetMoons  = planetInfo.moons;
 	
+			var break1 = document.createElement("br");
+			var break2 = document.createElement("br");
+			var break3 = document.createElement("br");
+			var break4 = document.createElement("br");
+			var break5 = document.createElement("br");
+			var break6 = document.createElement("br");
+			var break7 = document.createElement("br");
+			var break8 = document.createElement("br");
+	
 			var nameBox = document.createElement("h1");
+			nameBox.setAttribute("id", "planetTitle");
+			var pictureBox = document.createElement("h1");
 			nameBox.innerText = "This is " + planetName;
 			var sunDistanceBox = document.createElement("p");
+			sunDistanceBox.setAttribute("class", "planet-p");
 			sunDistanceBox.innerText = "Distance from Sun: " + planetSunDistance + "Km";
 			var earthDistanceBox = document.createElement("p");
+			earthDistanceBox.setAttribute("class", "planet-p");
 			earthDistanceBox.innerText = "Distance from Earth: " + planetEarthDistance + "Km";
 			var gravityBox = document.createElement("p");
+			gravityBox.setAttribute("class", "planet-p");
 			gravityBox.innerText = "Gravity: " + planetGravity + "m/s/s";
 			var massBox = document.createElement("p");
+			massBox.setAttribute("class", "planet-p");
 			massBox.innerText = "Mass: " + planetMass;
 			var orbitalPeriodBox = document.createElement("p");
+			orbitalPeriodBox.setAttribute("class", "planet-p");
 			orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
 			var diameterBox = document.createElement("p");
+			diameterBox.setAttribute("class", "planet-p");
 			diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
 			var dayLengthBox = document.createElement("p");
+			dayLengthBox.setAttribute("class", "planet-p");
 			dayLengthBox.innerText = "Length of day: " + planetDayLength;
 			var axisAngleBox = document.createElement("p");
+			axisAngleBox.setAttribute("class", "planet-p");
 			axisAngleBox.innerText = "Angle of axis: " + planetAxisAngle + " degrees.";
 	
 			var planetPng = document.createElement("img");
@@ -17017,15 +17036,24 @@
 			console.log(planetPng);
 	
 			planetDiv.appendChild(nameBox);
+			planetDiv.appendChild(pictureBox);
+			planetDiv.appendChild(break1);
 			planetDiv.appendChild(sunDistanceBox);
+			planetDiv.appendChild(break2);
 			planetDiv.appendChild(earthDistanceBox);
+			planetDiv.appendChild(break3);
 			planetDiv.appendChild(gravityBox);
+			planetDiv.appendChild(break4);
 			planetDiv.appendChild(massBox);
+			planetDiv.appendChild(break5);
 			planetDiv.appendChild(orbitalPeriodBox);
+			planetDiv.appendChild(break6);
 			planetDiv.appendChild(diameterBox);
+			planetDiv.appendChild(break7);
 			planetDiv.appendChild(dayLengthBox);
+			planetDiv.appendChild(break8);
 			planetDiv.appendChild(axisAngleBox);
-			planetDiv.appendChild(planetPng);
+			pictureBox.appendChild(planetPng);
 	
 		},
 	
