@@ -16791,36 +16791,25 @@
 		},
 	
 		viewScroll: function() {
-			var speed = 5;
+			var speed = 3;
 			var x, y;
 			function handleMouse(e) {
 			  if (x && y) {
-					document.getElementsByClassName("parallax")[0].scrollTop += speed*(e.clientY - y);
-					document.getElementsByClassName("parallax")[0].scrollLeft += speed*(e.clientX - x);
-					document.getElementsByClassName("cursor")[0].style.top = e.clientY + "px";
-					document.getElementsByClassName("cursor")[0].style.left = e.clientX + "px";
-			  }
+					var parallax = document.getElementsByClassName("parallax")[0];
+					var cursor = document.getElementsByClassName("cursor")[0];
+					parallax.scrollTop += speed*(e.clientY - y);
+					parallax.scrollLeft += speed*(e.clientX - x);
+					// cursor.style.top = (e.clientY - (cursor.style.height = (e.clientY/4))) + "px";
+					// cursor.style.left = (e.clientX - (cursor.style.width = (e.clientX/4))) + "px";
+					cursor.style.top = e.clientY - 75 + "px";
+					cursor.style.left = e.clientX - 75 + "px";
+	
+				}
 			  x = e.clientX;
 			  y = e.clientY;
 			}
 			document.onmousemove = handleMouse;
 		},
-	
-		// followMouse: function() {
-		// 	var speed = 3;
-		// 	var x, y;
-		// 	function handleMouse(e) {
-		// 	  if (x && y) {
-		// 			document.getElementsByClassName("cursor")[0].style.top = e.clientY + "px";
-		// 			document.getElementsByClassName("cursor")[0].style.left = e.clientX + "px";
-		// 			// document.getElementById("cursor").scrollTop += speed*(e.clientY - y);
-		// 			// document.getElementById("cursor").scrollLeft += speed*(e.clientX - x);
-		// 	  }
-		// 	  x = e.clientX;
-		// 	  y = e.clientY;
-		// 	}
-		// 	document.onmousemove = handleMouse;
-		// },
 	
 		listPlanet: function(pname, weight){
 			var newPlanet = new Planet(this.solarSystem.findPlanetByName(pname));

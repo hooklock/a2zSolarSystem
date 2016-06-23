@@ -71,12 +71,14 @@ li {
 /*CURSOR*/
 .cursor {
 	position: absolute;
+	visibility: hidden;
 	z-index: 50;
 	opacity: 0.60;
 }
 
 .cursor img {
 	position: relative;
+	visibility: visible;
 	height: 150px;
 	width: auto;
 }
