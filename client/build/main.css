@@ -68,9 +68,25 @@ li {
 	background-color: rgb(175, 238, 238);
 }
 
+/*CURSOR*/
+.cursor {
+	position: absolute;
+	visibility: hidden;
+	z-index: 50;
+	opacity: 0.60;
+	pointer-events: none;
+}
+
+.cursor img {
+	position: relative;
+	visibility: visible;
+	height: 150px;
+	width: auto;
+	pointer-events: none;
+}
+
 /*MAIN VIEW FRAME*/
 .viewClass {
-	/*visibility: hidden;*/
 	position: fixed;
 	width: auto;
 	height: auto;
@@ -90,20 +106,6 @@ li {
 #planetDiv{
 	visibility: hidden;
 }
-
-/*#viewDiv {
-	visibility: hidden;
-	position: fixed;
-	width: 65em;
-	height: 32em;
-	border: 3px solid rgba(175, 238, 238,0.3);
-	background-color: rgba(83,163,178,0.7);
-	color: white;
-	z-index: 40;
-	top: 7em;
-	left: 7em;
-	border-radius: 15px;
-}*/
 
 .close-icon {
 	background: transparent url('./img/frame-close.png') no-repeat 0 0;
@@ -142,7 +144,6 @@ h1 {
 .planet-p {
 	display: inline-block;
 	vertical-align: top;
-	/*width: 50%;*/
 }
 
 /*CHECK YOUR WEIGHT*/
