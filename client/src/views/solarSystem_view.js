@@ -15,7 +15,7 @@ SolarSystemView.prototype = {
 
 	//Mouse movement event handler
 	viewScroll: function() {
-		var speed = 5;
+		var speed = 3;
 		var x, y;
 		function handleMouse(e) {
 		  if (x && y) {
@@ -128,19 +128,6 @@ SolarSystemView.prototype = {
 			innerOrbitDisplay.style.visibility = "visible";
 			this.planetByType();
 		}.bind(this));
-		var orderButton = document.getElementById("OrderFrame");
-		orderButton.addEventListener("click", function(e) {
-			var innerOrbitDisplay = document.getElementById("viewDiv");
-			innerOrbitDisplay.style.visibility = "visible";
-			this.orderPlanetsBy();
-		}.bind(this));
-
-		var largeButton = document.getElementById("largeFrame");
-		largeButton.addEventListener("click", function(e) {
-			var innerOrbitDisplay = document.getElementById("viewDiv");
-			innerOrbitDisplay.style.visibility = "visible";
-			this.planetByLargestThing();
-		}.bind(this));
 
 		// planet buttons here
 		var mercuryButton = document.getElementById("Mercury");
@@ -232,7 +219,6 @@ SolarSystemView.prototype = {
 		var planetDiameter  = planetInfo.diameter;
 		var planetDayLength  = planetInfo.dayLength;
 		var planetAxisAngle  = planetInfo.axisAngle;
-		// var planetMoons  = planetInfo.moons;
 
 		var break1 = document.createElement("br");
 		var break2 = document.createElement("br");
@@ -261,7 +247,7 @@ SolarSystemView.prototype = {
 		massBox.innerText = "Mass: " + planetMass;
 		var orbitalPeriodBox = document.createElement("p");
 		orbitalPeriodBox.setAttribute("class", "planet-p");
-		orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Days to orbit the Sun.";
+		orbitalPeriodBox.innerText = planetName + " takes " + planetOrbitalPeriod + " Earth Years to orbit the Sun.";
 		var diameterBox = document.createElement("p");
 		diameterBox.setAttribute("class", "planet-p");
 		diameterBox.innerText = "Diameter: " + planetDiameter + " m.";
@@ -487,188 +473,7 @@ SolarSystemView.prototype = {
 				gtPlanet.appendChild(terrPlanet);
 			}
 		}.bind(this);
-<<<<<<< HEAD
-	},
-
-	orderPlanetsBy: function() {
-		var orderBox = document.getElementById("viewDiv");
-		while (orderBox.hasChildNodes()) {
-		orderBox.removeChild(orderBox.firstChild);
-		}
-
-		var lineBreak1 = document.createElement("br");
-		var lineBreak2 = document.createElement("br");
-		var lineBreak3 = document.createElement("br");
-
-		var orderForm = document.createElement('form');
-		orderForm.setAttribute('id', 'orderform');
-		var thingLabel = document.createElement('label');
-		thingLabel.setAttribute( 'id', 'thing-dropdown');
-		thingLabel.innerText = "Choose your attribute:  ";
-		var orderLabel = document.createElement('label');
-		orderLabel.setAttribute( 'id', 'order-dropdown');
-		orderLabel.innerText = "Ascending or descending?: ";
-		var thingSelect = document.createElement('select');
-		thingSelect.setAttribute( 'id', 'thing-content');
-		var orderSelect = document.createElement('select');
-		orderSelect.setAttribute( 'id', 'order-content');
-		var submitButton = document.createElement('input');
-		submitButton.setAttribute('type', 'submit');
-		submitButton.setAttribute('value', 'Find Planet');
-
-		orderForm.addEventListener('submit', this.getOrderInfo.bind(this));
-
-		thingLabel.appendChild(thingSelect);
-		thingLabel.appendChild(lineBreak1);
-		orderLabel.appendChild(orderSelect);
-		orderLabel.appendChild(lineBreak2);
-		orderForm.appendChild(thingLabel);
-		orderForm.appendChild(orderLabel);
-		orderForm.appendChild(submitButton);
-		orderBox.appendChild(orderForm);
-		// travelForm.appendChild(innerOrbitClose);
-
-		this.makeDisplayOrderDropDowns();
-
-		var displayOrder = document.createElement("h3");
-		displayOrder.setAttribute("id", "displayOrder");
-		orderBox.appendChild(displayOrder);
-
-	},
-
-	makeDisplayOrderDropDowns: function() {
-		// for(var element in this.solarSystem.planets[0]){
-		// var thing = document.createElement('option');
-		var order1 = document.createElement('option');
-		var order2 = document.createElement('option');
-		// console.log(Object.keys(this.solarSystem.planets[0]));
-
-		var keys = Object.keys(this.solarSystem.planets[0]);
-		for(var key in keys){
-			var thing = document.createElement('option');
-			// console.log(keys[key]);
-			var element = keys[key];
-			// console.log(element);
-			// var element2 = element.toUpperCase
-
-		thing.text = element.toUpperCase();
-		thing.setAttribute( 'class', 'planetNameClass' );
-			// newObject = JSON.stringify(thing);
-		thing.setAttribute( 'value', element );
-
-		// console.log("thing", thing);
-
-		var newthingSelect = document.getElementById('thing-content');
-
-		newthingSelect.appendChild(thing);
-		}
-
-		order1.text = "Ascending";
-		order1.setAttribute( 'class', 'planetNameClass' );
-		order1.setAttribute( 'value', "ascending" );
-		order2.text = "Descending";
-		order2.setAttribute( 'class', 'planetNameClass' );
-		order2.setAttribute( 'value', "descending" );
-
-		var neworderSelect = document.getElementById('order-content');
-
-		neworderSelect.appendChild(order1);
-		neworderSelect.appendChild(order2);
-	},
-
-	getOrderInfo: function(e) {
-		e.preventDefault();
-
-		var displayOrder = document.getElementById("displayOrder");
-
-		while (displayOrder.hasChildNodes()) {
-		displayOrder.removeChild(displayOrder.firstChild);
-		}
-
-		var select1 = document.getElementById('thing-content');
-		var select2 = document.getElementById('order-content');
-
-		object1 = select1.options[select1.selectedIndex].value;
-		object2 = select2.options[select2.selectedIndex].value;
-
-		var orderOfPlanets = this.solarSystem.orderThingsBy(object1, object2);
-
-		console.log(orderOfPlanets);
-
-		displayOrder.innerText = "In " + object2 + " order: " + orderOfPlanets[0].name + ", " + orderOfPlanets[1].name + ", " + orderOfPlanets[2].name + ", " + orderOfPlanets[3].name + ", " + orderOfPlanets[4].name + ", " + orderOfPlanets[5].name + ", " + orderOfPlanets[6].name + ", " + orderOfPlanets[7].name;
-
-	},
-
-
-
-	// planetByThing: function(){
-	// 	var thingContainer = document.getElementById("thingContainer");
-	// 	var thingForm = document.createElement("form");
-	// 	var thingSelect = document.createElement("select");
-	//
-	//
-	planetByLargestThing: function() {
-	var thingBox = document.getElementById("viewDiv");
-	while (thingBox.hasChildNodes()) {
-	thingBox.removeChild(thingBox.firstChild);
 	}
-	var thingForm = document.createElement("form");
-	thingForm.setAttribute("id", "thing_form");
-	var thingLabel = document.createElement("label");
-	thingLabel.setAttribute("id", "thing_dropdown");
-	thingLabel.innerText = "Select your Thing!";
-	var thingSelect = document.createElement("select");
-	thingSelect.setAttribute("id", "thing_select");
-	var thingSubmit = document.createElement("input");
-	thingSubmit.setAttribute("type", "submit");
-	thingSubmit.setAttribute("value", "Click Here");
-
-	thingForm.addEventListener("submit", this.getLargestThing.bind(this));
-
-	thingLabel.appendChild(thingSelect);
-	thingForm.appendChild(thingLabel);
-	thingForm.appendChild(thingSubmit);
-	thingBox.appendChild(thingForm);
-
-	this.makeThingDropDown();
-
-	var displayThing = document.createElement("h3");
-	displayThing.setAttribute("id", "display_thing");
-	thingBox.appendChild(displayThing);
-},
-
-	makeThingDropDown: function(){
-		var keys = Object.keys(this.solarSystem.planets[0]);
-		for (var key in keys){
-			var choice = document.createElement("option");
-			var element = keys[key];
-			choice.text = element.toUpperCase();
-			choice.setAttribute("value", element);
-			var choiceSelect = document.getElementById("thing_select");
-			choiceSelect.appendChild(choice);
-			// console.log(keys[key]);
-		}
-	},
-
-	getLargestThing: function(e){
-		e.preventDefault();
-
-		var displayLargestThing = document.getElementById("display_thing");
-
-		while(display_thing.hasChildNodes()){display_thing.removeChild(display_thing.firstChild);
-		}
-
-		var select = document.getElementById("thing_select");
-
-		object = select.options[select.selectedIndex].value;
-
-		var result = this.solarSystem.findLargestThing(object);
-		console.log(result);
-
-		displayLargestThing.innerText = result.name;
-
-	}
-
 };
 
 module.exports = SolarSystemView;
