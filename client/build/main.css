@@ -74,6 +74,7 @@ li {
 	visibility: hidden;
 	z-index: 50;
 	opacity: 0.60;
+	pointer-events: none;
 }
 
 .cursor img {
@@ -81,6 +82,7 @@ li {
 	visibility: visible;
 	height: 150px;
 	width: auto;
+	pointer-events: none;
 }
 
 /*MAIN VIEW FRAME*/

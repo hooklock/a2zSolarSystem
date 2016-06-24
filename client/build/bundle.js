@@ -16799,11 +16799,8 @@
 					var cursor = document.getElementsByClassName("cursor")[0];
 					parallax.scrollTop += speed*(e.clientY - y);
 					parallax.scrollLeft += speed*(e.clientX - x);
-					// cursor.style.top = (e.clientY - (cursor.style.height = (e.clientY/4))) + "px";
-					// cursor.style.left = (e.clientX - (cursor.style.width = (e.clientX/4))) + "px";
 					cursor.style.top = e.clientY - 75 + "px";
 					cursor.style.left = e.clientX - 75 + "px";
-	
 				}
 			  x = e.clientX;
 			  y = e.clientY;
