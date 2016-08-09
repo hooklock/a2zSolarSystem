@@ -25,6 +25,7 @@ SolarSystemView.prototype = {
 				parallax.scrollLeft += speed*(e.clientX - x);
 				cursor.style.top = e.clientY - 75 + "px";
 				cursor.style.left = e.clientX - 75 + "px";
+				
 			}
 		  x = e.clientX;
 		  y = e.clientY;

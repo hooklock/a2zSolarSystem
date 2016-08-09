@@ -25,3 +25,8 @@ a2zSolarSystem git:(Master) $ npm start
 #Testing Dependencies:
 - chai
 - mocha
+
+#How This App Works
+- This app was built using TDD vanilla JavaScript OOP.  The model files carry out the logic required by the app and the are required and used in the app.js file which handles the window.onload function by handling the get request information, this includes the rendering of:
+
+- The solarSystemView

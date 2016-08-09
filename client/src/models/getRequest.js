@@ -10,11 +10,7 @@ var GetRequest = function(url){
                     console.log("got the data");
                     var jsonString = request.responseText;
                     var sampleSolarSystem = JSON.parse(jsonString)[0];
-                    // var solarsystem = new SolarSystem(sampleSolarSystem);
-                    // console.log(solarsystem);
-                    // return solarsystem;
                     return callback(sampleSolarSystem);
-                    // localStorage.setItem('data', JSON.stringify(sampleSolarSystem));
                 }
             };
             request.send(null);
@@ -28,17 +24,12 @@ var GetRequest = function(url){
                     console.log("got the data");
                     var jsonString = request.responseText;
                     var sampleFunFacts = JSON.parse(jsonString);
-                    // var solarsystem = new SolarSystem(sampleFunFacts);
-                    // console.log(solarsystem);
-                    // return solarsystem;
                     return callback(sampleFunFacts);
-                    // localStorage.setItem('data', JSON.stringify(sampleSolarSystem));
                 }
             };
             request.send(null);
     };
 
-    // this.getSolarSystem();
 };
 
 module.exports = GetRequest;
