@@ -6,20 +6,21 @@ var FunFactsView = function(funfacts) {
 
 FunFactsView.prototype = {
 	render: function() {
-		// this.randomFact();
 		this.showFunFactDiv();
 		this.closeFunFactDiv();
 	},
-    randomFact: function(){
-        var factBox = document.getElementById('viewDiv');
+
+	randomFact: function(){
+    var factBox = document.getElementById('viewDiv');
 		while (factBox.hasChildNodes()) {
-		factBox.removeChild(factBox.firstChild);
+			factBox.removeChild(factBox.firstChild);
 		}
-        var random = _.sample(this.funfacts.facts).fact;
+    var random = _.sample(this.funfacts.facts).fact;
 		var factoid = document.createElement("h3");
 		factBox.appendChild(factoid);
-        factoid.innerText = random;
-    },
+    factoid.innerText = random;
+  },
+
 	showFunFactDiv: function() {
 		var factButton = document.getElementById("FactFrame");
 		factButton.addEventListener("click", function(e) {
@@ -28,10 +29,10 @@ FunFactsView.prototype = {
 			this.randomFact();
 		}.bind(this));
 	},
+
 	closeFunFactDiv: function() {
 		document.getElementById('main-frame').onclick = function(e) {
 			if(e.target != document.getElementById("viewDiv") && e.target != document.getElementById("viewDiv").children[0]) {
-				// console.log(document.getElementById("viewDiv").children);
 				var closeDiv = document.getElementById("viewDiv");
 				e.target = closeDiv.style.visibility = "hidden";
 			}
