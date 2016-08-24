@@ -1,6 +1,5 @@
 var assert = require('chai').assert;
 var SolarSystem = require('../solarsystem.js');
-var Sun = require('../sun.js');
 var Planet = require('../planet.js');
 var FunFacts = require('../funFacts.js');
 var FunFact = require('../funFact.js');
@@ -70,8 +69,7 @@ describe('Planet', function() {
 describe('SolarSystem', function() {
 
   beforeEach(function(){
-	  newsun = new Sun ({name: 'Sol'});
-	  solarsystem = new SolarSystem({name: "Solar System", sun: newsun, planets: []});
+	  solarsystem = new SolarSystem({name: "Solar System", planets: []});
 	  mercury = new Planet({
       name: "Mercury",
       earthDistance: 77000000 ,
@@ -118,11 +116,6 @@ describe('SolarSystem', function() {
         }
       ]
     });
-  });
-
-  it('should have a name and a sun', function(){
-    assert.equal('Solar System', solarsystem.name);
-    assert.equal('Sol', solarsystem.sun.name);
   });
 
   it('should add a planet', function(){
@@ -215,8 +208,7 @@ describe('SolarSystem', function() {
 describe('Fun Facts', function() {
 
   beforeEach(function(){
-    newsun = new Sun ({name: 'Sol'});
-    solarsystem = new SolarSystem({name: "Solar System", sun: newsun, planets: []});
+    solarsystem = new SolarSystem({name: "Solar System", planets: []});
     mercury = new Planet({
       name: "Mercury",
       earthDistance: 77000000 ,
@@ -243,7 +235,7 @@ describe('Fun Facts', function() {
       dayLength: "116d 18h 0m",
       axisAngle: 177.4
     });
-		
+
     earth = new Planet({
       name: "Earth",
       earthDistance: 0,

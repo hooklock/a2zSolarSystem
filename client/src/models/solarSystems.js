@@ -1,12 +1,12 @@
 var SolarSystems = function(solarsystem){
-    this.solarsystems = [];
+  this.solarsystems = [];
 };
 
 SolarSystems.prototype = {
-    addSolarSystem: function(solarsystem){
-        this.solarsystems.push(solarsystem);
-        return this.solarsystems;
-    }
+  addSolarSystem: function(solarsystem){
+    this.solarsystems.push(solarsystem);
+    return this.solarsystems;
+  }
 };
 
 module.exports = SolarSystems;
